@@ -69,6 +69,44 @@ const items = computed<NavigationMenuItem[]>(() => [
       <NuxtPage />
     </UMain>
 
+    <!-- Нижняя навигация для мобильных -->
+    <nav class="sm:hidden fixed inset-x-0 bottom-0 z-40 border-t border-default bg-default/95 backdrop-blur">
+      <div class="max-w-(--ui-container) mx-auto px-2 py-1.5 flex items-center justify-around gap-1">
+        <UButton
+          to="/"
+          icon="i-lucide-home"
+          size="lg"
+          color="neutral"
+          variant="ghost"
+          :aria-pressed="route.path === '/'"
+        />
+        <UButton
+          to="/katalog"
+          icon="i-lucide-layout-grid"
+          size="lg"
+          color="neutral"
+          variant="ghost"
+          :aria-pressed="route.path.startsWith('/katalog')"
+        />
+        <UButton
+          to="/kontakty"
+          icon="i-lucide-phone"
+          size="lg"
+          color="neutral"
+          variant="ghost"
+          :aria-pressed="route.path.startsWith('/kontakty')"
+        />
+        <UButton
+          to="/blog"
+          icon="i-lucide-book-open-text"
+          size="lg"
+          color="neutral"
+          variant="ghost"
+          :aria-pressed="route.path.startsWith('/blog')"
+        />
+      </div>
+    </nav>
+
     <USeparator
       icon="i-simple-icons-nuxtdotjs"
       type="dashed"

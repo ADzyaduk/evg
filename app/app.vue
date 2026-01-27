@@ -1,14 +1,11 @@
 <script setup lang="ts">
-const title = 'Современный сервис на Nuxt'
+const title = 'Подушки для уличной мебели и яхт в Сочи'
 const description =
-  'Создаем быстрые и красивые веб‑приложения на Nuxt и Nuxt UI. Фокус на результате, скорости и удобстве для ваших клиентов.'
+  'Шьём подушки для уличной мебели, пляжных лежаков и носовые подушки для яхт из влагостойких тканей с UV‑защитой. Перешиваем диваны и мягкую мебель по вашим размерам в Сочи и по Краснодарскому краю.'
 
 useHead({
   meta: [
     { name: 'viewport', content: 'width=device-width, initial-scale=1' }
-  ],
-  link: [
-    { rel: 'icon', href: '/favicon.ico' }
   ],
   htmlAttrs: {
     lang: 'ru'
