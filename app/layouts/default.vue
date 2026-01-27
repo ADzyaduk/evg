@@ -71,37 +71,45 @@ const items = computed<NavigationMenuItem[]>(() => [
 
     <!-- Нижняя навигация для мобильных -->
     <nav class="sm:hidden fixed inset-x-0 bottom-0 z-40 border-t border-default bg-default/95 backdrop-blur">
-      <div class="max-w-(--ui-container) mx-auto px-2 py-1.5 flex items-center justify-around gap-1">
+      <div class="max-w-(--ui-container) mx-auto px-2 py-1.5 flex items-center justify-around gap-1 text-xs">
         <UButton
           to="/"
           icon="i-lucide-home"
-          size="lg"
+          label="Главная"
+          size="md"
           color="neutral"
           variant="ghost"
+          class="flex-1 flex flex-col items-center justify-center gap-0.5"
           :aria-pressed="route.path === '/'"
         />
         <UButton
           to="/katalog"
           icon="i-lucide-layout-grid"
-          size="lg"
+          label="Каталог"
+          size="md"
           color="neutral"
           variant="ghost"
+          class="flex-1 flex flex-col items-center justify-center gap-0.5"
           :aria-pressed="route.path.startsWith('/katalog')"
         />
         <UButton
           to="/kontakty"
           icon="i-lucide-phone"
-          size="lg"
+          label="Контакты"
+          size="md"
           color="neutral"
           variant="ghost"
+          class="flex-1 flex flex-col items-center justify-center gap-0.5"
           :aria-pressed="route.path.startsWith('/kontakty')"
         />
         <UButton
           to="/blog"
           icon="i-lucide-book-open-text"
-          size="lg"
+          label="Блог"
+          size="md"
           color="neutral"
           variant="ghost"
+          class="flex-1 flex flex-col items-center justify-center gap-0.5"
           :aria-pressed="route.path.startsWith('/blog')"
         />
       </div>

@@ -9,7 +9,7 @@
       <div class="prose prose-sm max-w-none dark:prose-invert">
         <div class="not-prose mb-4 sm:float-right sm:ml-4 sm:mb-2 overflow-hidden rounded-lg bg-muted max-w-[260px]">
           <img
-            src="https://images.pexels.com/photos/90319/pexels-photo-90319.jpeg?auto=compress&cs=tinysrgb&w=800"
+            src="/img/Booka-lounge-set-1-Sadovaya-mebel-akatsiya.jpg"
             alt="Садовые подушки на уличной мебели"
             class="h-full w-full object-cover"
           >
@@ -30,7 +30,7 @@
 
         <div class="not-prose mb-4 sm:float-left sm:mr-4 sm:mb-2 overflow-hidden rounded-lg bg-muted max-w-[260px]">
           <img
-            src="https://images.pexels.com/photos/2102587/pexels-photo-2102587.jpeg?auto=compress&cs=tinysrgb&w=800"
+            src="/img/orig.webp"
             alt="Ткани и образцы для садовых подушек"
             class="h-full w-full object-cover"
           >

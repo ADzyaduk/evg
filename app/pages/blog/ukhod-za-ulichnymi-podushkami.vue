@@ -9,7 +9,7 @@
       <div class="prose prose-sm max-w-none dark:prose-invert">
         <div class="not-prose mb-4 sm:float-right sm:ml-4 sm:mb-2 overflow-hidden rounded-lg bg-muted max-w-[260px]">
           <img
-            src="https://images.pexels.com/photos/3965520/pexels-photo-3965520.jpeg?auto=compress&cs=tinysrgb&w=800"
+            src="/img/orig (1).webp"
             alt="Уход за подушками для уличной мебели"
             class="h-full w-full object-cover"
           >
@@ -30,7 +30,7 @@
 
         <div class="not-prose mb-4 sm:float-left sm:mr-4 sm:mb-2 overflow-hidden rounded-lg bg-muted max-w-[260px]">
           <img
-            src="https://images.pexels.com/photos/3965558/pexels-photo-3965558.jpeg?auto=compress&cs=tinysrgb&w=800"
+            src="/img/s-l1600.webp"
             alt="Стиральная машина и аккуратные подушки"
             class="h-full w-full object-cover"
           >

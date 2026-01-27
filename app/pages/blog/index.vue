@@ -39,7 +39,7 @@
           title="Как выбрать ткань для садовых подушек"
           description="На что смотреть при выборе ткани для подушек для уличной мебели, чтобы они служили дольше одного сезона."
           date="2025-01-15"
-          image="https://images.pexels.com/photos/2121123/pexels-photo-2121123.jpeg?auto=compress&cs=tinysrgb&w=800"
+          image="/img/Booka-lounge-set-1-Sadovaya-mebel-akatsiya.jpg"
           to="/blog/kak-vybrat-tkan-dlya-sadovykh-podushek"
         />
 
@@ -47,7 +47,7 @@
           title="Как ухаживать за подушками для уличной мебели"
           description="Простые правила ухода, чтобы подушки для уличной мебели и пляжных лежаков служили несколько сезонов."
           date="2025-01-20"
-          image="https://images.pexels.com/photos/3965559/pexels-photo-3965559.jpeg?auto=compress&cs=tinysrgb&w=800"
+          image="/img/orig.webp"
           to="/blog/ukhod-za-ulichnymi-podushkami"
         />
 
@@ -55,7 +55,7 @@
           title="Какие ткани лучше для яхт и морского климата"
           description="Разбираем, чем Sunbrella и похожие материалы отличаются от обычных тканей для уличной мебели на яхтах."
           date="2025-01-25"
-          image="https://images.pexels.com/photos/996326/pexels-photo-996326.jpeg?auto=compress&cs=tinysrgb&w=800"
+          image="/img/1690563359_hdpic-club-p-yakhta-vid-szadi-49-e1755513283928.jpg"
           to="/blog/kakie-tkani-dlya-yaht"
         />
 
@@ -63,7 +63,7 @@
           title="Чем уличные подушки отличаются от интерьерных"
           description="Почему нельзя просто вынести диванные подушки на улицу и чего ждать от настоящих уличных материалов."
           date="2025-01-28"
-          image="https://images.pexels.com/photos/269262/pexels-photo-269262.jpeg?auto=compress&cs=tinysrgb&w=800"
+          image="/img/1687874901_kartin-papik-pro-p-kartinki-more-plyazh-lezhak-59.jpg"
           to="/blog/ulichnye-i-interernye-podushki"
         />
       </div>
