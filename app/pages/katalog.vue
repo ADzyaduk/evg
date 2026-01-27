@@ -11,9 +11,15 @@
     >
       <div class="grid gap-6 lg:grid-cols-3">
         <UCard>
-          <div class="aspect-video rounded-lg bg-muted flex items-center justify-center text-sm text-muted-foreground">
-            Здесь будет фото подушек для кресел и шезлонгов
-          </div>
+          <template #header>
+            <div class="aspect-video overflow-hidden rounded-lg bg-muted">
+              <img
+                src="/img/Booka-lounge-set-1-Sadovaya-mebel-akatsiya.jpg"
+                alt="Подушки для садовых кресел и шезлонгов"
+                class="h-full w-full object-cover"
+              >
+            </div>
+          </template>
           <template #footer>
             <p class="font-semibold">Подушки для садовых кресел и шезлонгов</p>
             <p class="text-sm text-muted">
@@ -29,9 +35,15 @@
         </UCard>
 
         <UCard>
-          <div class="aspect-video rounded-lg bg-muted flex items-center justify-center text-sm text-muted-foreground">
-            Здесь будет фото чехлов на лежаки
-          </div>
+          <template #header>
+            <div class="aspect-video overflow-hidden rounded-lg bg-muted">
+              <img
+                src="/img/1687874901_kartin-papik-pro-p-kartinki-more-plyazh-lezhak-59.jpg"
+                alt="Чехлы для пляжных лежаков у моря"
+                class="h-full w-full object-cover"
+              >
+            </div>
+          </template>
           <template #footer>
             <p class="font-semibold">Чехлы для пляжных лежаков</p>
             <p class="text-sm text-muted">
@@ -47,9 +59,15 @@
         </UCard>
 
         <UCard>
-          <div class="aspect-video rounded-lg bg-muted flex items-center justify-center text-sm text-muted-foreground">
-            Здесь будет фото комплекта для террасы
-          </div>
+          <template #header>
+            <div class="aspect-video overflow-hidden rounded-lg bg-muted">
+              <img
+                src="/img/orig.webp"
+                alt="Комплект подушек для уличной террасы"
+                class="h-full w-full object-cover"
+              >
+            </div>
+          </template>
           <template #footer>
             <p class="font-semibold">Комплекты для террас и веранд</p>
             <p class="text-sm text-muted">
@@ -72,9 +90,15 @@
     >
       <div class="grid gap-6 lg:grid-cols-2">
         <UCard>
-          <div class="aspect-video rounded-lg bg-muted flex items-center justify-center text-sm text-muted-foreground">
-            Здесь будет фото носовых подушек на яхте
-          </div>
+          <template #header>
+            <div class="aspect-video overflow-hidden rounded-lg bg-muted">
+              <img
+                src="/img/1690563359_hdpic-club-p-yakhta-vid-szadi-49-e1755513283928.jpg"
+                alt="Носовые подушки на палубе яхты"
+                class="h-full w-full object-cover"
+              >
+            </div>
+          </template>
           <template #footer>
             <p class="font-semibold">Носовые подушки для яхт</p>
             <p class="text-sm text-muted">
@@ -91,9 +115,15 @@
         </UCard>
 
         <UCard>
-          <div class="aspect-video rounded-lg bg-muted flex items-center justify-center text-sm text-muted-foreground">
-            Здесь будет фото перешитого дивана
-          </div>
+          <template #header>
+            <div class="aspect-video overflow-hidden rounded-lg bg-muted">
+              <img
+                src="/img/s-l1600.webp"
+                alt="Перешитый диван с новой обивкой"
+                class="h-full w-full object-cover"
+              >
+            </div>
+          </template>
           <template #footer>
             <p class="font-semibold">Перешив диванов и мебели</p>
             <p class="text-sm text-muted">

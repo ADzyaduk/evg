@@ -4,6 +4,7 @@
       eyebrow="Пошив подушек и чехлов в Сочи"
       title="Прочные подушки для уличной мебели, пляжа и яхт"
       description="Производим подушки для уличной мебели, пляжных лежаков и носовые подушки для яхт из влагостойких тканей, не выгорающих на солнце. Перешиваем диваны и шьём подушки на заказ под ваши размеры."
+      orientation="horizontal"
       :links="[
         {
           label: 'Рассчитать заказ',
@@ -20,7 +21,13 @@
           variant: 'subtle'
         }
       ]"
-    />
+    >
+      <img
+        src="/img/hero.jpg"
+        alt="Зона отдыха с уличной мебелью и подушками"
+        class="rounded-2xl shadow-2xl ring ring-default w-full max-w-xl mx-auto"
+      >
+    </UPageHero>
 
     <UPageSection
       id="preimushchestva"
@@ -73,9 +80,15 @@
     >
       <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         <UCard>
-          <div class="aspect-video rounded-lg bg-muted flex items-center justify-center text-sm text-muted-foreground">
-            Здесь будет фото садовых подушек
-          </div>
+          <template #header>
+            <div class="aspect-video overflow-hidden rounded-lg bg-muted">
+              <img
+                src="/img/Booka-lounge-set-1-Sadovaya-mebel-akatsiya.jpg"
+                alt="Подушки для садовой мебели на террасе"
+                class="h-full w-full object-cover"
+              >
+            </div>
+          </template>
           <template #footer>
             <p class="font-medium">Подушки для садовых кресел и шезлонгов</p>
             <p class="text-sm text-muted">
@@ -85,9 +98,15 @@
         </UCard>
 
         <UCard>
-          <div class="aspect-video rounded-lg bg-muted flex items-center justify-center text-sm text-muted-foreground">
-            Здесь будет фото пляжных лежаков
-          </div>
+          <template #header>
+            <div class="aspect-video overflow-hidden rounded-lg bg-muted">
+              <img
+                src="/img/1687874901_kartin-papik-pro-p-kartinki-more-plyazh-lezhak-59.jpg"
+                alt="Пляжные лежаки с подушками у моря"
+                class="h-full w-full object-cover"
+              >
+            </div>
+          </template>
           <template #footer>
             <p class="font-medium">Чехлы для пляжных лежаков</p>
             <p class="text-sm text-muted">
@@ -97,9 +116,15 @@
         </UCard>
 
         <UCard>
-          <div class="aspect-video rounded-lg bg-muted flex items-center justify-center text-sm text-muted-foreground">
-            Здесь будет фото носовых подушек для яхт
-          </div>
+          <template #header>
+            <div class="aspect-video overflow-hidden rounded-lg bg-muted">
+              <img
+                src="/img/1690563359_hdpic-club-p-yakhta-vid-szadi-49-e1755513283928.jpg"
+                alt="Носовая зона отдыха на яхте"
+                class="h-full w-full object-cover"
+              >
+            </div>
+          </template>
           <template #footer>
             <p class="font-medium">Носовые подушки для яхт</p>
             <p class="text-sm text-muted">
