@@ -65,7 +65,7 @@ const items = computed<NavigationMenuItem[]>(() => [
       </template>
     </UHeader>
 
-    <UMain class="flex-1">
+    <UMain class="flex-1" :class="{ 'py-4!': route.path === '/kontakty' }">
       <NuxtPage />
     </UMain>
 
