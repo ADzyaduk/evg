@@ -44,6 +44,11 @@ export default defineNuxtConfig({
 
   compatibilityDate: '2026-01-15',
 
+  runtimeConfig: {
+    telegramBotToken: '',
+    telegramChatId: ''
+  },
+
   eslint: {
     config: {
       stylistic: {

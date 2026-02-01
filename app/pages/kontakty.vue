@@ -45,19 +45,13 @@
       ]"
     />
 
-    <UPageSection>
-      <UPageCTA
-        title="Опишите задачу в свободной форме"
-        description="Прикрепите фото мебели или зоны отдыха, напишите город и желаемые сроки — мы предложим варианты тканей и ориентировочную стоимость."
-        :links="[
-          {
-            label: 'Написать в Telegram',
-            to: '#',
-            trailingIcon: 'i-simple-icons-telegram',
-            color: 'neutral'
-          }
-        ]"
-      />
+    <UPageSection
+      title="Опишите задачу в свободной форме"
+      description="Прикрепите фото мебели или зоны отдыха, напишите город и желаемые сроки — мы предложим варианты тканей и ориентировочную стоимость."
+    >
+      <div class="max-w-xl">
+        <FeedbackForm />
+      </div>
     </UPageSection>
   </div>
 </template>
