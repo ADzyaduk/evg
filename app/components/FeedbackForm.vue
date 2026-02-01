@@ -78,8 +78,22 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
     photos.value = []
   }
   catch (err: unknown) {
-    const e = err as { statusMessage?: string; data?: { message?: string }; message?: string }
-    const message = e?.statusMessage ?? e?.data?.message ?? e?.message ?? 'Не удалось отправить заявку. Попробуйте позже.'
+    const e = err as {
+      statusCode?: number
+      statusMessage?: string
+      data?: { statusMessage?: string; message?: string; data?: { description?: string } }
+      message?: string
+    }
+    const message =
+      e?.statusMessage ??
+      e?.data?.statusMessage ??
+      e?.data?.data?.description ??
+      e?.data?.message ??
+      e?.message ??
+      'Не удалось отправить заявку. Попробуйте позже.'
+    if (import.meta.dev) {
+      console.error('[FeedbackForm]', e)
+    }
     toast.add({
       title: 'Ошибка',
       description: message,

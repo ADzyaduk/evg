@@ -64,13 +64,16 @@ export default defineEventHandler(async (event) => {
   }
 
   const config = useRuntimeConfig()
-  const token = config.telegramBotToken
-  const chatId = config.telegramChatId
+  const token = String(config.telegramBotToken || '').trim()
+  const chatId = String(config.telegramChatId || '').trim()
 
   if (!token || !chatId) {
+    const missing = []
+    if (!token) missing.push('NUXT_TELEGRAM_BOT_TOKEN')
+    if (!chatId) missing.push('NUXT_TELEGRAM_CHAT_ID')
     throw createError({
       statusCode: 500,
-      statusMessage: 'Telegram не настроен. Укажите NUXT_TELEGRAM_BOT_TOKEN и NUXT_TELEGRAM_CHAT_ID.'
+      statusMessage: `Telegram не настроен. Добавьте в Amvera: ${missing.join(', ')}`
     })
   }
 
@@ -95,11 +98,10 @@ export default defineEventHandler(async (event) => {
       chat_id: chatId,
       text
     }
-  }).catch((err) => {
-    throw createError({
-      statusCode: 500,
-      statusMessage: err?.data?.description ?? 'Ошибка отправки в Telegram'
-    })
+  }).catch((err: unknown) => {
+    const e = err as { data?: { description?: string }; statusMessage?: string }
+    const msg = e?.data?.description ?? e?.statusMessage ?? 'Ошибка отправки в Telegram'
+    throw createError({ statusCode: 500, statusMessage: msg })
   })
 
   if (!sendMessageResponse.ok) {
@@ -117,11 +119,10 @@ export default defineEventHandler(async (event) => {
     await $fetch<{ ok: boolean; description?: string }>(`${baseUrl}/sendPhoto`, {
       method: 'POST',
       body: formData
-    }).catch((err) => {
-      throw createError({
-        statusCode: 500,
-        statusMessage: err?.data?.description ?? 'Ошибка отправки фото в Telegram'
-      })
+    }).catch((err: unknown) => {
+      const e = err as { data?: { description?: string }; statusMessage?: string }
+      const msg = e?.data?.description ?? e?.statusMessage ?? 'Ошибка отправки фото в Telegram'
+      throw createError({ statusCode: 500, statusMessage: msg })
     })
   }
 
