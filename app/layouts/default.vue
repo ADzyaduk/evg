@@ -44,7 +44,12 @@ const items = computed<NavigationMenuItem[]>(() => [
       <UNavigationMenu :items="items" />
 
       <template #right>
-        <UColorModeButton />
+        <ClientOnly>
+          <UColorModeButton />
+          <template #fallback>
+            <div class="size-9" />
+          </template>
+        </ClientOnly>
 
         <UButton
           color="neutral"

@@ -3,10 +3,10 @@ import * as z from 'zod'
 import type { FormSubmitEvent } from '@nuxt/ui'
 
 const schema = z.object({
-  name: z.string().min(1, 'Имя обязательно'),
-  phone: z.string().min(1, 'Телефон обязателен'),
-  email: z.union([z.string().email('Неверный формат email'), z.literal('')]).optional(),
-  message: z.string().min(1, 'Сообщение обязательно')
+  name: z.string().min(1, 'Укажите ваше имя'),
+  phone: z.string().min(1, 'Укажите номер телефона'),
+  email: z.union([z.string().email('Введите корректный email'), z.literal('')]).optional(),
+  message: z.string().min(1, 'Напишите сообщение')
 })
 
 type Schema = z.output<typeof schema>
@@ -28,14 +28,14 @@ const toast = useToast()
 function validateFiles(): string | null {
   const files = photos.value ?? []
   if (files.length > MAX_FILES) {
-    return `Максимум ${MAX_FILES} фото`
+    return `Можно загрузить не более ${MAX_FILES} фото`
   }
   for (const file of files) {
     if (file.size > MAX_FILE_SIZE) {
-      return `Файл ${file.name} слишком большой (макс. 5 МБ)`
+      return `Файл «${file.name}» слишком большой. Максимальный размер — 5 МБ`
     }
     if (!ACCEPTED_TYPES.includes(file.type)) {
-      return `Формат ${file.name} не поддерживается (JPG, PNG, WebP, GIF)`
+      return `Файл «${file.name}» в неподдерживаемом формате. Используйте JPG, PNG, WebP или GIF`
     }
   }
   return null
@@ -44,7 +44,7 @@ function validateFiles(): string | null {
 async function onSubmit(event: FormSubmitEvent<Schema>) {
   const fileError = validateFiles()
   if (fileError) {
-    toast.add({ title: 'Ошибка', description: fileError, color: 'error' })
+    toast.add({ title: 'Проверьте форму', description: fileError, color: 'error' })
     return
   }
 
@@ -66,7 +66,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
     })
     toast.add({
       title: 'Заявка отправлена',
-      description: 'Мы свяжемся с вами в ближайшее время.',
+      description: 'Спасибо! Мы свяжемся с вами в ближайшее время.',
       color: 'success'
     })
     Object.assign(state, {
@@ -95,7 +95,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
       console.error('[FeedbackForm]', e)
     }
     toast.add({
-      title: 'Ошибка',
+      title: 'Не удалось отправить',
       description: message,
       color: 'error'
     })

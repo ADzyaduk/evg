@@ -1,10 +1,10 @@
 import { z } from 'zod'
 
 const feedbackSchema = z.object({
-  name: z.string().min(1, 'Имя обязательно'),
-  phone: z.string().min(1, 'Телефон обязателен'),
-  email: z.union([z.string().email(), z.literal('')]).optional(),
-  message: z.string().min(1, 'Сообщение обязательно')
+  name: z.string().min(1, 'Укажите ваше имя'),
+  phone: z.string().min(1, 'Укажите номер телефона'),
+  email: z.union([z.string().email('Введите корректный email'), z.literal('')]).optional(),
+  message: z.string().min(1, 'Напишите сообщение')
 })
 
 export default defineEventHandler(async (event) => {
@@ -77,18 +77,19 @@ export default defineEventHandler(async (event) => {
     })
   }
 
-  const text = [
-    'Новая заявка с сайта',
+  const escapeHtml = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+  const lines = [
+    '<b>🆕 Новая заявка с сайта</b>',
     '',
-    `Имя: ${name}`,
-    `Телефон: ${phone}`,
-    email ? `Email: ${email}` : null,
+    `<b>👤 Имя:</b> ${escapeHtml(name)}`,
+    `<b>📞 Телефон:</b> ${escapeHtml(phone)}`,
+    email ? `<b>✉️ Email:</b> ${escapeHtml(email)}` : null,
+    photoFiles.length ? `<b>📎 Фото:</b> ${photoFiles.length} шт.` : null,
     '',
-    'Сообщение:',
-    message
+    '<b>💬 Сообщение:</b>',
+    escapeHtml(message)
   ]
-    .filter(Boolean)
-    .join('\n')
+  const text = lines.filter(Boolean).join('\n')
 
   const baseUrl = `https://api.telegram.org/bot${token}`
 
@@ -96,11 +97,15 @@ export default defineEventHandler(async (event) => {
     method: 'POST',
     body: {
       chat_id: chatId,
-      text
+      text,
+      parse_mode: 'HTML'
     }
   }).catch((err: unknown) => {
     const e = err as { data?: { description?: string }; statusMessage?: string }
-    const msg = e?.data?.description ?? e?.statusMessage ?? 'Ошибка отправки в Telegram'
+    let msg = e?.data?.description ?? e?.statusMessage ?? 'Ошибка отправки в Telegram'
+    if (msg?.toLowerCase().includes('chat not found')) {
+      msg = 'Чат не найден. Напишите боту /start в Telegram, затем повторите отправку.'
+    }
     throw createError({ statusCode: 500, statusMessage: msg })
   })
 
@@ -121,7 +126,10 @@ export default defineEventHandler(async (event) => {
       body: formData
     }).catch((err: unknown) => {
       const e = err as { data?: { description?: string }; statusMessage?: string }
-      const msg = e?.data?.description ?? e?.statusMessage ?? 'Ошибка отправки фото в Telegram'
+      let msg = e?.data?.description ?? e?.statusMessage ?? 'Ошибка отправки фото в Telegram'
+      if (msg?.toLowerCase().includes('chat not found')) {
+        msg = 'Чат не найден. Напишите боту /start в Telegram, затем повторите отправку.'
+      }
       throw createError({ statusCode: 500, statusMessage: msg })
     })
   }
