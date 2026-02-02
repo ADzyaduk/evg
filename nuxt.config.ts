@@ -11,11 +11,7 @@ export default defineNuxtConfig({
   app: {
     head: {
       link: [
-        {
-          rel: 'icon',
-          type: 'image/x-icon',
-          href: '/33.ico'
-        }
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
       ]
     }
   },
@@ -48,7 +44,7 @@ export default defineNuxtConfig({
     telegramBotToken: '',
     telegramChatId: '',
     public: {
-      siteUrl: 'https://pavlovfactory.ru'
+      siteUrl: 'https://pavlovcraft.ru'
     }
   },
 
