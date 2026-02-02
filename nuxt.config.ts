@@ -46,7 +46,10 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     telegramBotToken: '',
-    telegramChatId: ''
+    telegramChatId: '',
+    public: {
+      siteUrl: 'https://pavlovfactory.ru'
+    }
   },
 
   eslint: {
