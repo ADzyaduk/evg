@@ -1,11 +1,12 @@
 <template>
   <div>
     <UPageHero
+      v-animate
       title="Как ухаживать за подушками для уличной мебели"
       description="Простые правила ухода, чтобы подушки для уличной мебели и пляжных лежаков служили несколько сезонов и сохраняли внешний вид."
     />
 
-    <UPageSection>
+    <UPageSection v-animate>
       <div class="prose prose-sm max-w-none dark:prose-invert">
         <div class="not-prose mb-4 sm:float-right sm:ml-4 sm:mb-2 overflow-hidden rounded-lg bg-muted max-w-[260px]">
           <img
@@ -81,4 +82,3 @@
     </UPageSection>
   </div>
 </template>
-

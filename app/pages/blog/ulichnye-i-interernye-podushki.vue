@@ -1,11 +1,12 @@
 <template>
   <div>
     <UPageHero
+      v-animate
       title="Чем уличные подушки отличаются от интерьерных"
       description="Почему нельзя просто вынести диванные подушки на улицу и чего ждать от настоящих уличных материалов."
     />
 
-    <UPageSection>
+    <UPageSection v-animate>
       <div class="prose prose-sm max-w-none dark:prose-invert">
         <div class="not-prose mb-4 sm:float-right sm:ml-4 sm:mb-2 overflow-hidden rounded-lg bg-muted max-w-[260px]">
           <img
@@ -63,4 +64,3 @@
     </UPageSection>
   </div>
 </template>
-

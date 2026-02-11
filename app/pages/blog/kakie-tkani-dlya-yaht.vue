@@ -1,11 +1,12 @@
 <template>
   <div>
     <UPageHero
+      v-animate
       title="Какие ткани лучше для яхт и морского климата"
       description="Чем специализированные морские ткани вроде Sunbrella отличаются от обычных уличных материалов и когда их имеет смысл использовать."
     />
 
-    <UPageSection>
+    <UPageSection v-animate>
       <div class="grid gap-4 lg:grid-cols-[2fr,3fr] items-start">
         <div class="overflow-hidden rounded-lg bg-muted">
           <img
@@ -68,4 +69,3 @@
     </UPageSection>
   </div>
 </template>
-

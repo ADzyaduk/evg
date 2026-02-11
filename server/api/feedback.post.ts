@@ -3,7 +3,7 @@ import { z } from 'zod'
 const feedbackSchema = z.object({
   name: z.string().min(1, 'Укажите ваше имя'),
   phone: z.string().min(1, 'Укажите номер телефона'),
-  email: z.union([z.string().email('Введите корректный email'), z.literal('')]).optional(),
+  messenger: z.string().optional(),
   message: z.string().min(1, 'Напишите сообщение')
 })
 
@@ -11,9 +11,9 @@ export default defineEventHandler(async (event) => {
   const contentType = getHeader(event, 'content-type') ?? ''
   let name: string
   let phone: string
-  let email: string | undefined
+  let messenger: string | undefined
   let message: string
-  let photoFiles: { data: Uint8Array; filename: string; type?: string }[] = []
+  const photoFiles: { data: Uint8Array, filename: string, type?: string }[] = []
 
   if (contentType.includes('multipart/form-data')) {
     const parts = await readMultipartFormData(event)
@@ -33,8 +33,7 @@ export default defineEventHandler(async (event) => {
           filename: part.filename,
           type: part.type
         })
-      }
-      else if (part.name) {
+      } else if (part.name) {
         fields[part.name] = value
       }
     }
@@ -48,9 +47,8 @@ export default defineEventHandler(async (event) => {
       })
     }
     ;({ name, phone, message } = parseResult.data)
-    email = parseResult.data.email || undefined
-  }
-  else {
+    messenger = parseResult.data.messenger || undefined
+  } else {
     const body = await readBody(event)
     const parseResult = feedbackSchema.safeParse(body)
     if (!parseResult.success) {
@@ -60,7 +58,7 @@ export default defineEventHandler(async (event) => {
         statusMessage: firstError?.message ?? 'Ошибка валидации'
       })
     }
-    ;({ name, phone, email, message } = parseResult.data)
+    ;({ name, phone, messenger, message } = parseResult.data)
   }
 
   const config = useRuntimeConfig()
@@ -83,7 +81,7 @@ export default defineEventHandler(async (event) => {
     '',
     `<b>👤 Имя:</b> ${escapeHtml(name)}`,
     `<b>📞 Телефон:</b> ${escapeHtml(phone)}`,
-    email ? `<b>✉️ Email:</b> ${escapeHtml(email)}` : null,
+    messenger ? `<b>💬 Max:</b> ${escapeHtml(messenger)}` : null,
     photoFiles.length ? `<b>📎 Фото:</b> ${photoFiles.length} шт.` : null,
     '',
     '<b>💬 Сообщение:</b>',
@@ -93,7 +91,7 @@ export default defineEventHandler(async (event) => {
 
   const baseUrl = `https://api.telegram.org/bot${token}`
 
-  const sendMessageResponse = await $fetch<{ ok: boolean; description?: string }>(`${baseUrl}/sendMessage`, {
+  const sendMessageResponse = await $fetch<{ ok: boolean, description?: string }>(`${baseUrl}/sendMessage`, {
     method: 'POST',
     body: {
       chat_id: chatId,
@@ -101,7 +99,7 @@ export default defineEventHandler(async (event) => {
       parse_mode: 'HTML'
     }
   }).catch((err: unknown) => {
-    const e = err as { data?: { description?: string }; statusMessage?: string }
+    const e = err as { data?: { description?: string }, statusMessage?: string }
     let msg = e?.data?.description ?? e?.statusMessage ?? 'Ошибка отправки в Telegram'
     if (msg?.toLowerCase().includes('chat not found')) {
       msg = 'Чат не найден. Напишите боту /start в Telegram, затем повторите отправку.'
@@ -121,11 +119,11 @@ export default defineEventHandler(async (event) => {
     formData.append('chat_id', chatId)
     formData.append('photo', new Blob([file.data as BlobPart], { type: file.type || 'image/jpeg' }), file.filename)
 
-    await $fetch<{ ok: boolean; description?: string }>(`${baseUrl}/sendPhoto`, {
+    await $fetch<{ ok: boolean, description?: string }>(`${baseUrl}/sendPhoto`, {
       method: 'POST',
       body: formData
     }).catch((err: unknown) => {
-      const e = err as { data?: { description?: string }; statusMessage?: string }
+      const e = err as { data?: { description?: string }, statusMessage?: string }
       let msg = e?.data?.description ?? e?.statusMessage ?? 'Ошибка отправки фото в Telegram'
       if (msg?.toLowerCase().includes('chat not found')) {
         msg = 'Чат не найден. Напишите боту /start в Telegram, затем повторите отправку.'

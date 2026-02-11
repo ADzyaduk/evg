@@ -1,6 +1,7 @@
 <template>
   <div>
     <UPageHero
+      v-animate
       eyebrow="Пошив подушек и чехлов в Сочи"
       title="Прочные подушки для уличной мебели, пляжа и яхт"
       description="Производим подушки для уличной мебели, пляжных лежаков и носовые подушки для яхт из влагостойких тканей, не выгорающих на солнце. Перешиваем диваны и шьём подушки на заказ под ваши размеры."
@@ -31,6 +32,7 @@
 
     <UPageSection
       id="preimushchestva"
+      v-animate
       title="Почему наши подушки служат дольше"
       description="Мы используем материалы, рассчитанные на улицу и морской климат Сочи — подушки не выгорают, не боятся влаги и сохраняют форму."
       :features="[
@@ -75,11 +77,15 @@
 
     <UPageSection
       id="primery-rabot"
+      v-animate
       title="Примеры работ"
       description="Подушки для уличной мебели, пляжных лежаков и носовые подушки для яхт. Пока используем заглушки — позже сюда добавим реальные фото из Сочи."
     >
       <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <UCard>
+        <UCard
+          v-animate="1"
+          class="card-hover"
+        >
           <template #header>
             <div class="aspect-video overflow-hidden rounded-lg bg-muted">
               <img
@@ -90,14 +96,19 @@
             </div>
           </template>
           <template #footer>
-            <p class="font-medium">Подушки для садовых кресел и шезлонгов</p>
+            <p class="font-medium">
+              Подушки для садовых кресел и шезлонгов
+            </p>
             <p class="text-sm text-muted">
               Съёмные чехлы, наполнитель повышенной упругости, влагостойкие ткани с защитой от выгорания.
             </p>
           </template>
         </UCard>
 
-        <UCard>
+        <UCard
+          v-animate="2"
+          class="card-hover"
+        >
           <template #header>
             <div class="aspect-video overflow-hidden rounded-lg bg-muted">
               <img
@@ -108,14 +119,19 @@
             </div>
           </template>
           <template #footer>
-            <p class="font-medium">Чехлы для пляжных лежаков</p>
+            <p class="font-medium">
+              Чехлы для пляжных лежаков
+            </p>
             <p class="text-sm text-muted">
               Износостойкие чехлы на лежаки с фиксацией, рассчитанные на частую стирку и интенсивную нагрузку.
             </p>
           </template>
         </UCard>
 
-        <UCard>
+        <UCard
+          v-animate="3"
+          class="card-hover"
+        >
           <template #header>
             <div class="aspect-video overflow-hidden rounded-lg bg-muted">
               <img
@@ -126,7 +142,9 @@
             </div>
           </template>
           <template #footer>
-            <p class="font-medium">Носовые подушки для яхт</p>
+            <p class="font-medium">
+              Носовые подушки для яхт
+            </p>
             <p class="text-sm text-muted">
               Носовые зоны из тканей Sunbrella, кожи или алькантары, адаптированные под морской климат.
             </p>
@@ -137,13 +155,19 @@
 
     <UPageSection
       id="uslugi-kratko"
+      v-animate
       title="Пошив подушек и перешив мебели на заказ"
       description="От идеи до готовых подушек — помогаем подобрать ткань, наполнитель и форму под ваш интерьер и задачи."
     >
       <div class="grid gap-6 lg:grid-cols-4">
-        <UCard class="lg:col-span-2">
+        <UCard
+          v-animate="1"
+          class="lg:col-span-2 card-hover"
+        >
           <template #header>
-            <p class="font-semibold">Как мы работаем</p>
+            <p class="font-semibold">
+              Как мы работаем
+            </p>
           </template>
           <ol class="space-y-3 text-sm">
             <li><span class="font-semibold">1. Заявка.</span> Вы присылаете фото мебели и краткое описание задачи.</li>
@@ -154,9 +178,14 @@
           </ol>
         </UCard>
 
-        <UCard>
+        <UCard
+          v-animate="2"
+          class="card-hover"
+        >
           <template #header>
-            <p class="font-semibold">Подушки для улицы</p>
+            <p class="font-semibold">
+              Подушки для улицы
+            </p>
           </template>
           <ul class="space-y-2 text-sm">
             <li>Подушки для уличной мебели и садовых гарнитуров</li>
@@ -165,9 +194,14 @@
           </ul>
         </UCard>
 
-        <UCard>
+        <UCard
+          v-animate="3"
+          class="card-hover"
+        >
           <template #header>
-            <p class="font-semibold">Яхты и мягкая мебель</p>
+            <p class="font-semibold">
+              Яхты и мягкая мебель
+            </p>
           </template>
           <ul class="space-y-2 text-sm">
             <li>Носовые подушки для яхт</li>
@@ -180,6 +214,7 @@
 
     <UPageSection
       id="seo-blok"
+      v-animate
       title="Подушки для уличной мебели и пошив на заказ в Сочи"
       description="Ищете, где заказать подушки для уличной мебели, чехлы на пляжные лежаки или носовые подушки для яхт в Сочи? Мы работаем с влагостойкими тканями с UV‑защитой и предлагаем быстрый пошив под ваши размеры."
     >
@@ -203,10 +238,10 @@
       </div>
     </UPageSection>
 
-    <UPageSection>
+    <UPageSection v-animate>
       <UPageCTA
         title="Расскажите о вашей мебели — подберём решение"
-        description="Пришлите фото и примерные размеры в мессенджер — мы предложим варианты тканей, ориентировочную стоимость и сроки изготовления."
+        description="Пришлите фото и примерные размеры в мессенджер Max или Telegram — мы предложим варианты тканей, ориентировочную стоимость и сроки изготовления."
         variant="subtle"
         :links="[
           {

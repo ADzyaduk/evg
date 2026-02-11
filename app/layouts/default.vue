@@ -54,10 +54,39 @@ const items = computed<NavigationMenuItem[]>(() => [
         <UButton
           color="neutral"
           variant="ghost"
+          to="#"
+          target="_blank"
+          aria-label="Telegram"
+          class="icon-hover"
+        >
+          <UIcon
+            name="i-simple-icons-telegram"
+            class="size-5 text-telegram"
+          />
+        </UButton>
+
+        <UButton
+          color="neutral"
+          variant="ghost"
+          to="#"
+          target="_blank"
+          aria-label="Мессенджер Max"
+          class="icon-hover"
+        >
+          <img
+            src="/max.png"
+            alt="Max"
+            class="size-5 object-contain"
+          >
+        </UButton>
+
+        <UButton
+          color="neutral"
+          variant="ghost"
           icon="i-lucide-phone"
-          label="Позвонить"
           to="tel:+70000000000"
           aria-label="Позвонить"
+          class="icon-hover"
         />
       </template>
 
@@ -70,7 +99,10 @@ const items = computed<NavigationMenuItem[]>(() => [
       </template>
     </UHeader>
 
-    <UMain class="flex-1" :class="{ 'py-4!': route.path === '/kontakty' }">
+    <UMain
+      class="flex-1"
+      :class="{ 'py-4!': route.path === '/kontakty' }"
+    >
       <NuxtPage />
     </UMain>
 
@@ -135,27 +167,41 @@ const items = computed<NavigationMenuItem[]>(() => [
 
       <template #right>
         <UButton
-          icon="i-simple-icons-telegram"
           color="neutral"
           variant="ghost"
           to="#"
           target="_blank"
           aria-label="Telegram"
-        />
+          class="icon-hover"
+        >
+          <UIcon
+            name="i-simple-icons-telegram"
+            class="size-5 text-telegram"
+          />
+        </UButton>
+
         <UButton
-          icon="i-simple-icons-x"
           color="neutral"
           variant="ghost"
           to="#"
           target="_blank"
-          aria-label="Max"
-        />
+          aria-label="Мессенджер Max"
+          class="icon-hover"
+        >
+          <img
+            src="/max.png"
+            alt="Max"
+            class="size-5 object-contain"
+          >
+        </UButton>
+
         <UButton
-          icon="i-lucide-phone"
           color="neutral"
           variant="ghost"
+          icon="i-lucide-phone"
           to="tel:+70000000000"
           aria-label="Позвонить"
+          class="icon-hover"
         />
       </template>
     </UFooter>

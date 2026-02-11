@@ -5,7 +5,7 @@ import type { FormSubmitEvent } from '@nuxt/ui'
 const schema = z.object({
   name: z.string().min(1, 'Укажите ваше имя'),
   phone: z.string().min(1, 'Укажите номер телефона'),
-  email: z.union([z.string().email('Введите корректный email'), z.literal('')]).optional(),
+  messenger: z.string().optional(),
   message: z.string().min(1, 'Напишите сообщение')
 })
 
@@ -14,7 +14,7 @@ type Schema = z.output<typeof schema>
 const state = reactive<Partial<Schema>>({
   name: undefined,
   phone: undefined,
-  email: undefined,
+  messenger: undefined,
   message: undefined
 })
 
@@ -52,8 +52,8 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
   formData.append('name', event.data.name)
   formData.append('phone', event.data.phone)
   formData.append('message', event.data.message)
-  if (event.data.email) {
-    formData.append('email', event.data.email)
+  if (event.data.messenger) {
+    formData.append('messenger', event.data.messenger)
   }
   for (const file of (photos.value ?? [])) {
     formData.append('photos', file)
@@ -72,25 +72,24 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
     Object.assign(state, {
       name: undefined,
       phone: undefined,
-      email: undefined,
+      messenger: undefined,
       message: undefined
     })
     photos.value = []
-  }
-  catch (err: unknown) {
+  } catch (err: unknown) {
     const e = err as {
       statusCode?: number
       statusMessage?: string
-      data?: { statusMessage?: string; message?: string; data?: { description?: string } }
+      data?: { statusMessage?: string, message?: string, data?: { description?: string } }
       message?: string
     }
-    const message =
-      e?.statusMessage ??
-      e?.data?.statusMessage ??
-      e?.data?.data?.description ??
-      e?.data?.message ??
-      e?.message ??
-      'Не удалось отправить заявку. Попробуйте позже.'
+    const message
+      = e?.statusMessage
+        ?? e?.data?.statusMessage
+        ?? e?.data?.data?.description
+        ?? e?.data?.message
+        ?? e?.message
+        ?? 'Не удалось отправить заявку. Попробуйте позже.'
     if (import.meta.dev) {
       console.error('[FeedbackForm]', e)
     }
@@ -142,15 +141,14 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
     </div>
 
     <UFormField
-      label="Email"
-      name="email"
+      label="Мессенджер Max"
+      name="messenger"
       class="w-full"
     >
       <UInput
-        v-model="state.email"
-        type="email"
-        placeholder="email@example.com"
-        autocomplete="email"
+        v-model="state.messenger"
+        placeholder="Ваш ник в Max"
+        autocomplete="off"
         size="md"
         class="w-full"
       />

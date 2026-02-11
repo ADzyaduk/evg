@@ -1,11 +1,12 @@
 <template>
   <div>
     <UPageHero
+      v-animate
       title="Как выбрать ткань для садовых подушек"
       description="На что обратить внимание при выборе ткани для подушек для уличной мебели, чтобы они служили дольше одного сезона."
     />
 
-    <UPageSection>
+    <UPageSection v-animate>
       <div class="prose prose-sm max-w-none dark:prose-invert">
         <div class="not-prose mb-4 sm:float-right sm:ml-4 sm:mb-2 overflow-hidden rounded-lg bg-muted max-w-[260px]">
           <img
@@ -80,4 +81,3 @@
     </UPageSection>
   </div>
 </template>
-

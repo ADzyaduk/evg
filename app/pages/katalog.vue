@@ -1,16 +1,21 @@
 <template>
   <div>
     <UPageHero
+      v-animate
       title="Каталог подушек и чехлов"
       description="Подушки для уличной мебели, пляжных лежаков, носовые подушки для яхт и перешив диванов. Все изделия шьём на заказ под ваши размеры."
     />
 
     <UPageSection
+      v-animate
       title="Подушки для уличной мебели"
       description="Решения для садовых кресел, шезлонгов, уличных диванов и комплектов на террасе."
     >
       <div class="grid gap-6 lg:grid-cols-3">
-        <UCard>
+        <UCard
+          v-animate="1"
+          class="card-hover"
+        >
           <template #header>
             <div class="aspect-video overflow-hidden rounded-lg bg-muted">
               <img
@@ -21,7 +26,9 @@
             </div>
           </template>
           <template #footer>
-            <p class="font-semibold">Подушки для садовых кресел и шезлонгов</p>
+            <p class="font-semibold">
+              Подушки для садовых кресел и шезлонгов
+            </p>
             <p class="text-sm text-muted">
               Подушки со съёмными чехлами на молнии, которые легко стирать. Используем уличные ткани
               Oxford, полиэстер с водоотталкивающей пропиткой и материалы с UV‑защитой.
@@ -34,7 +41,10 @@
           </template>
         </UCard>
 
-        <UCard>
+        <UCard
+          v-animate="2"
+          class="card-hover"
+        >
           <template #header>
             <div class="aspect-video overflow-hidden rounded-lg bg-muted">
               <img
@@ -45,7 +55,9 @@
             </div>
           </template>
           <template #footer>
-            <p class="font-semibold">Чехлы для пляжных лежаков</p>
+            <p class="font-semibold">
+              Чехлы для пляжных лежаков
+            </p>
             <p class="text-sm text-muted">
               Чехлы для пляжных лежаков из износостойких материалов для отелей, апартаментов и
               частных террас. Учитываем частую стирку, прямое солнце и интенсивное использование.
@@ -58,7 +70,10 @@
           </template>
         </UCard>
 
-        <UCard>
+        <UCard
+          v-animate="3"
+          class="card-hover"
+        >
           <template #header>
             <div class="aspect-video overflow-hidden rounded-lg bg-muted">
               <img
@@ -69,7 +84,9 @@
             </div>
           </template>
           <template #footer>
-            <p class="font-semibold">Комплекты для террас и веранд</p>
+            <p class="font-semibold">
+              Комплекты для террас и веранд
+            </p>
             <p class="text-sm text-muted">
               Комплекты подушек для уличных диванов, лавок и встроенной мебели. Подбираем оттенки и
               фактуру тканей под фасад, пол и декор, чтобы зона отдыха выглядела цельно.
@@ -85,11 +102,15 @@
     </UPageSection>
 
     <UPageSection
+      v-animate
       title="Носовые подушки для яхт и мягкая мебель"
       description="Изготавливаем носовые подушки для яхт и перешиваем мягкую мебель из кожи, алькантары и специализированных уличных тканей."
     >
       <div class="grid gap-6 lg:grid-cols-2">
-        <UCard>
+        <UCard
+          v-animate="1"
+          class="card-hover"
+        >
           <template #header>
             <div class="aspect-video overflow-hidden rounded-lg bg-muted">
               <img
@@ -100,7 +121,9 @@
             </div>
           </template>
           <template #footer>
-            <p class="font-semibold">Носовые подушки для яхт</p>
+            <p class="font-semibold">
+              Носовые подушки для яхт
+            </p>
             <p class="text-sm text-muted">
               Носовые подушки для яхт из кожи, алькантары или тканей Sunbrella. Учитываем форму
               палубы, точки крепления и эксплуатацию в морском климате, чтобы подушки не скользили и
@@ -114,7 +137,10 @@
           </template>
         </UCard>
 
-        <UCard>
+        <UCard
+          v-animate="2"
+          class="card-hover"
+        >
           <template #header>
             <div class="aspect-video overflow-hidden rounded-lg bg-muted">
               <img
@@ -125,7 +151,9 @@
             </div>
           </template>
           <template #footer>
-            <p class="font-semibold">Перешив диванов и мебели</p>
+            <p class="font-semibold">
+              Перешив диванов и мебели
+            </p>
             <p class="text-sm text-muted">
               Перешиваем диваны, кресла и другую мягкую мебель по индивидуальным размерам. Меняем
               обивку, наполнитель и геометрию сиденья, чтобы вернуть комфорт и обновить интерьер.
@@ -141,6 +169,7 @@
     </UPageSection>
 
     <UPageSection
+      v-animate
       title="Индивидуальный пошив под ваши задачи"
       description="Все изделия мы шьём на заказ. Можно изменить размер, толщину, плотность наполнителя, цвет и фактуру ткани."
     >
@@ -159,4 +188,3 @@
     </UPageSection>
   </div>
 </template>
-

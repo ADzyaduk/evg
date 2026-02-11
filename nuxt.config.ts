@@ -2,13 +2,14 @@
 export default defineNuxtConfig({
   modules: ['@nuxt/eslint', '@nuxt/ui', '@nuxt/a11y'],
 
-  devtools: {
-    enabled: true
-  },
+  /** SSR включён по умолчанию в Nuxt; явно указываем для SEO и соцсетей (og, превью). */
+  ssr: true,
 
-  css: ['~/assets/css/main.css'],
+  /** В продакшене отключаем, чтобы не отдавать лишнее и не влиять на производительность. */
+  devtools: { enabled: process.env.NODE_ENV === 'development' },
 
   app: {
+    pageTransition: { name: 'page', mode: 'out-in' },
     head: {
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -16,8 +17,35 @@ export default defineNuxtConfig({
     }
   },
 
+  css: ['~/assets/css/main.css'],
+
+  runtimeConfig: {
+    telegramBotToken: '',
+    telegramChatId: '',
+    public: {
+      siteUrl: 'https://pavlovcraft.ru'
+    }
+  },
+
   routeRules: {
-    '/': { prerender: true }
+    '/': { prerender: true },
+    '/blog': { prerender: true },
+    '/katalog': { prerender: true },
+    '/kontakty': { prerender: true },
+    '/uslugi': { prerender: true },
+    '/o-kompanii': { prerender: true },
+    '/otzyvy': { prerender: true }
+  },
+
+  compatibilityDate: '2026-01-15',
+
+  eslint: {
+    config: {
+      stylistic: {
+        commaDangle: 'never',
+        braceStyle: '1tbs'
+      }
+    }
   },
 
   /**
@@ -36,24 +64,5 @@ export default defineNuxtConfig({
     },
     // devtools можно тоже выключить, чтобы меньше шума
     devtools: false
-  },
-
-  compatibilityDate: '2026-01-15',
-
-  runtimeConfig: {
-    telegramBotToken: '',
-    telegramChatId: '',
-    public: {
-      siteUrl: 'https://pavlovcraft.ru'
-    }
-  },
-
-  eslint: {
-    config: {
-      stylistic: {
-        commaDangle: 'never',
-        braceStyle: '1tbs'
-      }
-    }
   }
 })
