@@ -23,7 +23,11 @@ export default defineNuxtConfig({
     telegramBotToken: '',
     telegramChatId: '',
     public: {
-      siteUrl: 'https://pavlovcraft.ru'
+      siteUrl: 'https://pavlovcraft.ru',
+      /** ID счётчика Яндекс.Метрики (например, 12345678). */
+      yandexMetrikaId: '',
+      /** GA4 Measurement ID (например, G-XXXXXXX). */
+      gaMeasurementId: ''
     }
   },
 
