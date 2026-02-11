@@ -1,3 +1,19 @@
+<script setup lang="ts">
+useSeoMeta({
+  title: 'Подушки для уличной мебели и яхт в Сочи — пошив на заказ | PavlovCraft',
+  description:
+    'Пошив подушек для уличной мебели, пляжных лежаков и яхт в Сочи. Влагостойкие ткани с UV‑защитой, индивидуальные размеры, выезд на замер и гарантия качества.',
+  ogTitle: 'Подушки для уличной мебели и яхт в Сочи — PavlovCraft',
+  ogDescription:
+    'Подушки для уличной мебели, лежаков и яхт из влагостойких тканей с защитой от выгорания. Шьём на заказ под ваши размеры в Сочи и Краснодарском крае.',
+  ogType: 'website',
+  ogUrl: 'https://pavlovcraft.ru/',
+  ogImage: 'https://pavlovcraft.ru/img/hero.jpg',
+  twitterCard: 'summary_large_image',
+  robots: 'index,follow'
+});
+</script>
+
 <template>
   <div>
     <UPageHero

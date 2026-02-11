@@ -1,3 +1,19 @@
+<script setup lang="ts">
+useSeoMeta({
+  title: 'Как ухаживать за подушками для уличной мебели — блог PavlovCraft',
+  description:
+    'Подробно рассказываем, как ухаживать за подушками для уличной мебели и пляжных лежаков: чистка, сушка, стирка чехлов и хранение вне сезона.',
+  ogTitle: 'Уход за подушками для уличной мебели',
+  ogDescription:
+    'Регулярная чистка, правильная сушка, бережная стирка чехлов и хранение садовых подушек — простые правила, чтобы они служили дольше.',
+  ogType: 'article',
+  ogUrl: 'https://pavlovcraft.ru/blog/ukhod-za-ulichnymi-podushkami',
+  ogImage: 'https://pavlovcraft.ru/img/orig%20(1).webp',
+  twitterCard: 'summary_large_image',
+  robots: 'index,follow'
+});
+</script>
+
 <template>
   <div>
     <UPageHero

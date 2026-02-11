@@ -1,3 +1,19 @@
+<script setup lang="ts">
+useSeoMeta({
+  title: 'О нас — раздел переехал на страницу «О компании» | PavlovCraft',
+  description:
+    'Раздел «О нас» переехал на обновлённую страницу «О компании» PavlovCraft. Перейдите по ссылке, чтобы узнать больше о мастерской по пошиву подушек и чехлов в Сочи.',
+  ogTitle: 'О нас — PavlovCraft',
+  ogDescription:
+    'Используйте ссылку на страницу «О компании», чтобы прочитать актуальную информацию о PavlovCraft.',
+  ogType: 'website',
+  ogUrl: 'https://pavlovcraft.ru/o-nas',
+  ogImage: 'https://pavlovcraft.ru/img/hero.jpg',
+  twitterCard: 'summary_large_image',
+  robots: 'noindex,follow'
+});
+</script>
+
 <template>
   <div>
     <UPageHero

@@ -1,4 +1,18 @@
 <script setup lang="ts">
+useSeoMeta({
+  title: 'Контакты PavlovCraft — пошив подушек для уличной мебели и яхт в Сочи',
+  description:
+    'Свяжитесь с PavlovCraft для заказа подушек для уличной мебели, пляжных лежаков и яхт в Сочи. Телефон, мессенджеры и форма обратной связи.',
+  ogTitle: 'Контакты PavlovCraft — Сочи',
+  ogDescription:
+    'Телефон, мессенджеры и форма заявки для заказа подушек и чехлов на заказ для улицы и яхт.',
+  ogType: 'website',
+  ogUrl: 'https://pavlovcraft.ru/kontakty',
+  ogImage: 'https://pavlovcraft.ru/img/hero.jpg',
+  twitterCard: 'summary_large_image',
+  robots: 'index,follow'
+});
+
 const contacts = [
   {
     icon: 'i-lucide-phone',

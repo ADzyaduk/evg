@@ -1,3 +1,19 @@
+<script setup lang="ts">
+useSeoMeta({
+  title: 'Отзывы клиентов о подушках для уличной мебели и яхт — PavlovCraft',
+  description:
+    'Отзывы клиентов, для которых мы шили подушки для уличной мебели, пляжных лежаков и носовые подушки для яхт, а также перешивали диваны в Сочи.',
+  ogTitle: 'Отзывы о PavlovCraft — подушки и чехлы на заказ',
+  ogDescription:
+    'Честные впечатления клиентов о качестве подушек, чехлов и сервисе PavlovCraft в Сочи.',
+  ogType: 'website',
+  ogUrl: 'https://pavlovcraft.ru/otzyvy',
+  ogImage: 'https://pavlovcraft.ru/img/Booka-lounge-set-1-Sadovaya-mebel-akatsiya.jpg',
+  twitterCard: 'summary_large_image',
+  robots: 'index,follow'
+});
+</script>
+
 <template>
   <div>
     <UPageHero

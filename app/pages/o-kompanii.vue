@@ -1,3 +1,19 @@
+<script setup lang="ts">
+useSeoMeta({
+  title: 'О компании PavlovCraft — пошив подушек и чехлов в Сочи',
+  description:
+    'Небольшая мастерская PavlovCraft в Сочи, которая шьёт подушки для уличной мебели, пляжных лежаков и яхт, а также перешивает диваны с упором на качество и практичность.',
+  ogTitle: 'О компании PavlovCraft — подушки и чехлы на заказ',
+  ogDescription:
+    'Узнайте больше о нашей мастерской по пошиву подушек и чехлов для улицы и яхт в Сочи.',
+  ogType: 'website',
+  ogUrl: 'https://pavlovcraft.ru/o-kompanii',
+  ogImage: 'https://pavlovcraft.ru/img/orig.webp',
+  twitterCard: 'summary_large_image',
+  robots: 'index,follow'
+});
+</script>
+
 <template>
   <div>
     <UPageHero

@@ -1,3 +1,19 @@
+<script setup lang="ts">
+useSeoMeta({
+  title: 'Каталог подушек и чехлов для уличной мебели и яхт — PavlovCraft',
+  description:
+    'Подушки для уличной мебели, чехлы на пляжные лежаки, носовые подушки для яхт и перешив диванов в Сочи. Все изделия шьём на заказ под ваши размеры.',
+  ogTitle: 'Каталог подушек и чехлов — PavlovCraft',
+  ogDescription:
+    'Решения для уличной мебели, террас, пляжных лежаков и яхт. Индивидуальный пошив под ваши размеры и условия эксплуатации в Сочи.',
+  ogType: 'website',
+  ogUrl: 'https://pavlovcraft.ru/katalog',
+  ogImage: 'https://pavlovcraft.ru/img/orig.webp',
+  twitterCard: 'summary_large_image',
+  robots: 'index,follow'
+});
+</script>
+
 <template>
   <div>
     <UPageHero

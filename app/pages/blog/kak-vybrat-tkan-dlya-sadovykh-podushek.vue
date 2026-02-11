@@ -1,3 +1,19 @@
+<script setup lang="ts">
+useSeoMeta({
+  title: 'Как выбрать ткань для садовых подушек — блог PavlovCraft',
+  description:
+    'Рассказываем, какую ткань выбрать для садовых подушек и подушек для уличной мебели, чтобы они не выгорали, не намокали и служили несколько сезонов.',
+  ogTitle: 'Как выбрать ткань для садовых подушек',
+  ogDescription:
+    'Критерии выбора ткани для подушек для уличной мебели: влагостойкость, UV‑защита, плотность и удобство ухода.',
+  ogType: 'article',
+  ogUrl: 'https://pavlovcraft.ru/blog/kak-vybrat-tkan-dlya-sadovykh-podushek',
+  ogImage: 'https://pavlovcraft.ru/img/Booka-lounge-set-1-Sadovaya-mebel-akatsiya.jpg',
+  twitterCard: 'summary_large_image',
+  robots: 'index,follow'
+});
+</script>
+
 <template>
   <div>
     <UPageHero

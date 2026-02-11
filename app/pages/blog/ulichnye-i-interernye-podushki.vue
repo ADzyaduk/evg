@@ -1,3 +1,19 @@
+<script setup lang="ts">
+useSeoMeta({
+  title: 'Чем уличные подушки отличаются от интерьерных — блог PavlovCraft',
+  description:
+    'Объясняем, почему нельзя просто вынести диванные подушки на улицу и чем уличные ткани и наполнители отличаются от интерьерных.',
+  ogTitle: 'Отличия уличных и интерьерных подушек',
+  ogDescription:
+    'Подушки для уличной мебели и диванные подушки в доме — разные задачи. Рассказываем о тканях, наполнителях и практическом использовании.',
+  ogType: 'article',
+  ogUrl: 'https://pavlovcraft.ru/blog/ulichnye-i-interernye-podushki',
+  ogImage: 'https://images.pexels.com/photos/269255/pexels-photo-269255.jpeg?auto=compress&cs=tinysrgb&w=800',
+  twitterCard: 'summary_large_image',
+  robots: 'index,follow'
+});
+</script>
+
 <template>
   <div>
     <UPageHero

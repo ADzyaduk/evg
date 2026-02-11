@@ -1,3 +1,19 @@
+<script setup lang="ts">
+useSeoMeta({
+  title: 'Блог о подушках для уличной мебели и яхт — PavlovCraft',
+  description:
+    'Статьи о выборе тканей, уходе за подушками для уличной мебели и особенностях материалов для яхт в сочинском климате.',
+  ogTitle: 'Блог PavlovCraft — советы по тканям и уходу',
+  ogDescription:
+    'Практичные советы по выбору тканей и уходу за подушками для уличной мебели, пляжных лежаков и яхт.',
+  ogType: 'website',
+  ogUrl: 'https://pavlovcraft.ru/blog',
+  ogImage: 'https://pavlovcraft.ru/img/Booka-lounge-set-1-Sadovaya-mebel-akatsiya.jpg',
+  twitterCard: 'summary_large_image',
+  robots: 'index,follow'
+});
+</script>
+
 <template>
   <div>
     <UPageHero

@@ -1,3 +1,19 @@
+<script setup lang="ts">
+useSeoMeta({
+  title: 'Какие ткани лучше для яхт и морского климата — блог PavlovCraft',
+  description:
+    'Разбираем, какие ткани подойдут для носовых подушек и мягкой мебели на яхте: Sunbrella, морские ткани, кожа и алькантара.',
+  ogTitle: 'Ткани для яхт и морского климата',
+  ogDescription:
+    'Чем специализированные морские ткани вроде Sunbrella отличаются от обычных уличных материалов и когда их лучше использовать на яхте.',
+  ogType: 'article',
+  ogUrl: 'https://pavlovcraft.ru/blog/kakie-tkani-dlya-yaht',
+  ogImage: 'https://images.pexels.com/photos/1004665/pexels-photo-1004665.jpeg?auto=compress&cs=tinysrgb&w=1200',
+  twitterCard: 'summary_large_image',
+  robots: 'index,follow'
+});
+</script>
+
 <template>
   <div>
     <UPageHero

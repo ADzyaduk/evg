@@ -1,3 +1,19 @@
+<script setup lang="ts">
+useSeoMeta({
+  title: 'Услуги по пошиву подушек и чехлов на заказ в Сочи — PavlovCraft',
+  description:
+    'Пошив подушек для уличной мебели, чехлов на пляжные лежаки, носовых подушек для яхт и перешив диванов в Сочи. Полный цикл — от замеров до доставки.',
+  ogTitle: 'Пошив подушек и чехлов на заказ — услуги PavlovCraft',
+  ogDescription:
+    'Подушки для уличной мебели, лежаков и яхт, а также перешив диванов под ваши размеры и задачи в Сочи и Краснодарском крае.',
+  ogType: 'website',
+  ogUrl: 'https://pavlovcraft.ru/uslugi',
+  ogImage: 'https://pavlovcraft.ru/img/1687874901_kartin-papik-pro-p-kartinki-more-plyazh-lezhak-59.jpg',
+  twitterCard: 'summary_large_image',
+  robots: 'index,follow'
+});
+</script>
+
 <template>
   <div>
     <UPageHero
