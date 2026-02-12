@@ -17,24 +17,24 @@ const contacts = [
   {
     icon: 'i-lucide-phone',
     title: 'Телефон',
-    value: '+7 (000) 000‑00‑00',
-    link: 'tel:+70000000000',
+    value: '+7 (985) 424-07-03',
+    link: 'tel:+79854240703',
     description: 'Для оперативных вопросов и согласования замеров',
     image: null
   },
   {
     icon: 'i-simple-icons-telegram',
     title: 'Telegram',
-    value: '@username',
-    link: '#',
+    value: '+7 (985) 424-07-03',
+    link: 'https://t.me/+79854240703',
     description: 'Удобно отправить фото мебели и обсудить детали заказа',
     image: null
   },
   {
     icon: '',
     title: 'Мессенджер Max',
-    value: '@username',
-    link: '#',
+    value: '+7 (985) 424-07-03',
+    link: 'https://max.ru/+79854240703',
     description: 'Напишите в мессенджер — ответим в течение рабочего дня',
     image: '/max.png'
   },

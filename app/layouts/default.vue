@@ -54,7 +54,7 @@ const items = computed<NavigationMenuItem[]>(() => [
         <UButton
           color="neutral"
           variant="ghost"
-          to="#"
+          to="https://t.me/+79854240703"
           target="_blank"
           aria-label="Telegram"
           class="icon-hover"
@@ -68,7 +68,7 @@ const items = computed<NavigationMenuItem[]>(() => [
         <UButton
           color="neutral"
           variant="ghost"
-          to="#"
+          to="https://max.ru/+79854240703"
           target="_blank"
           aria-label="Мессенджер Max"
           class="icon-hover"
@@ -84,7 +84,7 @@ const items = computed<NavigationMenuItem[]>(() => [
           color="neutral"
           variant="ghost"
           icon="i-lucide-phone"
-          to="tel:+70000000000"
+          to="tel:+79854240703"
           aria-label="Позвонить"
           class="icon-hover"
         />
@@ -169,7 +169,7 @@ const items = computed<NavigationMenuItem[]>(() => [
         <UButton
           color="neutral"
           variant="ghost"
-          to="#"
+          to="https://t.me/+79854240703"
           target="_blank"
           aria-label="Telegram"
           class="icon-hover"
@@ -183,7 +183,7 @@ const items = computed<NavigationMenuItem[]>(() => [
         <UButton
           color="neutral"
           variant="ghost"
-          to="#"
+          to="https://max.ru/+79854240703"
           target="_blank"
           aria-label="Мессенджер Max"
           class="icon-hover"
@@ -199,7 +199,7 @@ const items = computed<NavigationMenuItem[]>(() => [
           color="neutral"
           variant="ghost"
           icon="i-lucide-phone"
-          to="tel:+70000000000"
+          to="tel:+79854240703"
           aria-label="Позвонить"
           class="icon-hover"
         />
