@@ -3,7 +3,6 @@ import { z } from 'zod'
 const feedbackSchema = z.object({
   name: z.string().min(1, 'Укажите ваше имя'),
   phone: z.string().min(1, 'Укажите номер телефона'),
-  messenger: z.string().optional(),
   message: z.string().min(1, 'Напишите сообщение')
 })
 
@@ -11,7 +10,6 @@ export default defineEventHandler(async (event) => {
   const contentType = getHeader(event, 'content-type') ?? ''
   let name: string
   let phone: string
-  let messenger: string | undefined
   let message: string
   const photoFiles: { data: Uint8Array, filename: string, type?: string }[] = []
 
@@ -47,7 +45,6 @@ export default defineEventHandler(async (event) => {
       })
     }
     ;({ name, phone, message } = parseResult.data)
-    messenger = parseResult.data.messenger || undefined
   } else {
     const body = await readBody(event)
     const parseResult = feedbackSchema.safeParse(body)
@@ -58,7 +55,7 @@ export default defineEventHandler(async (event) => {
         statusMessage: firstError?.message ?? 'Ошибка валидации'
       })
     }
-    ;({ name, phone, messenger, message } = parseResult.data)
+    ;({ name, phone, message } = parseResult.data)
   }
 
   const config = useRuntimeConfig()
@@ -81,7 +78,6 @@ export default defineEventHandler(async (event) => {
     '',
     `<b>👤 Имя:</b> ${escapeHtml(name)}`,
     `<b>📞 Телефон:</b> ${escapeHtml(phone)}`,
-    messenger ? `<b>💬 Max:</b> ${escapeHtml(messenger)}` : null,
     photoFiles.length ? `<b>📎 Фото:</b> ${photoFiles.length} шт.` : null,
     '',
     '<b>💬 Сообщение:</b>',

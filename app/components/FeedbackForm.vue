@@ -5,7 +5,6 @@ import type { FormSubmitEvent } from '@nuxt/ui'
 const schema = z.object({
   name: z.string().min(1, 'Укажите ваше имя'),
   phone: z.string().min(1, 'Укажите номер телефона'),
-  messenger: z.string().optional(),
   message: z.string().min(1, 'Напишите сообщение')
 })
 
@@ -14,7 +13,6 @@ type Schema = z.output<typeof schema>
 const state = reactive<Partial<Schema>>({
   name: undefined,
   phone: undefined,
-  messenger: undefined,
   message: undefined
 })
 
@@ -52,9 +50,6 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
   formData.append('name', event.data.name)
   formData.append('phone', event.data.phone)
   formData.append('message', event.data.message)
-  if (event.data.messenger) {
-    formData.append('messenger', event.data.messenger)
-  }
   for (const file of (photos.value ?? [])) {
     formData.append('photos', file)
   }
@@ -72,7 +67,6 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
     Object.assign(state, {
       name: undefined,
       phone: undefined,
-      messenger: undefined,
       message: undefined
     })
     photos.value = []
@@ -139,20 +133,6 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
         />
       </UFormField>
     </div>
-
-    <UFormField
-      label="Мессенджер Max"
-      name="messenger"
-      class="w-full"
-    >
-      <UInput
-        v-model="state.messenger"
-        placeholder="Ваш ник в Max"
-        autocomplete="off"
-        size="md"
-        class="w-full"
-      />
-    </UFormField>
 
     <UFormField
       label="Сообщение"
