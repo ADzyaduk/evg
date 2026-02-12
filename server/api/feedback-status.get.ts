@@ -4,8 +4,10 @@
  */
 export default defineEventHandler(() => {
   const config = useRuntimeConfig()
-  const hasToken = Boolean(config.telegramBotToken?.trim())
-  const hasChatId = Boolean(config.telegramChatId?.trim())
+  const token = String(config.telegramBotToken || '').trim()
+  const chatId = String(config.telegramChatId || '').trim()
+  const hasToken = Boolean(token)
+  const hasChatId = Boolean(chatId)
   return {
     configured: hasToken && hasChatId,
     hasToken,

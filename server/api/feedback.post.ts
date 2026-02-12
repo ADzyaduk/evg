@@ -24,14 +24,17 @@ export default defineEventHandler(async (event) => {
 
     const fields: Record<string, string> = {}
     for (const part of parts) {
-      const value = part.data.toString('utf-8')
       if (part.filename) {
+        if (!part.data?.length) {
+          continue
+        }
         photoFiles.push({
           data: part.data,
           filename: part.filename,
           type: part.type
         })
       } else if (part.name) {
+        const value = part.data?.toString('utf-8') ?? ''
         fields[part.name] = value
       }
     }
