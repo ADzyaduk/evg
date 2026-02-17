@@ -160,9 +160,19 @@ const items = computed<NavigationMenuItem[]>(() => [
 
     <UFooter>
       <template #left>
-        <p class="text-muted text-sm">
-          © {{ new Date().getFullYear() }} Ваша компания. Все права защищены.
-        </p>
+        <div class="flex flex-col gap-1 text-xs sm:text-sm text-muted">
+          <p>
+            © {{ new Date().getFullYear() }} PavlovCraft. Все права защищены.
+          </p>
+          <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+            <NuxtLink
+              to="/politika-konfidentsialnosti"
+              class="hover:text-primary underline-offset-2 hover:underline"
+            >
+              Политика обработки персональных данных
+            </NuxtLink>
+          </div>
+        </div>
       </template>
 
       <template #right>

@@ -5,7 +5,10 @@ import type { FormSubmitEvent } from '@nuxt/ui'
 const schema = z.object({
   name: z.string().min(1, 'Укажите ваше имя'),
   phone: z.string().min(1, 'Укажите номер телефона'),
-  message: z.string().min(1, 'Напишите сообщение')
+  message: z.string().min(1, 'Напишите сообщение'),
+  consent: z.literal<boolean>(true, {
+    errorMap: () => ({ message: 'Нужно согласиться с обработкой персональных данных' })
+  })
 })
 
 type Schema = z.output<typeof schema>
@@ -13,7 +16,8 @@ type Schema = z.output<typeof schema>
 const state = reactive<Partial<Schema>>({
   name: undefined,
   phone: undefined,
-  message: undefined
+  message: undefined,
+  consent: false
 })
 
 const photos = ref<File[]>([])
@@ -67,7 +71,8 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
     Object.assign(state, {
       name: undefined,
       phone: undefined,
-      message: undefined
+      message: undefined,
+      consent: false
     })
     photos.value = []
   } catch (err: unknown) {
@@ -166,6 +171,30 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
         size="sm"
         class="w-full min-h-24"
       />
+    </UFormField>
+
+    <UFormField
+      name="consent"
+      class="w-full"
+    >
+      <UCheckbox
+        v-model="state.consent"
+        label="Я согласен(а) на обработку персональных данных"
+        class="text-sm"
+      >
+        <template #description>
+          <span class="text-xs sm:text-sm">
+            Отправляя форму, вы подтверждаете согласие с
+            <NuxtLink
+              to="/politika-konfidentsialnosti"
+              class="text-primary underline-offset-2 hover:underline"
+            >
+              политикой обработки персональных данных
+            </NuxtLink>
+            .
+          </span>
+        </template>
+      </UCheckbox>
     </UFormField>
 
     <UButton
