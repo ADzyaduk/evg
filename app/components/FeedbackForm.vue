@@ -6,9 +6,10 @@ const schema = z.object({
   name: z.string().min(1, 'Укажите ваше имя'),
   phone: z.string().min(1, 'Укажите номер телефона'),
   message: z.string().min(1, 'Напишите сообщение'),
-  consent: z.literal<boolean>(true, {
-    errorMap: () => ({ message: 'Нужно согласиться с обработкой персональных данных' })
-  })
+  consent: z.boolean().refine(
+    val => val === true,
+    { message: 'Нужно согласиться с обработкой персональных данных' }
+  )
 })
 
 type Schema = z.output<typeof schema>
@@ -178,9 +179,10 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
       class="w-full"
     >
       <UCheckbox
-        v-model="state.consent"
+        :model-value="(state.consent ?? false) as boolean"
         label="Я согласен(а) на обработку персональных данных"
         class="text-sm"
+        @update:model-value="(v: unknown) => { state.consent = v === true }"
       >
         <template #description>
           <span class="text-xs sm:text-sm">

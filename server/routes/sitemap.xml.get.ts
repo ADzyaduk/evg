@@ -6,10 +6,10 @@ type SitemapEntry = {
 }
 
 export default defineEventHandler((event) => {
-  const config = useRuntimeConfig();
+  const config = useRuntimeConfig()
 
-  const rawSiteUrl = config.public.siteUrl || 'https://pavlovcraft.ru';
-  const baseUrl = rawSiteUrl.replace(/\/$/, '');
+  const rawSiteUrl = config.public.siteUrl || 'https://pavlovcraft.ru'
+  const baseUrl = rawSiteUrl.replace(/\/$/, '')
 
   const urls: SitemapEntry[] = [
     // Основные страницы
@@ -47,38 +47,37 @@ export default defineEventHandler((event) => {
       priority: 0.7,
       lastmod: '2025-01-28'
     }
-  ];
+  ]
 
   const bodyLines: string[] = [
     '<?xml version="1.0" encoding="UTF-8"?>',
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
-  ];
+  ]
 
   for (const url of urls) {
-    bodyLines.push('  <url>');
-    bodyLines.push(`    <loc>${baseUrl}${url.loc}</loc>`);
+    bodyLines.push('  <url>')
+    bodyLines.push(`    <loc>${baseUrl}${url.loc}</loc>`)
 
     if (url.lastmod) {
-      bodyLines.push(`    <lastmod>${url.lastmod}</lastmod>`);
+      bodyLines.push(`    <lastmod>${url.lastmod}</lastmod>`)
     }
 
     if (url.changefreq) {
-      bodyLines.push(`    <changefreq>${url.changefreq}</changefreq>`);
+      bodyLines.push(`    <changefreq>${url.changefreq}</changefreq>`)
     }
 
     if (typeof url.priority === 'number') {
-      bodyLines.push(`    <priority>${url.priority.toFixed(1)}</priority>`);
+      bodyLines.push(`    <priority>${url.priority.toFixed(1)}</priority>`)
     }
 
-    bodyLines.push('  </url>');
+    bodyLines.push('  </url>')
   }
 
-  bodyLines.push('</urlset>');
+  bodyLines.push('</urlset>')
 
-  const xml = bodyLines.join('\n');
+  const xml = bodyLines.join('\n')
 
-  setHeader(event, 'Content-Type', 'application/xml; charset=utf-8');
+  setHeader(event, 'Content-Type', 'application/xml; charset=utf-8')
 
-  return xml;
-});
-
+  return xml
+})

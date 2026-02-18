@@ -11,7 +11,7 @@ useSeoMeta({
   ogImage: 'https://pavlovcraft.ru/img/1687874901_kartin-papik-pro-p-kartinki-more-plyazh-lezhak-59.jpg',
   twitterCard: 'summary_large_image',
   robots: 'index,follow'
-});
+})
 </script>
 
 <template>

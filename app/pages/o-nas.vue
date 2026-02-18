@@ -11,7 +11,7 @@ useSeoMeta({
   ogImage: 'https://pavlovcraft.ru/img/hero.jpg',
   twitterCard: 'summary_large_image',
   robots: 'noindex,follow'
-});
+})
 </script>
 
 <template>

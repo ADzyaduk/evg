@@ -38,10 +38,28 @@ export default defineNuxtConfig({
     '/kontakty': { prerender: true },
     '/uslugi': { prerender: true },
     '/o-kompanii': { prerender: true },
-    '/otzyvy': { prerender: true }
+    '/otzyvy': { prerender: true },
+    '/politika-konfidentsialnosti': { prerender: true },
+    // Долгий кэш для статики — меньше повторных запросов, быстрее повторные заходы
+    '/img/**': {
+      headers: { 'Cache-Control': 'public, max-age=31536000, immutable' }
+    },
+    '/logo.png': {
+      headers: { 'Cache-Control': 'public, max-age=31536000, immutable' }
+    },
+    '/max.png': {
+      headers: { 'Cache-Control': 'public, max-age=31536000, immutable' }
+    },
+    '/_nuxt/**': {
+      headers: { 'Cache-Control': 'public, max-age=31536000, immutable' }
+    }
   },
 
   compatibilityDate: '2026-01-15',
+
+  nitro: {
+    compressPublicAssets: true
+  },
 
   eslint: {
     config: {

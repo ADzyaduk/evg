@@ -11,7 +11,7 @@ useSeoMeta({
   ogImage: 'https://pavlovcraft.ru/img/orig%20(1).webp',
   twitterCard: 'summary_large_image',
   robots: 'index,follow'
-});
+})
 </script>
 
 <template>
@@ -28,6 +28,10 @@ useSeoMeta({
           <img
             src="/img/orig (1).webp"
             alt="Уход за подушками для уличной мебели"
+            width="640"
+            height="360"
+            loading="lazy"
+            decoding="async"
             class="h-full w-full object-cover"
           >
         </div>
@@ -49,6 +53,10 @@ useSeoMeta({
           <img
             src="/img/s-l1600.webp"
             alt="Стиральная машина и аккуратные подушки"
+            width="640"
+            height="360"
+            loading="lazy"
+            decoding="async"
             class="h-full w-full object-cover"
           >
         </div>

@@ -11,7 +11,7 @@ useSeoMeta({
   ogImage: 'https://pavlovcraft.ru/img/orig.webp',
   twitterCard: 'summary_large_image',
   robots: 'index,follow'
-});
+})
 </script>
 
 <template>
@@ -37,6 +37,10 @@ useSeoMeta({
               <img
                 src="/img/Booka-lounge-set-1-Sadovaya-mebel-akatsiya.jpg"
                 alt="Подушки для садовых кресел и шезлонгов"
+                width="750"
+                height="422"
+                loading="lazy"
+                decoding="async"
                 class="h-full w-full object-cover"
               >
             </div>
@@ -67,6 +71,10 @@ useSeoMeta({
               <img
                 src="/img/1687874901_kartin-papik-pro-p-kartinki-more-plyazh-lezhak-59.jpg"
                 alt="Чехлы для пляжных лежаков у моря"
+                width="1920"
+                height="1080"
+                loading="lazy"
+                decoding="async"
                 class="h-full w-full object-cover"
               >
             </div>
@@ -97,6 +105,10 @@ useSeoMeta({
               <img
                 src="/img/orig.webp"
                 alt="Комплект подушек для уличной террасы"
+                width="640"
+                height="360"
+                loading="lazy"
+                decoding="async"
                 class="h-full w-full object-cover"
               >
             </div>
@@ -135,6 +147,10 @@ useSeoMeta({
               <img
                 src="/img/1690563359_hdpic-club-p-yakhta-vid-szadi-49-e1755513283928.jpg"
                 alt="Носовые подушки на палубе яхты"
+                width="800"
+                height="449"
+                loading="lazy"
+                decoding="async"
                 class="h-full w-full object-cover"
               >
             </div>
@@ -165,6 +181,10 @@ useSeoMeta({
               <img
                 src="/img/s-l1600.webp"
                 alt="Перешитый диван с новой обивкой"
+                width="640"
+                height="360"
+                loading="lazy"
+                decoding="async"
                 class="h-full w-full object-cover"
               >
             </div>

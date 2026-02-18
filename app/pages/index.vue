@@ -11,7 +11,12 @@ useSeoMeta({
   ogImage: 'https://pavlovcraft.ru/img/hero.jpg',
   twitterCard: 'summary_large_image',
   robots: 'index,follow'
-});
+})
+
+// Preload LCP-изображения для ускорения первой отрисовки
+useHead({
+  link: [{ rel: 'preload', as: 'image', href: '/img/hero.jpg' }]
+})
 </script>
 
 <template>
@@ -42,6 +47,10 @@ useSeoMeta({
       <img
         src="/img/hero.jpg"
         alt="Зона отдыха с уличной мебелью и подушками"
+        width="1280"
+        height="720"
+        fetchpriority="high"
+        decoding="async"
         class="rounded-2xl shadow-2xl ring ring-default w-full max-w-xl mx-auto"
       >
     </UPageHero>
@@ -107,6 +116,10 @@ useSeoMeta({
               <img
                 src="/img/Booka-lounge-set-1-Sadovaya-mebel-akatsiya.jpg"
                 alt="Подушки для садовой мебели на террасе"
+                width="750"
+                height="422"
+                loading="lazy"
+                decoding="async"
                 class="h-full w-full object-cover"
               >
             </div>
@@ -130,6 +143,10 @@ useSeoMeta({
               <img
                 src="/img/1687874901_kartin-papik-pro-p-kartinki-more-plyazh-lezhak-59.jpg"
                 alt="Пляжные лежаки с подушками у моря"
+                width="1920"
+                height="1080"
+                loading="lazy"
+                decoding="async"
                 class="h-full w-full object-cover"
               >
             </div>
@@ -153,6 +170,10 @@ useSeoMeta({
               <img
                 src="/img/1690563359_hdpic-club-p-yakhta-vid-szadi-49-e1755513283928.jpg"
                 alt="Носовая зона отдыха на яхте"
+                width="800"
+                height="449"
+                loading="lazy"
+                decoding="async"
                 class="h-full w-full object-cover"
               >
             </div>

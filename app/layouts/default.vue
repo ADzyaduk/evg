@@ -76,7 +76,10 @@ const items = computed<NavigationMenuItem[]>(() => [
           <img
             src="/max.png"
             alt="Max"
+            width="20"
+            height="20"
             class="size-5 object-contain"
+            decoding="async"
           >
         </UButton>
 
@@ -201,7 +204,10 @@ const items = computed<NavigationMenuItem[]>(() => [
           <img
             src="/max.png"
             alt="Max"
+            width="20"
+            height="20"
             class="size-5 object-contain"
+            decoding="async"
           >
         </UButton>
 

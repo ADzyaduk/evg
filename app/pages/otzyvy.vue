@@ -11,7 +11,7 @@ useSeoMeta({
   ogImage: 'https://pavlovcraft.ru/img/Booka-lounge-set-1-Sadovaya-mebel-akatsiya.jpg',
   twitterCard: 'summary_large_image',
   robots: 'index,follow'
-});
+})
 </script>
 
 <template>

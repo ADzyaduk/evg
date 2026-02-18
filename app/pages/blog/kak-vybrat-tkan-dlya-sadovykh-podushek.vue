@@ -11,7 +11,7 @@ useSeoMeta({
   ogImage: 'https://pavlovcraft.ru/img/Booka-lounge-set-1-Sadovaya-mebel-akatsiya.jpg',
   twitterCard: 'summary_large_image',
   robots: 'index,follow'
-});
+})
 </script>
 
 <template>
@@ -28,6 +28,10 @@ useSeoMeta({
           <img
             src="/img/Booka-lounge-set-1-Sadovaya-mebel-akatsiya.jpg"
             alt="Садовые подушки на уличной мебели"
+            width="750"
+            height="422"
+            loading="lazy"
+            decoding="async"
             class="h-full w-full object-cover"
           >
         </div>
@@ -49,6 +53,10 @@ useSeoMeta({
           <img
             src="/img/orig.webp"
             alt="Ткани и образцы для садовых подушек"
+            width="640"
+            height="360"
+            loading="lazy"
+            decoding="async"
             class="h-full w-full object-cover"
           >
         </div>
