@@ -8,7 +8,7 @@ useSeoMeta({
     'Используйте ссылку на страницу «О компании», чтобы прочитать актуальную информацию о PavlovCraft.',
   ogType: 'website',
   ogUrl: 'https://pavlovcraft.ru/o-nas',
-  ogImage: 'https://pavlovcraft.ru/img/hero.jpg',
+  ogImage: 'https://pavlovcraft.ru/img/hero.webp',
   twitterCard: 'summary_large_image',
   robots: 'noindex,follow'
 })

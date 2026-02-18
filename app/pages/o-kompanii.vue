@@ -8,7 +8,7 @@ useSeoMeta({
     'Узнайте больше о нашей мастерской по пошиву подушек и чехлов для улицы и яхт в Сочи.',
   ogType: 'website',
   ogUrl: 'https://pavlovcraft.ru/o-kompanii',
-  ogImage: 'https://pavlovcraft.ru/img/orig.webp',
+  ogImage: 'https://pavlovcraft.ru/img/orig-opt.webp',
   twitterCard: 'summary_large_image',
   robots: 'index,follow'
 })

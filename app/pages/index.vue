@@ -8,14 +8,14 @@ useSeoMeta({
     'Подушки для уличной мебели, лежаков и яхт из влагостойких тканей с защитой от выгорания. Шьём на заказ под ваши размеры в Сочи и Краснодарском крае.',
   ogType: 'website',
   ogUrl: 'https://pavlovcraft.ru/',
-  ogImage: 'https://pavlovcraft.ru/img/hero.jpg',
+  ogImage: 'https://pavlovcraft.ru/img/hero.webp',
   twitterCard: 'summary_large_image',
   robots: 'index,follow'
 })
 
 // Preload LCP-изображения для ускорения первой отрисовки
 useHead({
-  link: [{ rel: 'preload', as: 'image', href: '/img/hero.jpg' }]
+  link: [{ rel: 'preload', as: 'image', href: '/img/hero.webp' }]
 })
 </script>
 
@@ -45,10 +45,10 @@ useHead({
       ]"
     >
       <img
-        src="/img/hero.jpg"
+        src="/img/hero.webp"
         alt="Зона отдыха с уличной мебелью и подушками"
-        width="1280"
-        height="720"
+        width="760"
+        height="428"
         fetchpriority="high"
         decoding="async"
         class="rounded-2xl shadow-2xl ring ring-default w-full max-w-xl mx-auto"
@@ -114,10 +114,10 @@ useHead({
           <template #header>
             <div class="aspect-video overflow-hidden rounded-lg bg-muted">
               <img
-                src="/img/Booka-lounge-set-1-Sadovaya-mebel-akatsiya.jpg"
+                src="/img/booka.webp"
                 alt="Подушки для садовой мебели на террасе"
-                width="750"
-                height="422"
+                width="700"
+                height="394"
                 loading="lazy"
                 decoding="async"
                 class="h-full w-full object-cover"
@@ -141,10 +141,10 @@ useHead({
           <template #header>
             <div class="aspect-video overflow-hidden rounded-lg bg-muted">
               <img
-                src="/img/1687874901_kartin-papik-pro-p-kartinki-more-plyazh-lezhak-59.jpg"
+                src="/img/lezhak.webp"
                 alt="Пляжные лежаки с подушками у моря"
-                width="1920"
-                height="1080"
+                width="700"
+                height="394"
                 loading="lazy"
                 decoding="async"
                 class="h-full w-full object-cover"
@@ -168,10 +168,10 @@ useHead({
           <template #header>
             <div class="aspect-video overflow-hidden rounded-lg bg-muted">
               <img
-                src="/img/1690563359_hdpic-club-p-yakhta-vid-szadi-49-e1755513283928.jpg"
+                src="/img/yacht.webp"
                 alt="Носовая зона отдыха на яхте"
-                width="800"
-                height="449"
+                width="700"
+                height="394"
                 loading="lazy"
                 decoding="async"
                 class="h-full w-full object-cover"

@@ -8,7 +8,7 @@ useSeoMeta({
     'Решения для уличной мебели, террас, пляжных лежаков и яхт. Индивидуальный пошив под ваши размеры и условия эксплуатации в Сочи.',
   ogType: 'website',
   ogUrl: 'https://pavlovcraft.ru/katalog',
-  ogImage: 'https://pavlovcraft.ru/img/orig.webp',
+  ogImage: 'https://pavlovcraft.ru/img/orig-opt.webp',
   twitterCard: 'summary_large_image',
   robots: 'index,follow'
 })
@@ -35,10 +35,10 @@ useSeoMeta({
           <template #header>
             <div class="aspect-video overflow-hidden rounded-lg bg-muted">
               <img
-                src="/img/Booka-lounge-set-1-Sadovaya-mebel-akatsiya.jpg"
+                src="/img/booka.webp"
                 alt="Подушки для садовых кресел и шезлонгов"
-                width="750"
-                height="422"
+                width="700"
+                height="394"
                 loading="lazy"
                 decoding="async"
                 class="h-full w-full object-cover"
@@ -69,10 +69,10 @@ useSeoMeta({
           <template #header>
             <div class="aspect-video overflow-hidden rounded-lg bg-muted">
               <img
-                src="/img/1687874901_kartin-papik-pro-p-kartinki-more-plyazh-lezhak-59.jpg"
+                src="/img/lezhak.webp"
                 alt="Чехлы для пляжных лежаков у моря"
-                width="1920"
-                height="1080"
+                width="700"
+                height="394"
                 loading="lazy"
                 decoding="async"
                 class="h-full w-full object-cover"
@@ -103,10 +103,10 @@ useSeoMeta({
           <template #header>
             <div class="aspect-video overflow-hidden rounded-lg bg-muted">
               <img
-                src="/img/orig.webp"
+                src="/img/orig-opt.webp"
                 alt="Комплект подушек для уличной террасы"
-                width="640"
-                height="360"
+                width="700"
+                height="394"
                 loading="lazy"
                 decoding="async"
                 class="h-full w-full object-cover"
@@ -145,10 +145,10 @@ useSeoMeta({
           <template #header>
             <div class="aspect-video overflow-hidden rounded-lg bg-muted">
               <img
-                src="/img/1690563359_hdpic-club-p-yakhta-vid-szadi-49-e1755513283928.jpg"
+                src="/img/yacht.webp"
                 alt="Носовые подушки на палубе яхты"
-                width="800"
-                height="449"
+                width="700"
+                height="394"
                 loading="lazy"
                 decoding="async"
                 class="h-full w-full object-cover"
@@ -179,10 +179,10 @@ useSeoMeta({
           <template #header>
             <div class="aspect-video overflow-hidden rounded-lg bg-muted">
               <img
-                src="/img/s-l1600.webp"
+                src="/img/sl1600-opt.webp"
                 alt="Перешитый диван с новой обивкой"
-                width="640"
-                height="360"
+                width="700"
+                height="394"
                 loading="lazy"
                 decoding="async"
                 class="h-full w-full object-cover"

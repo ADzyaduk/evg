@@ -8,7 +8,7 @@ useSeoMeta({
     'Практичные советы по выбору тканей и уходу за подушками для уличной мебели, пляжных лежаков и яхт.',
   ogType: 'website',
   ogUrl: 'https://pavlovcraft.ru/blog',
-  ogImage: 'https://pavlovcraft.ru/img/Booka-lounge-set-1-Sadovaya-mebel-akatsiya.jpg',
+  ogImage: 'https://pavlovcraft.ru/img/booka.webp',
   twitterCard: 'summary_large_image',
   robots: 'index,follow'
 })
@@ -60,7 +60,7 @@ useSeoMeta({
           title="Как выбрать ткань для садовых подушек"
           description="На что смотреть при выборе ткани для подушек для уличной мебели, чтобы они служили дольше одного сезона."
           date="2025-01-15"
-          image="/img/Booka-lounge-set-1-Sadovaya-mebel-akatsiya.jpg"
+          image="/img/booka.webp"
           to="/blog/kak-vybrat-tkan-dlya-sadovykh-podushek"
         />
 
@@ -70,7 +70,7 @@ useSeoMeta({
           title="Как ухаживать за подушками для уличной мебели"
           description="Простые правила ухода, чтобы подушки для уличной мебели и пляжных лежаков служили несколько сезонов."
           date="2025-01-20"
-          image="/img/orig.webp"
+          image="/img/orig-opt.webp"
           to="/blog/ukhod-za-ulichnymi-podushkami"
         />
 
@@ -80,7 +80,7 @@ useSeoMeta({
           title="Какие ткани лучше для яхт и морского климата"
           description="Разбираем, чем Sunbrella и похожие материалы отличаются от обычных тканей для уличной мебели на яхтах."
           date="2025-01-25"
-          image="/img/1690563359_hdpic-club-p-yakhta-vid-szadi-49-e1755513283928.jpg"
+          image="/img/yacht.webp"
           to="/blog/kakie-tkani-dlya-yaht"
         />
 
@@ -90,7 +90,7 @@ useSeoMeta({
           title="Чем уличные подушки отличаются от интерьерных"
           description="Почему нельзя просто вынести диванные подушки на улицу и чего ждать от настоящих уличных материалов."
           date="2025-01-28"
-          image="/img/1687874901_kartin-papik-pro-p-kartinki-more-plyazh-lezhak-59.jpg"
+          image="/img/lezhak.webp"
           to="/blog/ulichnye-i-interernye-podushki"
         />
       </div>

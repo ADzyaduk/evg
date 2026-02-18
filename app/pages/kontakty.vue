@@ -8,7 +8,7 @@ useSeoMeta({
     'Телефон, мессенджеры и форма заявки для заказа подушек и чехлов на заказ для улицы и яхт.',
   ogType: 'website',
   ogUrl: 'https://pavlovcraft.ru/kontakty',
-  ogImage: 'https://pavlovcraft.ru/img/hero.jpg',
+  ogImage: 'https://pavlovcraft.ru/img/hero.webp',
   twitterCard: 'summary_large_image',
   robots: 'index,follow'
 })
@@ -36,7 +36,7 @@ const contacts = [
     value: '+7 (985) 424-07-03',
     link: 'https://max.ru/+79854240703',
     description: 'Напишите в мессенджер — ответим в течение рабочего дня',
-    image: '/max.png'
+    image: '/max.webp'
   },
   {
     icon: 'i-lucide-map-pin',

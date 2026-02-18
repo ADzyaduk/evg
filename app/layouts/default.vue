@@ -74,7 +74,7 @@ const items = computed<NavigationMenuItem[]>(() => [
           class="icon-hover"
         >
           <img
-            src="/max.png"
+            src="/max.webp"
             alt="Max"
             width="20"
             height="20"
@@ -202,7 +202,7 @@ const items = computed<NavigationMenuItem[]>(() => [
           class="icon-hover"
         >
           <img
-            src="/max.png"
+            src="/max.webp"
             alt="Max"
             width="20"
             height="20"

@@ -5,7 +5,7 @@ definePageMeta({
     'Политика конфиденциальности и обработки персональных данных мастерской PavlovCraft в Сочи. Узнайте, какие данные мы собираем, как их храним и для каких целей используем.',
   ogTitle: 'Политика конфиденциальности PavlovCraft',
   ogUrl: 'https://pavlovcraft.ru/politika-konfidentsialnosti',
-  ogImage: 'https://pavlovcraft.ru/img/hero.jpg'
+  ogImage: 'https://pavlovcraft.ru/img/hero.webp'
 })
 </script>
 

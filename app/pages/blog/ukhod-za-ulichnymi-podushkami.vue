@@ -8,7 +8,7 @@ useSeoMeta({
     'Регулярная чистка, правильная сушка, бережная стирка чехлов и хранение садовых подушек — простые правила, чтобы они служили дольше.',
   ogType: 'article',
   ogUrl: 'https://pavlovcraft.ru/blog/ukhod-za-ulichnymi-podushkami',
-  ogImage: 'https://pavlovcraft.ru/img/orig%20(1).webp',
+  ogImage: 'https://pavlovcraft.ru/img/orig1-opt.webp',
   twitterCard: 'summary_large_image',
   robots: 'index,follow'
 })
@@ -26,10 +26,10 @@ useSeoMeta({
       <div class="prose prose-sm max-w-none dark:prose-invert">
         <div class="not-prose mb-4 sm:float-right sm:ml-4 sm:mb-2 overflow-hidden rounded-lg bg-muted max-w-[260px]">
           <img
-            src="/img/orig (1).webp"
+            src="/img/orig1-opt.webp"
             alt="Уход за подушками для уличной мебели"
-            width="640"
-            height="360"
+            width="520"
+            height="293"
             loading="lazy"
             decoding="async"
             class="h-full w-full object-cover"
@@ -51,10 +51,10 @@ useSeoMeta({
 
         <div class="not-prose mb-4 sm:float-left sm:mr-4 sm:mb-2 overflow-hidden rounded-lg bg-muted max-w-[260px]">
           <img
-            src="/img/s-l1600.webp"
+            src="/img/sl1600-opt.webp"
             alt="Стиральная машина и аккуратные подушки"
-            width="640"
-            height="360"
+            width="520"
+            height="293"
             loading="lazy"
             decoding="async"
             class="h-full w-full object-cover"

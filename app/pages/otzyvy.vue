@@ -8,7 +8,7 @@ useSeoMeta({
     'Честные впечатления клиентов о качестве подушек, чехлов и сервисе PavlovCraft в Сочи.',
   ogType: 'website',
   ogUrl: 'https://pavlovcraft.ru/otzyvy',
-  ogImage: 'https://pavlovcraft.ru/img/Booka-lounge-set-1-Sadovaya-mebel-akatsiya.jpg',
+  ogImage: 'https://pavlovcraft.ru/img/booka.webp',
   twitterCard: 'summary_large_image',
   robots: 'index,follow'
 })

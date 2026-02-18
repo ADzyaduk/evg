@@ -8,7 +8,7 @@ useSeoMeta({
     'Критерии выбора ткани для подушек для уличной мебели: влагостойкость, UV‑защита, плотность и удобство ухода.',
   ogType: 'article',
   ogUrl: 'https://pavlovcraft.ru/blog/kak-vybrat-tkan-dlya-sadovykh-podushek',
-  ogImage: 'https://pavlovcraft.ru/img/Booka-lounge-set-1-Sadovaya-mebel-akatsiya.jpg',
+  ogImage: 'https://pavlovcraft.ru/img/booka.webp',
   twitterCard: 'summary_large_image',
   robots: 'index,follow'
 })
@@ -26,7 +26,7 @@ useSeoMeta({
       <div class="prose prose-sm max-w-none dark:prose-invert">
         <div class="not-prose mb-4 sm:float-right sm:ml-4 sm:mb-2 overflow-hidden rounded-lg bg-muted max-w-[260px]">
           <img
-            src="/img/Booka-lounge-set-1-Sadovaya-mebel-akatsiya.jpg"
+            src="/img/booka.webp"
             alt="Садовые подушки на уличной мебели"
             width="750"
             height="422"
@@ -51,10 +51,10 @@ useSeoMeta({
 
         <div class="not-prose mb-4 sm:float-left sm:mr-4 sm:mb-2 overflow-hidden rounded-lg bg-muted max-w-[260px]">
           <img
-            src="/img/orig.webp"
+            src="/img/orig-opt.webp"
             alt="Ткани и образцы для садовых подушек"
-            width="640"
-            height="360"
+            width="700"
+            height="394"
             loading="lazy"
             decoding="async"
             class="h-full w-full object-cover"

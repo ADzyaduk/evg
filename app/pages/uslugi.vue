@@ -8,7 +8,7 @@ useSeoMeta({
     'Подушки для уличной мебели, лежаков и яхт, а также перешив диванов под ваши размеры и задачи в Сочи и Краснодарском крае.',
   ogType: 'website',
   ogUrl: 'https://pavlovcraft.ru/uslugi',
-  ogImage: 'https://pavlovcraft.ru/img/1687874901_kartin-papik-pro-p-kartinki-more-plyazh-lezhak-59.jpg',
+  ogImage: 'https://pavlovcraft.ru/img/lezhak.webp',
   twitterCard: 'summary_large_image',
   robots: 'index,follow'
 })
