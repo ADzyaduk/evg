@@ -4,7 +4,7 @@
     alt="Логотип PavlovCraft"
     width="192"
     height="192"
-    class="h-20 sm:h-24 w-auto"
+    class="h-8 sm:h-10 w-auto"
     fetchpriority="high"
     decoding="async"
   >

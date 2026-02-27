@@ -34,7 +34,7 @@ const contacts = [
     icon: '',
     title: 'Мессенджер Max',
     value: '+7 (985) 424-07-03',
-    link: 'https://max.ru/+79854240703',
+    link: 'https://max.ru/u/f9LHodD0cOIUkq5cHidDnAM2t5izIzxMfIIMB_L-q1EuNzpkF3htlB-9c2Q',
     description: 'Напишите в мессенджер — ответим в течение рабочего дня',
     image: '/max.webp'
   },

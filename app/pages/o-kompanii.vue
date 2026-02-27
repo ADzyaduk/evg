@@ -73,19 +73,27 @@ useSeoMeta({
     >
       <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <UCard v-animate="1" class="text-center">
-          <p class="text-4xl font-bold text-primary">300+</p>
+          <p class="text-4xl font-bold text-primary">
+            <CountUp :to="300" suffix="+" />
+          </p>
           <p class="mt-1 text-sm text-muted">Специалистов в коллективе</p>
         </UCard>
         <UCard v-animate="2" class="text-center">
-          <p class="text-4xl font-bold text-primary">380+</p>
+          <p class="text-4xl font-bold text-primary">
+            <CountUp :to="380" suffix="+" />
+          </p>
           <p class="mt-1 text-sm text-muted">Единиц оборудования</p>
         </UCard>
         <UCard v-animate="3" class="text-center">
-          <p class="text-4xl font-bold text-primary">205</p>
+          <p class="text-4xl font-bold text-primary">
+            <CountUp :to="205" />
+          </p>
           <p class="mt-1 text-sm text-muted">Универсальных швейных машин</p>
         </UCard>
         <UCard v-animate="4" class="text-center">
-          <p class="text-4xl font-bold text-primary">4</p>
+          <p class="text-4xl font-bold text-primary">
+            <CountUp :to="4" :duration="800" />
+          </p>
           <p class="mt-1 text-sm text-muted">Раскройных стола с автоматической раскладкой</p>
         </UCard>
       </div>

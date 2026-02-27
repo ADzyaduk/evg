@@ -16,6 +16,15 @@ useSeoMeta({
 
 <template>
   <div>
+    <div class="max-w-(--ui-container) mx-auto px-4 pt-6">
+      <UBreadcrumb
+        :items="[
+          { label: 'Блог', to: '/blog' },
+          { label: 'Как выбрать ткань для садовых подушек' }
+        ]"
+      />
+    </div>
+
     <UPageHero
       v-animate
       title="Как выбрать ткань для садовых подушек"
@@ -51,8 +60,8 @@ useSeoMeta({
 
         <div class="not-prose mb-4 sm:float-left sm:mr-4 sm:mb-2 overflow-hidden rounded-lg bg-muted max-w-[260px]">
           <img
-            src="/img/orig-opt.webp"
-            alt="Ткани и образцы для садовых подушек"
+            src="/img/tkani/oxford-300d.jpg"
+            alt="Ткань Oxford 300D для уличных подушек"
             width="700"
             height="394"
             loading="lazy"
@@ -97,8 +106,8 @@ useSeoMeta({
           подойдёт под ваши условия, мы подскажем варианты и покажем образцы.
         </p>
 
-        <p class="font-semibold">
-          Ключевые фразы: подушки для уличной мебели, ткань для садовых подушек, чехлы на пляжные
+        <p class="sr-only">
+          Подушки для уличной мебели, ткань для садовых подушек, чехлы на пляжные
           лежаки, пошив подушек на заказ в Сочи.
         </p>
       </div>

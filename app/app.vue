@@ -9,7 +9,42 @@ useHead({
   ],
   htmlAttrs: {
     lang: 'ru'
-  }
+  },
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'LocalBusiness',
+        'name': 'PavlovCraft',
+        'description': description,
+        'url': 'https://pavlovcraft.ru',
+        'telephone': '+79854240703',
+        'address': {
+          '@type': 'PostalAddress',
+          'addressLocality': 'Сочи',
+          'addressRegion': 'Краснодарский край',
+          'addressCountry': 'RU'
+        },
+        'openingHoursSpecification': [
+          {
+            '@type': 'OpeningHoursSpecification',
+            'dayOfWeek': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+            'opens': '09:00',
+            'closes': '18:00'
+          },
+          {
+            '@type': 'OpeningHoursSpecification',
+            'dayOfWeek': 'Saturday',
+            'opens': '10:00',
+            'closes': '16:00'
+          }
+        ],
+        'image': 'https://pavlovcraft.ru/img/hero.webp',
+        'priceRange': '$$'
+      })
+    }
+  ]
 })
 
 useSeoMeta({

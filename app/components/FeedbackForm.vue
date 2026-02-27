@@ -27,6 +27,7 @@ const MAX_FILE_SIZE = 5 * 1024 * 1024 // 5MB
 const ACCEPTED_TYPES = ['image/jpeg', 'image/png', 'image/webp', 'image/gif']
 
 const toast = useToast()
+const isSubmitting = ref(false)
 
 function validateFiles(): string | null {
   const files = photos.value ?? []
@@ -51,6 +52,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
     return
   }
 
+  isSubmitting.value = true
   const formData = new FormData()
   formData.append('name', event.data.name)
   formData.append('phone', event.data.phone)
@@ -98,6 +100,8 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
       description: message,
       color: 'error'
     })
+  } finally {
+    isSubmitting.value = false
   }
 }
 </script>
@@ -203,6 +207,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
       type="submit"
       size="lg"
       block
+      :loading="isSubmitting"
       trailing-icon="i-lucide-send"
       class="mt-1"
     >

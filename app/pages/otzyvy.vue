@@ -33,16 +33,22 @@ useSeoMeta({
           class="card-hover"
         >
           <template #header>
-            <p class="font-semibold">
-              Подушки для террасы в Сочи
-            </p>
+            <div class="flex items-center gap-2">
+              <UIcon
+                name="i-lucide-quote"
+                class="size-5 text-primary/40"
+              />
+              <p class="font-semibold">
+                Подушки для террасы в Сочи
+              </p>
+            </div>
           </template>
-          <p class="text-sm text-muted">
+          <p class="text-sm text-muted italic">
             «Заказывали комплект подушек для уличной мебели на террасе. Помогли подобрать ткань под
             наш интерьер, сделали точные замеры и уложились в срок до открытия сезона. Подушки
             комфортные, цвет не выгорел за лето.»
           </p>
-          <p class="mt-3 text-xs text-muted">
+          <p class="mt-3 text-xs font-medium">
             — Мария, частный дом в Сочи
           </p>
         </UCard>
@@ -52,16 +58,22 @@ useSeoMeta({
           class="card-hover"
         >
           <template #header>
-            <p class="font-semibold">
-              Чехлы на пляжные лежаки
-            </p>
+            <div class="flex items-center gap-2">
+              <UIcon
+                name="i-lucide-quote"
+                class="size-5 text-primary/40"
+              />
+              <p class="font-semibold">
+                Чехлы на пляжные лежаки
+              </p>
+            </div>
           </template>
-          <p class="text-sm text-muted">
+          <p class="text-sm text-muted italic">
             «Нужно было обновить чехлы для лежаков у бассейна в апартаментах. Сделали образец, потом
             быстро дошили всю партию. Чехлы плотные, легко стираются, гости часто отмечают, что на
             лежаках удобно.»
           </p>
-          <p class="mt-3 text-xs text-muted">
+          <p class="mt-3 text-xs font-medium">
             — Управляющая апартаментов
           </p>
         </UCard>
@@ -71,15 +83,21 @@ useSeoMeta({
           class="card-hover"
         >
           <template #header>
-            <p class="font-semibold">
-              Носовые подушки для яхты
-            </p>
+            <div class="flex items-center gap-2">
+              <UIcon
+                name="i-lucide-quote"
+                class="size-5 text-primary/40"
+              />
+              <p class="font-semibold">
+                Носовые подушки для яхты
+              </p>
+            </div>
           </template>
-          <p class="text-sm text-muted">
+          <p class="text-sm text-muted italic">
             «Заказывали носовые подушки из Sunbrella. Учли форму палубы, сделали аккуратные швы и
             крепления, которые не мешают. Второй сезон выглядят как новые, обслуживанием довольны.»
           </p>
-          <p class="mt-3 text-xs text-muted">
+          <p class="mt-3 text-xs font-medium">
             — Владельцы яхты
           </p>
         </UCard>

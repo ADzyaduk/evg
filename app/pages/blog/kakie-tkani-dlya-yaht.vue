@@ -8,7 +8,7 @@ useSeoMeta({
     'Чем специализированные морские ткани вроде Sunbrella отличаются от обычных уличных материалов и когда их лучше использовать на яхте.',
   ogType: 'article',
   ogUrl: 'https://pavlovcraft.ru/blog/kakie-tkani-dlya-yaht',
-  ogImage: 'https://images.pexels.com/photos/1004665/pexels-photo-1004665.jpeg?auto=compress&cs=tinysrgb&w=1200',
+  ogImage: 'https://pavlovcraft.ru/img/tkani/sunbrella-fabrics.jpg',
   twitterCard: 'summary_large_image',
   robots: 'index,follow'
 })
@@ -16,6 +16,15 @@ useSeoMeta({
 
 <template>
   <div>
+    <div class="max-w-(--ui-container) mx-auto px-4 pt-6">
+      <UBreadcrumb
+        :items="[
+          { label: 'Блог', to: '/blog' },
+          { label: 'Ткани для яхт и морского климата' }
+        ]"
+      />
+    </div>
+
     <UPageHero
       v-animate
       title="Какие ткани лучше для яхт и морского климата"
@@ -26,8 +35,12 @@ useSeoMeta({
       <div class="grid gap-4 lg:grid-cols-[2fr,3fr] items-start">
         <div class="overflow-hidden rounded-lg bg-muted">
           <img
-            src="https://images.pexels.com/photos/1004665/pexels-photo-1004665.jpeg?auto=compress&cs=tinysrgb&w=1200"
-            alt="Носовые подушки на палубе яхты"
+            src="/img/tkani/sunbrella-fabrics.jpg"
+            alt="Образцы морских тканей Sunbrella для яхт"
+            width="700"
+            height="394"
+            loading="lazy"
+            decoding="async"
             class="h-full w-full object-cover"
           >
         </div>
@@ -76,8 +89,8 @@ useSeoMeta({
             плюсы и минусы каждого решения по бюджету и долговечности.
           </p>
 
-          <p class="font-semibold">
-            Ключевые фразы: носовые подушки для яхт, ткани Sunbrella для яхт, мягкая мебель для
+          <p class="sr-only">
+            Носовые подушки для яхт, ткани Sunbrella для яхт, мягкая мебель для
             яхты на заказ, пошив подушек для яхты в Сочи.
           </p>
         </div>
