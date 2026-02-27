@@ -2,16 +2,11 @@ FROM node:20-alpine AS build
 
 WORKDIR /app
 
-# Устанавливаем pnpm
-RUN corepack enable && corepack prepare pnpm@10.28.1 --activate
+COPY package.json package-lock.json ./
+RUN npm ci
 
-# Устанавливаем зависимости
-COPY package.json pnpm-lock.yaml ./
-RUN pnpm install --frozen-lockfile
-
-# Копируем код и собираем Nuxt
 COPY . .
-RUN pnpm build
+RUN npm run build
 
 
 FROM node:20-alpine AS runner
