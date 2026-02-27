@@ -12,6 +12,19 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
   robots: 'index,follow'
 })
+
+const otherArticles = [
+  {
+    title: 'Уход за подушками для уличной мебели',
+    to: '/blog/ukhod-za-ulichnymi-podushkami',
+    image: '/img/orig-opt.webp'
+  },
+  {
+    title: 'Какие ткани лучше для яхт',
+    to: '/blog/kakie-tkani-dlya-yaht',
+    image: '/img/yacht.webp'
+  }
+]
 </script>
 
 <template>
@@ -25,26 +38,54 @@ useSeoMeta({
       />
     </div>
 
-    <UPageHero
-      v-animate
-      title="Как выбрать ткань для садовых подушек"
-      description="На что обратить внимание при выборе ткани для подушек для уличной мебели, чтобы они служили дольше одного сезона."
-    />
-
-    <UPageSection v-animate>
-      <div class="prose prose-sm max-w-none dark:prose-invert">
-        <div class="not-prose mb-4 sm:float-right sm:ml-4 sm:mb-2 overflow-hidden rounded-lg bg-muted max-w-[260px]">
-          <img
-            src="/img/booka.webp"
-            alt="Садовые подушки на уличной мебели"
-            width="750"
-            height="422"
-            loading="lazy"
-            decoding="async"
-            class="h-full w-full object-cover"
+    <article class="max-w-3xl mx-auto px-4 py-10 lg:py-16">
+      <header v-animate>
+        <div class="flex items-center gap-3 mb-4">
+          <UBadge
+            label="Ткани"
+            variant="subtle"
+            size="sm"
+          />
+          <span class="text-xs text-muted flex items-center gap-1">
+            <UIcon
+              name="i-lucide-clock"
+              class="size-3"
+            />
+            4 мин
+          </span>
+          <time
+            datetime="2025-01-15"
+            class="text-xs text-muted"
           >
+            15 января 2025
+          </time>
         </div>
 
+        <h1 class="text-3xl sm:text-4xl font-bold tracking-tight">
+          Как выбрать ткань для садовых подушек
+        </h1>
+        <p class="mt-3 text-lg text-muted">
+          На что обратить внимание, чтобы подушки служили дольше одного сезона.
+        </p>
+      </header>
+
+      <div
+        v-animate
+        class="mt-8 overflow-hidden rounded-2xl"
+      >
+        <img
+          src="/img/booka.webp"
+          alt="Садовые подушки на уличной мебели"
+          width="750"
+          height="422"
+          class="w-full object-cover aspect-[2/1]"
+        >
+      </div>
+
+      <div
+        v-animate
+        class="mt-10 prose prose-base max-w-none dark:prose-invert"
+      >
         <p>
           Подушки для уличной мебели работают в более жёстких условиях, чем домашние: солнце,
           влага, перепады температур, пыль и контакт с кремами для загара. Поэтому обычные
@@ -58,7 +99,7 @@ useSeoMeta({
           лежат возле бассейна или моря.
         </p>
 
-        <div class="not-prose mb-4 sm:float-left sm:mr-4 sm:mb-2 overflow-hidden rounded-lg bg-muted max-w-[260px]">
+        <div class="not-prose my-6 overflow-hidden rounded-xl">
           <img
             src="/img/tkani/oxford-300d.webp"
             alt="Ткань Oxford 300D для уличных подушек"
@@ -66,8 +107,11 @@ useSeoMeta({
             height="394"
             loading="lazy"
             decoding="async"
-            class="h-full w-full object-cover"
+            class="w-full object-cover aspect-video"
           >
+          <p class="text-xs text-muted mt-2 text-center">
+            Oxford 300D — одна из популярных тканей для уличных подушек
+          </p>
         </div>
 
         <h2>2. UV‑защита и устойчивость к выгоранию</h2>
@@ -98,19 +142,60 @@ useSeoMeta({
           накапливают запахи. Важно, чтобы ткань и наполнитель «работали в паре»: ткань не должна
           промокать до внутреннего слоя при небольшом дожде или брызгах.
         </p>
-
-        <h2>Итоги</h2>
-        <p>
-          Выбирая ткань для садовых подушек и подушек для уличной мебели, ориентируйтесь на
-          влагостойкость, UV‑защиту, плотность и удобство ухода. Если вы не уверены, какая коллекция
-          подойдёт под ваши условия, мы подскажем варианты и покажем образцы.
-        </p>
-
-        <p class="sr-only">
-          Подушки для уличной мебели, ткань для садовых подушек, чехлы на пляжные
-          лежаки, пошив подушек на заказ в Сочи.
-        </p>
       </div>
-    </UPageSection>
+
+      <div
+        v-animate
+        class="mt-10 p-6 rounded-2xl bg-primary/5 border border-primary/10"
+      >
+        <p class="font-semibold">
+          Итог
+        </p>
+        <p class="text-sm text-muted mt-1">
+          Ориентируйтесь на влагостойкость, UV‑защиту, плотность и удобство ухода.
+          Если не уверены, какая ткань подойдёт — мы покажем образцы и подберём под ваши условия.
+        </p>
+        <UButton
+          to="/kontakty"
+          label="Получить консультацию"
+          variant="soft"
+          trailing-icon="i-lucide-arrow-right"
+          class="mt-4"
+        />
+      </div>
+
+      <USeparator class="my-10" />
+
+      <div v-animate>
+        <p class="font-semibold mb-4">
+          Читайте также
+        </p>
+        <div class="grid gap-4 sm:grid-cols-2">
+          <NuxtLink
+            v-for="a in otherArticles"
+            :key="a.to"
+            :to="a.to"
+            class="group flex gap-4 items-center p-3 rounded-xl hover:bg-elevated/60 transition-colors"
+          >
+            <img
+              :src="a.image"
+              :alt="a.title"
+              width="120"
+              height="80"
+              loading="lazy"
+              class="size-16 rounded-lg object-cover shrink-0"
+            >
+            <p class="text-sm font-medium group-hover:text-primary transition-colors">
+              {{ a.title }}
+            </p>
+          </NuxtLink>
+        </div>
+      </div>
+    </article>
+
+    <p class="sr-only">
+      Подушки для уличной мебели, ткань для садовых подушек, чехлы на пляжные
+      лежаки, пошив подушек на заказ в Сочи.
+    </p>
   </div>
 </template>

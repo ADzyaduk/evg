@@ -8,10 +8,51 @@ useSeoMeta({
     'Подушки для уличной мебели и диванные подушки в доме — разные задачи. Рассказываем о тканях, наполнителях и практическом использовании.',
   ogType: 'article',
   ogUrl: 'https://pavlovcraft.ru/blog/ulichnye-i-interernye-podushki',
-  ogImage: 'https://images.pexels.com/photos/269255/pexels-photo-269255.jpeg?auto=compress&cs=tinysrgb&w=800',
+  ogImage: 'https://pavlovcraft.ru/img/lezhak.webp',
   twitterCard: 'summary_large_image',
   robots: 'index,follow'
 })
+
+const comparison = [
+  {
+    param: 'Ткань',
+    outdoor: 'Плотная, с пропиткой от воды и UV-защитой',
+    indoor: 'Мягкая, декоративная, без защиты'
+  },
+  {
+    param: 'Наполнитель',
+    outdoor: 'Быстросохнущий, устойчивый к влаге',
+    indoor: 'Пух, синтепон, поролон — впитывают воду'
+  },
+  {
+    param: 'Выгорание',
+    outdoor: 'Устойчива к солнцу на несколько сезонов',
+    indoor: 'Выгорает за 1–2 месяца на улице'
+  },
+  {
+    param: 'Уход',
+    outdoor: 'Съёмные чехлы, стирка, чистка щёткой',
+    indoor: 'Химчистка, бережная стирка'
+  },
+  {
+    param: 'Стоимость',
+    outdoor: 'Выше, но окупается сроком службы',
+    indoor: 'Ниже, но для улицы непригодна'
+  }
+]
+
+const otherArticles = [
+  {
+    title: 'Как выбрать ткань для садовых подушек',
+    to: '/blog/kak-vybrat-tkan-dlya-sadovykh-podushek',
+    image: '/img/booka.webp'
+  },
+  {
+    title: 'Уход за подушками для уличной мебели',
+    to: '/blog/ukhod-za-ulichnymi-podushkami',
+    image: '/img/orig-opt.webp'
+  }
+]
 </script>
 
 <template>
@@ -25,42 +66,117 @@ useSeoMeta({
       />
     </div>
 
-    <UPageHero
-      v-animate
-      title="Чем уличные подушки отличаются от интерьерных"
-      description="Почему нельзя просто вынести диванные подушки на улицу и чего ждать от настоящих уличных материалов."
-    />
-
-    <UPageSection v-animate>
-      <div class="prose prose-sm max-w-none dark:prose-invert">
-        <div class="not-prose mb-4 sm:float-right sm:ml-4 sm:mb-2 overflow-hidden rounded-lg bg-muted max-w-[260px]">
-          <img
-            src="https://images.pexels.com/photos/269255/pexels-photo-269255.jpeg?auto=compress&cs=tinysrgb&w=800"
-            alt="Уличные подушки на террасе"
-            class="h-full w-full object-cover"
+    <article class="max-w-3xl mx-auto px-4 py-10 lg:py-16">
+      <header v-animate>
+        <div class="flex items-center gap-3 mb-4">
+          <UBadge
+            label="Советы"
+            variant="subtle"
+            size="sm"
+          />
+          <span class="text-xs text-muted flex items-center gap-1">
+            <UIcon
+              name="i-lucide-clock"
+              class="size-3"
+            />
+            4 мин
+          </span>
+          <time
+            datetime="2025-01-28"
+            class="text-xs text-muted"
           >
+            28 января 2025
+          </time>
         </div>
 
+        <h1 class="text-3xl sm:text-4xl font-bold tracking-tight">
+          Чем уличные подушки отличаются от интерьерных
+        </h1>
+        <p class="mt-3 text-lg text-muted">
+          Почему нельзя просто вынести домашние подушки на улицу и чего ждать от уличных материалов.
+        </p>
+      </header>
+
+      <div
+        v-animate
+        class="mt-8 overflow-hidden rounded-2xl"
+      >
+        <img
+          src="/img/lezhak.webp"
+          alt="Уличные подушки на пляжных лежаках"
+          width="750"
+          height="422"
+          class="w-full object-cover aspect-[2/1]"
+        >
+      </div>
+
+      <div
+        v-animate
+        class="mt-10 prose prose-base max-w-none dark:prose-invert"
+      >
         <p>
           Интерьерные диванные подушки и подушки для уличной мебели решают разные задачи. Внутри
           дома ткани почти не сталкиваются с ультрафиолетом, влагой и резкими перепадами
           температур, а на улице это норма. Поэтому уличные материалы устроены иначе.
         </p>
+      </div>
 
+      <div
+        v-animate
+        class="mt-8 overflow-x-auto"
+      >
+        <table class="w-full text-sm border-collapse">
+          <thead>
+            <tr class="border-b border-default">
+              <th class="text-left py-3 pr-4 font-semibold">
+                Параметр
+              </th>
+              <th class="text-left py-3 px-4 font-semibold text-primary">
+                <UIcon
+                  name="i-lucide-sun"
+                  class="size-4 mr-1 inline-block align-middle"
+                />
+                Уличные
+              </th>
+              <th class="text-left py-3 pl-4 font-semibold">
+                <UIcon
+                  name="i-lucide-sofa"
+                  class="size-4 mr-1 inline-block align-middle"
+                />
+                Интерьерные
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              v-for="row in comparison"
+              :key="row.param"
+              class="border-b border-default/50"
+            >
+              <td class="py-3 pr-4 font-medium">
+                {{ row.param }}
+              </td>
+              <td class="py-3 px-4 text-muted">
+                {{ row.outdoor }}
+              </td>
+              <td class="py-3 pl-4 text-muted">
+                {{ row.indoor }}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div
+        v-animate
+        class="mt-10 prose prose-base max-w-none dark:prose-invert"
+      >
         <h2>Ткани и пропитки</h2>
         <p>
           Уличные ткани плотнее, часто имеют водоотталкивающую пропитку и защиту от выгорания.
           Интерьерная хлопковая или вискозная ткань быстро намокнет, потускнеет и может покрыться
           пятнами плесени, если оставить её под дождём.
         </p>
-
-        <div class="not-prose mb-4 sm:float-left sm:mr-4 sm:mb-2 overflow-hidden rounded-lg bg-muted max-w-[260px]">
-          <img
-            src="https://images.pexels.com/photos/269262/pexels-photo-269262.jpeg?auto=compress&cs=tinysrgb&w=800"
-            alt="Интерьерные подушки в гостиной"
-            class="h-full w-full object-cover"
-          >
-        </div>
 
         <h2>Наполнители</h2>
         <p>
@@ -75,17 +191,59 @@ useSeoMeta({
           чистку. Это не значит, что их можно постоянно держать под ливнем, но запас прочности у
           них заметно выше, чем у интерьерных аналогов.
         </p>
-
-        <p class="font-semibold">
-          Если вы хотите, чтобы зона отдыха на улице радовала не один сезон, стоит сразу выбирать
-          подушки и чехлы из уличных тканей, а не переносить диванные подушки с домашнего дивана.
-        </p>
-
-        <p class="sr-only">
-          Подушки для уличной мебели, отличие уличных и интерьерных подушек, чехлы
-          для террас и балконов в Сочи.
-        </p>
       </div>
-    </UPageSection>
+
+      <div
+        v-animate
+        class="mt-10 p-6 rounded-2xl bg-primary/5 border border-primary/10"
+      >
+        <p class="font-semibold">
+          Хотите подушки, которые переживут не один сезон?
+        </p>
+        <p class="text-sm text-muted mt-1">
+          Мы подберём уличные ткани и наполнители под ваш объект — от садового кресла до яхты.
+        </p>
+        <UButton
+          to="/kontakty"
+          label="Заказать подушки"
+          variant="soft"
+          trailing-icon="i-lucide-arrow-right"
+          class="mt-4"
+        />
+      </div>
+
+      <USeparator class="my-10" />
+
+      <div v-animate>
+        <p class="font-semibold mb-4">
+          Читайте также
+        </p>
+        <div class="grid gap-4 sm:grid-cols-2">
+          <NuxtLink
+            v-for="a in otherArticles"
+            :key="a.to"
+            :to="a.to"
+            class="group flex gap-4 items-center p-3 rounded-xl hover:bg-elevated/60 transition-colors"
+          >
+            <img
+              :src="a.image"
+              :alt="a.title"
+              width="120"
+              height="80"
+              loading="lazy"
+              class="size-16 rounded-lg object-cover shrink-0"
+            >
+            <p class="text-sm font-medium group-hover:text-primary transition-colors">
+              {{ a.title }}
+            </p>
+          </NuxtLink>
+        </div>
+      </div>
+    </article>
+
+    <p class="sr-only">
+      Подушки для уличной мебели, отличие уличных и интерьерных подушек, чехлы
+      для террас и балконов в Сочи.
+    </p>
   </div>
 </template>
