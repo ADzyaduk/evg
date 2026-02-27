@@ -9,7 +9,7 @@
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
     "typecheck": "nuxt typecheck",
-    "predeploy": "pnpm run lint && pnpm run typecheck && pnpm run build"
+    "predeploy": "npm run lint && npm run typecheck && npm run build"
   },
   "dependencies": {
     "@iconify-json/lucide": "^1.2.87",
@@ -25,6 +25,5 @@
     "eslint": "^9.39.2",
     "typescript": "^5.9.3",
     "vue-tsc": "^3.2.4"
-  },
-  "packageManager": "pnpm@10.28.1"
+  }
 }
