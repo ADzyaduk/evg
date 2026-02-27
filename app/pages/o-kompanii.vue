@@ -7,8 +7,8 @@ useSeoMeta({
   ogDescription:
     'Узнайте больше о нашей фабрике: оборудование, команда и подход к работе.',
   ogType: 'website',
-  ogUrl: 'https://ВАШ_ДОМЕН/o-kompanii',
-  ogImage: 'https://ВАШ_ДОМЕН/img/about/hero.PNG',
+  ogUrl: 'https://pavlovcraft.ru/o-kompanii',
+  ogImage: 'https://pavlovcraft.ru/img/about/hero.webp',
   twitterCard: 'summary_large_image',
   robots: 'index,follow'
 })
@@ -23,7 +23,7 @@ useSeoMeta({
       orientation="horizontal"
     >
       <img
-        src="/img/about/hero.PNG"
+        src="/img/about/hero.webp"
         alt="Швейный цех — ряды промышленных машин"
         width="760"
         height="428"
@@ -54,7 +54,7 @@ useSeoMeta({
         </div>
         <img
           v-animate="1"
-          src="/img/about/015.PNG"
+          src="/img/about/015.webp"
           alt="Сотрудницы за стёгальным оборудованием"
           width="760"
           height="428"
@@ -102,7 +102,7 @@ useSeoMeta({
           <template #header>
             <div class="aspect-video overflow-hidden rounded-lg bg-muted">
               <img
-                src="/img/about/011.PNG"
+                src="/img/about/011.webp"
                 alt="Швейная машина TYPICAL в цехе"
                 width="700"
                 height="394"
@@ -127,7 +127,7 @@ useSeoMeta({
           <template #header>
             <div class="aspect-video overflow-hidden rounded-lg bg-muted">
               <img
-                src="/img/about/008.PNG"
+                src="/img/about/008.webp"
                 alt="Полуавтомат для установки кнопок и люверсов"
                 width="700"
                 height="394"
@@ -152,7 +152,7 @@ useSeoMeta({
           <template #header>
             <div class="aspect-video overflow-hidden rounded-lg bg-muted">
               <img
-                src="/img/about/009.PNG"
+                src="/img/about/009.webp"
                 alt="Раскройный цех — работа на оборудовании"
                 width="700"
                 height="394"
@@ -177,7 +177,7 @@ useSeoMeta({
           <template #header>
             <div class="aspect-video overflow-hidden rounded-lg bg-muted">
               <img
-                src="/img/about/001.PNG"
+                src="/img/about/001.webp"
                 alt="Полуавтомат для стёжки с лазерной обрезкой"
                 width="700"
                 height="394"
@@ -201,7 +201,7 @@ useSeoMeta({
           <template #header>
             <div class="aspect-video overflow-hidden rounded-lg bg-muted">
               <img
-                src="/img/about/004.PNG"
+                src="/img/about/004.webp"
                 alt="Термотрансферный принтер AUDLEY для нанесения логотипов"
                 width="700"
                 height="394"
@@ -224,7 +224,7 @@ useSeoMeta({
           <template #header>
             <div class="aspect-video overflow-hidden rounded-lg bg-muted">
               <img
-                src="/img/about/003.PNG"
+                src="/img/about/003.webp"
                 alt="Панель управления термотрансферным оборудованием"
                 width="700"
                 height="394"
