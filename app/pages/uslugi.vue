@@ -249,7 +249,7 @@ useSeoMeta({
           <template #header>
             <div class="aspect-video overflow-hidden rounded-lg bg-muted">
               <img
-                src="/img/tkani/sunbrella.jpg"
+                src="/img/tkani/sunbrella.webp"
                 alt="Образцы тканей Sunbrella и морских материалов"
                 width="700"
                 height="394"
@@ -277,7 +277,7 @@ useSeoMeta({
           <template #header>
             <div class="aspect-video overflow-hidden rounded-lg bg-muted">
               <img
-                src="/img/tkani/oxford.webp"
+                src="/img/tkani/oxford-300d.webp"
                 alt="Уличные ткани Oxford и полиэстер с пропиткой"
                 width="700"
                 height="394"
@@ -305,7 +305,7 @@ useSeoMeta({
           <template #header>
             <div class="aspect-video overflow-hidden rounded-lg bg-muted">
               <img
-                src="/img/tkani/Alcantara.jpg"
+                src="/img/tkani/alcantara.webp"
                 alt="Кожа и алькантара для интерьеров и яхт"
                 width="700"
                 height="394"

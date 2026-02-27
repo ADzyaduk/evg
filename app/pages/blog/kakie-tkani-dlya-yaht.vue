@@ -8,7 +8,7 @@ useSeoMeta({
     'Чем специализированные морские ткани вроде Sunbrella отличаются от обычных уличных материалов и когда их лучше использовать на яхте.',
   ogType: 'article',
   ogUrl: 'https://pavlovcraft.ru/blog/kakie-tkani-dlya-yaht',
-  ogImage: 'https://pavlovcraft.ru/img/tkani/sunbrella-fabrics.jpg',
+  ogImage: 'https://pavlovcraft.ru/img/tkani/sunbrella-fabrics.webp',
   twitterCard: 'summary_large_image',
   robots: 'index,follow'
 })
@@ -35,7 +35,7 @@ useSeoMeta({
       <div class="grid gap-4 lg:grid-cols-[2fr,3fr] items-start">
         <div class="overflow-hidden rounded-lg bg-muted">
           <img
-            src="/img/tkani/sunbrella-fabrics.jpg"
+            src="/img/tkani/sunbrella-fabrics.webp"
             alt="Образцы морских тканей Sunbrella для яхт"
             width="700"
             height="394"

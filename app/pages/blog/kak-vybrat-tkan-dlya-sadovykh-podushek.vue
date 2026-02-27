@@ -60,7 +60,7 @@ useSeoMeta({
 
         <div class="not-prose mb-4 sm:float-left sm:mr-4 sm:mb-2 overflow-hidden rounded-lg bg-muted max-w-[260px]">
           <img
-            src="/img/tkani/oxford-300d.jpg"
+            src="/img/tkani/oxford-300d.webp"
             alt="Ткань Oxford 300D для уличных подушек"
             width="700"
             height="394"
