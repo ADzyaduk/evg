@@ -1,65 +1,41 @@
 export default defineNuxtPlugin(() => {
-  // Плагины *.client.ts выполняются только в браузере
   const config = useRuntimeConfig()
-  const { yandexMetrikaId, gaMeasurementId } = config.public as {
+  const { yandexMetrikaId } = config.public as {
     yandexMetrikaId?: string
-    gaMeasurementId?: string
   }
 
-  if (typeof document === 'undefined') {
-    return
+  if (typeof document === 'undefined') return
+
+  const { preferences } = useCookieConsent()
+
+  function loadYandexMetrika(id: string) {
+    if (document.getElementById('ym-script')) return
+
+    const ymScript = document.createElement('script')
+    ymScript.id = 'ym-script'
+    ymScript.async = true
+    ymScript.src = 'https://mc.yandex.ru/metrika/tag.js'
+    document.head.appendChild(ymScript)
+
+    const initScript = document.createElement('script')
+    initScript.innerHTML = `
+      (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0];
+        k.async=1;k.src=r;a.parentNode.insertBefore(k,a);
+      })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+      ym(${JSON.stringify(id)}, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true });
+    `
+    document.head.appendChild(initScript)
   }
 
-  // Яндекс.Метрика
-  if (yandexMetrikaId) {
-    const ymScriptId = 'ym-script'
-
-    if (!document.getElementById(ymScriptId)) {
-      const ymScript = document.createElement('script')
-      ymScript.id = ymScriptId
-      ymScript.async = true
-      ymScript.src = 'https://mc.yandex.ru/metrika/tag.js'
-      document.head.appendChild(ymScript)
-
-      // Инициализация счётчика
-      const initScript = document.createElement('script')
-      initScript.innerHTML = `
-        (function(m,e,t,r,i,k,a){
-          m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-          m[i].l=1*new Date();
-          k=e.createElement(t),a=e.getElementsByTagName(t)[0];
-          k.async=1;k.src=r;a.parentNode.insertBefore(k,a);
-        })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-        ym(${JSON.stringify(
-          yandexMetrikaId
-        )}, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true });
-      `
-      document.head.appendChild(initScript)
-    }
+  function tryLoad() {
+    if (!preferences.value?.analytics) return
+    if (yandexMetrikaId) loadYandexMetrika(yandexMetrikaId)
   }
 
-  // Google Analytics 4
-  if (gaMeasurementId) {
-    const gaScriptId = 'ga4-script'
+  tryLoad()
 
-    if (!document.getElementById(gaScriptId)) {
-      const gaScript = document.createElement('script')
-      gaScript.id = gaScriptId
-      gaScript.async = true
-      gaScript.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(
-        gaMeasurementId
-      )}`
-      document.head.appendChild(gaScript)
-
-      const inlineScript = document.createElement('script')
-      inlineScript.innerHTML = `
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', '${gaMeasurementId}');
-      `
-      document.head.appendChild(inlineScript)
-    }
-  }
+  watch(preferences, () => tryLoad(), { deep: true })
 })

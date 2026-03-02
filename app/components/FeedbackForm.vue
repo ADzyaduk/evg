@@ -190,14 +190,19 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
       >
         <template #description>
           <span class="text-xs sm:text-sm">
-            Отправляя форму, вы подтверждаете согласие с
+            Отправляя форму, вы подтверждаете
+            <NuxtLink
+              to="/soglasie-na-obrabotku"
+              class="text-primary underline-offset-2 hover:underline"
+            >
+              согласие на обработку персональных данных
+            </NuxtLink>
+            и принимаете
             <NuxtLink
               to="/politika-konfidentsialnosti"
               class="text-primary underline-offset-2 hover:underline"
             >
-              политикой обработки персональных данных
-            </NuxtLink>
-            .
+              политику конфиденциальности</NuxtLink>.
           </span>
         </template>
       </UCheckbox>

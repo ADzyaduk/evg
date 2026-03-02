@@ -27,9 +27,7 @@ export default defineNuxtConfig({
     public: {
       siteUrl: 'https://pavlovcraft.ru',
       /** ID счётчика Яндекс.Метрики (например, 12345678). */
-      yandexMetrikaId: '',
-      /** GA4 Measurement ID (например, G-XXXXXXX). */
-      gaMeasurementId: ''
+      yandexMetrikaId: '106779888'
     }
   },
 
@@ -42,6 +40,7 @@ export default defineNuxtConfig({
     '/o-kompanii': { prerender: true },
     '/otzyvy': { prerender: true },
     '/politika-konfidentsialnosti': { prerender: true },
+    '/soglasie-na-obrabotku': { prerender: true },
     // Долгий кэш для статики — меньше повторных запросов, быстрее повторные заходы
     '/img/**': {
       headers: { 'Cache-Control': 'public, max-age=31536000, immutable' }

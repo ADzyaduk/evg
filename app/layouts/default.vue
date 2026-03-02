@@ -296,14 +296,27 @@ const items = computed<NavigationMenuItem[]>(() => [
 
         <div class="flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-muted">
           <p>© {{ new Date().getFullYear() }} PavlovCraft. Все права защищены.</p>
-          <NuxtLink
-            to="/politika-konfidentsialnosti"
-            class="hover:text-primary underline-offset-2 hover:underline"
-          >
-            Политика обработки персональных данных
-          </NuxtLink>
+          <div class="flex flex-col sm:flex-row gap-1 sm:gap-3">
+            <NuxtLink
+              to="/politika-konfidentsialnosti"
+              class="hover:text-primary underline-offset-2 hover:underline"
+            >
+              Политика конфиденциальности
+            </NuxtLink>
+            <span class="hidden sm:inline text-muted/40">|</span>
+            <NuxtLink
+              to="/soglasie-na-obrabotku"
+              class="hover:text-primary underline-offset-2 hover:underline"
+            >
+              Согласие на обработку ПД
+            </NuxtLink>
+          </div>
         </div>
       </div>
     </footer>
+
+    <ClientOnly>
+      <CookieBanner />
+    </ClientOnly>
   </div>
 </template>
