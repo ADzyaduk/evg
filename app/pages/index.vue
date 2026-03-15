@@ -15,7 +15,7 @@ useSeoMeta({
 
 // Preload LCP-изображения для ускорения первой отрисовки
 useHead({
-  link: [{ rel: 'preload', as: 'image', href: '/img/about/hero.webp' }]
+  link: [{ rel: 'preload', as: 'image', href: '/img/hero.webp' }]
 })
 </script>
 
@@ -26,7 +26,7 @@ useHead({
       class="relative isolate overflow-hidden"
     >
       <img
-        src="/img/about/hero.webp"
+        src="/img/hero.webp"
         alt="Зона отдыха с уличной мебелью и подушками"
         width="1920"
         height="1080"
