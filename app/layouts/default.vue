@@ -15,6 +15,11 @@ const items = computed<NavigationMenuItem[]>(() => [
     active: route.path.startsWith('/uslugi')
   },
   {
+    label: 'Ткани',
+    to: '/tkani',
+    active: route.path.startsWith('/tkani')
+  },
+  {
     label: 'О компании',
     to: '/o-kompanii',
     active: route.path.startsWith('/o-kompanii')
@@ -133,6 +138,16 @@ const items = computed<NavigationMenuItem[]>(() => [
           :aria-pressed="route.path.startsWith('/uslugi')"
         />
         <UButton
+          to="/tkani"
+          icon="i-lucide-layers"
+          label="Ткани"
+          size="md"
+          color="neutral"
+          variant="ghost"
+          class="flex-1 flex flex-col items-center justify-center gap-0.5"
+          :aria-pressed="route.path.startsWith('/tkani')"
+        />
+        <UButton
           to="/kontakty"
           icon="i-lucide-phone"
           label="Контакты"
@@ -170,7 +185,7 @@ const items = computed<NavigationMenuItem[]>(() => [
               <AppLogo class="h-8 w-auto" />
             </NuxtLink>
             <p class="text-sm text-muted">
-              Пошив подушек для уличной мебели, пляжных лежаков и яхт в Сочи и Краснодарском крае.
+              Швейное производство и поставки тканей. Пошив на заказ в Сочи и Краснодарском крае.
             </p>
           </div>
 
@@ -186,6 +201,14 @@ const items = computed<NavigationMenuItem[]>(() => [
                   class="hover:text-primary transition-colors"
                 >
                   Услуги
+                </NuxtLink>
+              </li>
+              <li>
+                <NuxtLink
+                  to="/tkani"
+                  class="hover:text-primary transition-colors"
+                >
+                  Ткани
                 </NuxtLink>
               </li>
               <li>
@@ -230,7 +253,7 @@ const items = computed<NavigationMenuItem[]>(() => [
                   name="i-lucide-map-pin"
                   class="size-4 shrink-0"
                 />
-                <span>Сочи, Краснодарский край</span>
+                <span>Сочи, ул. Мира 44а</span>
               </li>
               <li class="flex items-center gap-2">
                 <UIcon

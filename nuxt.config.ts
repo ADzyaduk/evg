@@ -59,6 +59,7 @@ export default defineNuxtConfig({
     '/kontakty': { prerender: true },
     '/uslugi': { prerender: true },
     '/o-kompanii': { prerender: true },
+    '/tkani': { prerender: true },
     '/otzyvy': { prerender: true },
     '/politika-konfidentsialnosti': { prerender: true },
     '/soglasie-na-obrabotku': { prerender: true },

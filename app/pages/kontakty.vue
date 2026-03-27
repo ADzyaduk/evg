@@ -41,9 +41,9 @@ const contacts = [
   {
     icon: 'i-lucide-map-pin',
     title: 'Адрес',
-    value: 'Сочи, Краснодарский край',
-    link: 'https://maps.google.com/?q=Сочи',
-    description: 'Выезжаем на замер в Сочи и по краю',
+    value: 'Сочи, ул. Мира 44а',
+    link: 'https://maps.google.com/?q=Сочи,+ул.+Мира+44а',
+    description: 'Офис в центре Сочи — заезжайте или выезжаем к вам',
     image: null
   }
 ]

@@ -22,6 +22,7 @@ useHead({
         'telephone': '+79854240703',
         'address': {
           '@type': 'PostalAddress',
+          'streetAddress': 'ул. Мира, 44а',
           'addressLocality': 'Сочи',
           'addressRegion': 'Краснодарский край',
           'addressCountry': 'RU'

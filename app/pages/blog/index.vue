@@ -65,7 +65,7 @@ function formatDate(dateStr: string) {
   <div>
     <section
       v-animate
-      class="relative overflow-hidden bg-gradient-to-br from-primary/5 via-transparent to-primary/5 py-16 lg:py-24"
+      class="relative overflow-hidden bg-linear-to-br from-primary/5 via-transparent to-primary/5 py-16 lg:py-24"
     >
       <div class="max-w-(--ui-container) mx-auto px-4 text-center">
         <UBadge
