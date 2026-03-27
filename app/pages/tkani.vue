@@ -82,7 +82,7 @@ const fabrics = [
     <UPageHero
       v-animate
       title="Ткани"
-      description="Поставляем ткани для производства и пошива. Широкий ассортимент — от технических материалов до лёгких подкладочных полотен. Работаем с нашими тканями или принимаем материал заказчика."
+      description="Поставляем ткани для производства и пошива. Широкий ассортимент — от технических материалов до лёгких подкладочных полотен."
       orientation="horizontal"
     >
       <div class="flex flex-col gap-4 max-w-sm">
@@ -108,8 +108,8 @@ const fabrics = [
           <div class="flex items-center gap-3">
             <UIcon name="i-lucide-scissors" class="size-8 text-primary shrink-0" />
             <div>
-              <p class="font-semibold text-sm">Пошив из ваших тканей</p>
-              <p class="text-xs text-muted">Принимаем материал заказчика</p>
+              <p class="font-semibold text-sm">Пошив на заказ</p>
+              <p class="text-xs text-muted">Полный цикл — от раскроя до доставки</p>
             </div>
           </div>
         </UCard>

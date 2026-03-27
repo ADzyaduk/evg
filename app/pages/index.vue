@@ -39,7 +39,7 @@ useHead({
       <div class="max-w-(--ui-container) mx-auto px-4 py-24 sm:py-32 lg:py-40">
         <div class="max-w-2xl">
           <p class="text-sm font-medium text-emerald-300 tracking-wide uppercase">
-            Швейное производство и поставки тканей — Сочи
+            Швейное производство и поставки тканей
           </p>
           <h1 class="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white">
             Пошив на заказ и поставки тканей
@@ -47,7 +47,6 @@ useHead({
           <p class="mt-4 text-base sm:text-lg text-gray-200 leading-relaxed">
             Шьём на заказ и поставляем ткани для производства. Носовые подушки для яхт,
             чехлы для лежаков, мягкая мебель — из влагостойких материалов с UV‑защитой.
-            Работаем с нашими тканями или принимаем материал заказчика.
           </p>
           <div class="mt-8 flex flex-wrap gap-3">
             <UButton
