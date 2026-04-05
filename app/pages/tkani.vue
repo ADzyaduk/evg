@@ -517,7 +517,7 @@ const fabrics: Fabric[] = [
       { color: 'Лайм', file: 'Ткань Тиси 120 - 84 Лайм.webp' },
       { color: 'Небесный', file: 'Ткань Тиси 120 - 86 Небесный.webp' },
       { color: 'Лазурь', file: 'Ткань Тиси 120 - 90 Лазурь.webp' },
-    ],
+    ]
   },
   // ── Тиси 150 ─────────────────────────────────────────────────────────────────
   {
@@ -1068,23 +1068,6 @@ const fabrics: Fabric[] = [
   },
 ]
 
-// ─── Swatch hover popup ───────────────────────────────────────────────────────
-const popup = reactive({ visible: false, src: '', x: 0, y: 0 })
-
-function showPopup(e: PointerEvent, folder: string, file: string) {
-  const rect = (e.currentTarget as HTMLElement).getBoundingClientRect()
-  popup.src = imgPath(folder, file)
-  // clamp x so popup doesn't go off-screen (popup is 192px wide)
-  const rawX = rect.left + rect.width / 2
-  popup.x = Math.min(Math.max(rawX, 160), window.innerWidth - 160)
-  popup.y = rect.top + window.scrollY - 12
-  popup.visible = true
-}
-
-function hidePopup() {
-  popup.visible = false
-}
-
 // ─── Category filter ──────────────────────────────────────────────────────────
 const MAX_SWATCHES = 8
 
@@ -1121,7 +1104,6 @@ const activePillStyle = (key: string) => {
   <div>
     <!-- ── Hero ──────────────────────────────────────────────────────────────── -->
     <UPageHero
-      v-animate
       title="Ткани"
       description="Поставляем ткани для производства и пошива. Широкий ассортимент — от технических полиэфирных материалов до натуральных хлопковых полотен."
       orientation="horizontal"
@@ -1158,7 +1140,7 @@ const activePillStyle = (key: string) => {
     </UPageHero>
 
     <!-- ── Catalog ────────────────────────────────────────────────────────────── -->
-    <UPageSection v-animate class="py-8!">
+    <UPageSection class="py-8!">
       <template #title>Ассортимент</template>
       <template #description>
          Цены и наличие уточняйте при обращении.
@@ -1194,7 +1176,6 @@ const activePillStyle = (key: string) => {
         <div
           v-for="(fabric, index) in filteredFabrics"
           :key="fabric.id"
-          v-animate="(index % 6) + 1"
           class="fabric-card flex flex-col rounded-xl overflow-hidden border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 shadow-sm"
           :style="{ '--accent': categoryAccentColor[fabric.category] ?? '#94a3b8' }"
         >
@@ -1248,8 +1229,6 @@ const activePillStyle = (key: string) => {
                   :key="img.file"
                   class="swatch size-12 rounded-md overflow-hidden shrink-0 ring-1 ring-black/10 dark:ring-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60"
                   :title="img.color"
-                  @pointerenter="(e) => showPopup(e, fabric.folder, img.file)"
-                  @pointerleave="hidePopup"
                 >
                   <img
                     :src="imgPath(fabric.folder, img.file)"
@@ -1279,7 +1258,7 @@ const activePillStyle = (key: string) => {
     </UPageSection>
 
     <!-- ── CTA ───────────────────────────────────────────────────────────────── -->
-    <UPageSection v-animate class="pt-4!">
+    <UPageSection class="pt-4!">
       <UPageCTA
         title="Уточните наличие и условия"
         description="Напишите нам — расскажем про наличие нужного артикула, объём, сроки и стоимость доставки."
@@ -1288,28 +1267,12 @@ const activePillStyle = (key: string) => {
             label: 'Связаться с нами',
             to: '/kontakty',
             trailingIcon: 'i-lucide-arrow-right',
-            color: 'neutral',
-          },
+            color: 'neutral'
+          }
         ]"
       />
     </UPageSection>
   </div>
-
-  <!-- ── Swatch hover popup ─────────────────────────────────────────────────── -->
-  <Teleport to="body">
-    <Transition name="popup">
-      <div
-        v-if="popup.visible"
-        class="fixed pointer-events-none z-9999"
-        :style="{ left: popup.x + 'px', top: popup.y + 'px', transform: 'translate(-50%, -100%)' }"
-      >
-        <div class="w-80 h-80 rounded-xl overflow-hidden shadow-2xl ring-1 ring-black/10 dark:ring-white/15">
-          <img :src="popup.src" class="w-full h-full object-cover" loading="eager" decoding="async" />
-        </div>
-        <div class="mx-auto w-0 h-0 border-l-[7px] border-r-[7px] border-t-[7px] border-l-transparent border-r-transparent border-t-white/90 dark:border-t-neutral-800" />
-      </div>
-    </Transition>
-  </Teleport>
 </template>
 
 <style scoped>
@@ -1327,19 +1290,5 @@ const activePillStyle = (key: string) => {
   transform: scale(1.15);
   z-index: 5;
   position: relative;
-}
-.popup-enter-active,
-.popup-leave-active {
-  transition: opacity 0.15s ease, transform 0.15s ease;
-}
-.popup-enter-from,
-.popup-leave-to {
-  opacity: 0;
-  transform: translate(-50%, calc(-100% + 8px));
-}
-.popup-enter-to,
-.popup-leave-from {
-  opacity: 1;
-  transform: translate(-50%, -100%);
 }
 </style>
