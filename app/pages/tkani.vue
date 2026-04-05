@@ -1274,7 +1274,7 @@ const activePillStyle = (key: string) => {
       <!-- Empty state -->
       <div v-if="!filteredFabrics.length" class="text-center py-16 text-muted">
         <UIcon name="i-lucide-search-x" class="size-10 mx-auto mb-3 opacity-40" />
-        <p class="text-sm">Ничего не найдено?</p>
+        <p class="text-sm">Ничего не найдено</p>
       </div>
     </UPageSection>
 
