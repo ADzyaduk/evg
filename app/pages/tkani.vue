@@ -1161,7 +1161,7 @@ const activePillStyle = (key: string) => {
     <UPageSection v-animate class="py-8!">
       <template #title>Ассортимент</template>
       <template #description>
-        Нажмите на оттенок — увидите реальный цвет ткани. Цены и наличие уточняйте при обращении.
+         Цены и наличие уточняйте при обращении.
       </template>
 
       <!-- Category filter pills -->
