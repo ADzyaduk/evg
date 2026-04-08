@@ -76,29 +76,58 @@ useSeoMeta({
       class="py-8!"
     >
       <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <UCard v-animate="1" class="text-center">
+        <UCard
+          v-animate="1"
+          class="text-center"
+        >
           <p class="text-4xl font-bold text-primary">
-            <CountUp :to="300" suffix="+" />
+            <CountUp
+              :to="300"
+              suffix="+"
+            />
           </p>
-          <p class="mt-1 text-sm text-muted">Специалистов в коллективе</p>
+          <p class="mt-1 text-sm text-muted">
+            Специалистов в коллективе
+          </p>
         </UCard>
-        <UCard v-animate="2" class="text-center">
+        <UCard
+          v-animate="2"
+          class="text-center"
+        >
           <p class="text-4xl font-bold text-primary">
-            <CountUp :to="380" suffix="+" />
+            <CountUp
+              :to="380"
+              suffix="+"
+            />
           </p>
-          <p class="mt-1 text-sm text-muted">Единиц оборудования</p>
+          <p class="mt-1 text-sm text-muted">
+            Единиц оборудования
+          </p>
         </UCard>
-        <UCard v-animate="3" class="text-center">
+        <UCard
+          v-animate="3"
+          class="text-center"
+        >
           <p class="text-4xl font-bold text-primary">
             <CountUp :to="205" />
           </p>
-          <p class="mt-1 text-sm text-muted">Универсальных швейных машин</p>
-        </UCard>
-        <UCard v-animate="4" class="text-center">
-          <p class="text-4xl font-bold text-primary">
-            <CountUp :to="4" :duration="800" />
+          <p class="mt-1 text-sm text-muted">
+            Универсальных швейных машин
           </p>
-          <p class="mt-1 text-sm text-muted">Раскройных стола с автоматической раскладкой</p>
+        </UCard>
+        <UCard
+          v-animate="4"
+          class="text-center"
+        >
+          <p class="text-4xl font-bold text-primary">
+            <CountUp
+              :to="4"
+              :duration="800"
+            />
+          </p>
+          <p class="mt-1 text-sm text-muted">
+            Раскройных стола с автоматической раскладкой
+          </p>
         </UCard>
       </div>
     </UPageSection>
@@ -110,7 +139,10 @@ useSeoMeta({
       class="py-8!"
     >
       <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <UCard v-animate="1" class="card-hover">
+        <UCard
+          v-animate="1"
+          class="card-hover"
+        >
           <template #header>
             <div class="aspect-video overflow-hidden rounded-lg bg-muted">
               <img
@@ -125,7 +157,9 @@ useSeoMeta({
             </div>
           </template>
           <template #footer>
-            <p class="font-semibold">Швейный цех</p>
+            <p class="font-semibold">
+              Швейный цех
+            </p>
             <ul class="mt-2 space-y-1 text-sm text-muted">
               <li>205 универсальных швейных машин</li>
               <li>52 машины для одновременной строчки и обмётки</li>
@@ -135,7 +169,10 @@ useSeoMeta({
           </template>
         </UCard>
 
-        <UCard v-animate="2" class="card-hover">
+        <UCard
+          v-animate="2"
+          class="card-hover"
+        >
           <template #header>
             <div class="aspect-video overflow-hidden rounded-lg bg-muted">
               <img
@@ -150,7 +187,9 @@ useSeoMeta({
             </div>
           </template>
           <template #footer>
-            <p class="font-semibold">Фурнитура и отделка</p>
+            <p class="font-semibold">
+              Фурнитура и отделка
+            </p>
             <ul class="mt-2 space-y-1 text-sm text-muted">
               <li>8 машин для закрепок</li>
               <li>6 машин для нашивки липучек (велкро)</li>
@@ -160,7 +199,10 @@ useSeoMeta({
           </template>
         </UCard>
 
-        <UCard v-animate="3" class="card-hover">
+        <UCard
+          v-animate="3"
+          class="card-hover"
+        >
           <template #header>
             <div class="aspect-video overflow-hidden rounded-lg bg-muted">
               <img
@@ -175,7 +217,9 @@ useSeoMeta({
             </div>
           </template>
           <template #footer>
-            <p class="font-semibold">Раскройный цех</p>
+            <p class="font-semibold">
+              Раскройный цех
+            </p>
             <ul class="mt-2 space-y-1 text-sm text-muted">
               <li>4 больших раскройных стола</li>
               <li>14 ножей для точного раскроя ткани</li>
@@ -185,7 +229,10 @@ useSeoMeta({
           </template>
         </UCard>
 
-        <UCard v-animate="4" class="card-hover">
+        <UCard
+          v-animate="4"
+          class="card-hover"
+        >
           <template #header>
             <div class="aspect-video overflow-hidden rounded-lg bg-muted">
               <img
@@ -200,7 +247,9 @@ useSeoMeta({
             </div>
           </template>
           <template #footer>
-            <p class="font-semibold">Стёжка и заготовка деталей</p>
+            <p class="font-semibold">
+              Стёжка и заготовка деталей
+            </p>
             <ul class="mt-2 space-y-1 text-sm text-muted">
               <li>8 автоматов для стёжки с лазерной обрезкой по контуру</li>
               <li>Стёгальное оборудование для утеплителя шириной до 2 метров</li>
@@ -209,7 +258,10 @@ useSeoMeta({
           </template>
         </UCard>
 
-        <UCard v-animate="5" class="card-hover">
+        <UCard
+          v-animate="5"
+          class="card-hover"
+        >
           <template #header>
             <div class="aspect-video overflow-hidden rounded-lg bg-muted">
               <img
@@ -224,7 +276,9 @@ useSeoMeta({
             </div>
           </template>
           <template #footer>
-            <p class="font-semibold">Нанесение логотипов</p>
+            <p class="font-semibold">
+              Нанесение логотипов
+            </p>
             <ul class="mt-2 space-y-1 text-sm text-muted">
               <li>4 вышивальных машины — вышиваем логотипы и надписи нитками</li>
               <li>Термопресс — переносим логотип на ткань с помощью тепла и давления</li>
@@ -232,7 +286,10 @@ useSeoMeta({
           </template>
         </UCard>
 
-        <UCard v-animate="6" class="card-hover">
+        <UCard
+          v-animate="6"
+          class="card-hover"
+        >
           <template #header>
             <div class="aspect-video overflow-hidden rounded-lg bg-muted">
               <img
@@ -247,7 +304,9 @@ useSeoMeta({
             </div>
           </template>
           <template #footer>
-            <p class="font-semibold">Упаковка и доставка</p>
+            <p class="font-semibold">
+              Упаковка и доставка
+            </p>
             <ul class="mt-2 space-y-1 text-sm text-muted">
               <li>Вакуумная упаковка — изделия занимают меньше места и защищены от влаги</li>
               <li>Организуем доставку и сопровождаем груз до получателя</li>
@@ -264,14 +323,24 @@ useSeoMeta({
       class="py-8!"
     >
       <div class="grid gap-6 md:grid-cols-2">
-        <UCard v-animate="1" class="card-hover">
+        <UCard
+          v-animate="1"
+          class="card-hover"
+        >
           <div class="flex flex-col gap-4">
             <div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center">
-              <UIcon name="i-lucide-map-pin" class="size-5 text-primary" />
+              <UIcon
+                name="i-lucide-map-pin"
+                class="size-5 text-primary"
+              />
             </div>
             <div>
-              <p class="font-semibold text-lg">Офис — Сочи</p>
-              <p class="text-muted text-sm mt-1">ул. Мира 44а</p>
+              <p class="font-semibold text-lg">
+                Офис — Сочи
+              </p>
+              <p class="text-muted text-sm mt-1">
+                ул. Мира 44а
+              </p>
               <p class="text-sm mt-3 leading-relaxed">
                 Офис в Сочи — точка входа для клиентов из Краснодарского края и всего юга России.
                 Здесь мы принимаем заказы, согласовываем ткани и организуем доставку готовых изделий.
@@ -280,14 +349,24 @@ useSeoMeta({
           </div>
         </UCard>
 
-        <UCard v-animate="2" class="card-hover">
+        <UCard
+          v-animate="2"
+          class="card-hover"
+        >
           <div class="flex flex-col gap-4">
             <div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center">
-              <UIcon name="i-lucide-factory" class="size-5 text-primary" />
+              <UIcon
+                name="i-lucide-factory"
+                class="size-5 text-primary"
+              />
             </div>
             <div>
-              <p class="font-semibold text-lg">Фабрика — Иджеван, Армения</p>
-              <p class="text-muted text-sm mt-1">У подножья Иджеванского хребта</p>
+              <p class="font-semibold text-lg">
+                Фабрика — Иджеван, Армения
+              </p>
+              <p class="text-muted text-sm mt-1">
+                У подножья Иджеванского хребта
+              </p>
               <p class="text-sm mt-3 leading-relaxed">
                 Одна из наших швейных площадок находится в Иджеване (Армения) — живописном месте
                 у подножья Иджеванского хребта, с двух сторон омываемом рекой Агстев.
@@ -332,7 +411,10 @@ useSeoMeta({
       ]"
     />
 
-    <UPageSection v-animate class="pt-4!">
+    <UPageSection
+      v-animate
+      class="pt-4!"
+    >
       <UPageCTA
         title="Есть задача? Давайте обсудим"
         description="Расскажите, что нужно сшить — мы предложим удобный вариант: по вашим выкройкам, по нашим разработкам или из ваших тканей."

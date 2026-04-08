@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { faq } from '~/utils/faq'
+
 useSeoMeta({
   title: 'Швейное производство и поставки тканей в Сочи | PavlovCraft',
   description:
@@ -13,17 +15,55 @@ useSeoMeta({
   robots: 'index,follow'
 })
 
-// Preload LCP-изображения для ускорения первой отрисовки
 useHead({
   link: [{ rel: 'preload', as: 'image', href: '/img/hero.webp' }]
 })
+
+const examples = [
+  {
+    image: '/img/booka.webp',
+    imageAlt: 'Подушки для садовой мебели на террасе',
+    title: 'Подушки для садовых кресел и шезлонгов',
+    description: 'Съёмные чехлы, наполнитель повышенной упругости, влагостойкие ткани с защитой от выгорания.',
+    to: '/kontakty'
+  },
+  {
+    image: '/img/lezhak.webp',
+    imageAlt: 'Пляжные лежаки с подушками у моря',
+    title: 'Чехлы для пляжных лежаков',
+    description: 'Износостойкие чехлы на лежаки с фиксацией, рассчитанные на частую стирку и интенсивную нагрузку.',
+    to: '/kontakty'
+  },
+  {
+    image: '/img/yacht.webp',
+    imageAlt: 'Носовая зона отдыха на яхте',
+    title: 'Носовые подушки для яхт',
+    description: 'Носовые зоны из тканей Sunbrella, кожи или алькантары, адаптированные под морской климат.',
+    to: '/kontakty'
+  }
+]
+
+const processSteps = [
+  { num: 1, icon: 'i-lucide-camera', title: 'Заявка', text: 'Присылаете фото мебели и описание задачи' },
+  { num: 2, icon: 'i-lucide-ruler', title: 'Замеры', text: 'Выезжаем на объект или помогаем замерить онлайн' },
+  { num: 3, icon: 'i-lucide-palette', title: 'Подбор тканей', text: 'Предлагаем материалы под ваши условия' },
+  { num: 4, icon: 'i-lucide-scissors', title: 'Пошив', text: 'Изготавливаем с примеркой и корректировками' },
+  { num: 5, icon: 'i-lucide-truck', title: 'Доставка', text: 'Привозим по Сочи и краю с рекомендациями по уходу' }
+]
 </script>
 
 <template>
   <div>
-    <section
-      v-animate
-      class="relative isolate overflow-hidden"
+    <!-- Hero -->
+    <UPageHero
+      headline="Швейное производство · Сочи"
+      title="Пошив на заказ и поставки тканей"
+      description="Шьём на заказ и поставляем ткани для производства. Носовые подушки для яхт, чехлы для лежаков, мягкая мебель — из влагостойких материалов с UV‑защитой."
+      orientation="horizontal"
+      :links="[
+        { label: 'Рассчитать заказ', to: '/kontakty', trailingIcon: 'i-lucide-arrow-right' },
+        { label: 'Наши услуги', to: '/uslugi', icon: 'i-lucide-briefcase', color: 'neutral', variant: 'subtle' }
+      ]"
     >
       <img
         src="/img/hero.webp"
@@ -32,87 +72,27 @@ useHead({
         height="1080"
         fetchpriority="high"
         decoding="async"
-        class="absolute inset-0 -z-10 h-full w-full object-cover"
+        class="rounded-lg shadow-2xl ring ring-default w-full object-cover"
       >
-      <div class="absolute inset-0 -z-10 bg-linear-to-r from-black/70 via-black/50 to-black/30" />
+    </UPageHero>
 
-      <div class="max-w-(--ui-container) mx-auto px-4 py-24 sm:py-32 lg:py-40">
-        <div class="max-w-2xl">
-          <p class="text-sm font-medium text-emerald-300 tracking-wide uppercase">
-            Швейное производство и поставки тканей
-          </p>
-          <h1 class="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white">
-            Пошив на заказ и поставки тканей
-          </h1>
-          <p class="mt-4 text-base sm:text-lg text-gray-200 leading-relaxed">
-            Шьём на заказ и поставляем ткани для производства. Носовые подушки для яхт,
-            чехлы для лежаков, мягкая мебель — из влагостойких материалов с UV‑защитой.
-          </p>
-          <div class="mt-8 flex flex-wrap gap-3">
-            <UButton
-              to="/kontakty"
-              label="Рассчитать заказ"
-              trailing-icon="i-lucide-arrow-right"
-              size="xl"
-            />
-            <UButton
-              to="/uslugi"
-              label="Наши услуги"
-              icon="i-lucide-briefcase"
-              size="xl"
-              variant="outline"
-              class="text-white! border-white/30! hover:bg-white/10!"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-
+    <!-- Почему выбирают нас -->
     <UPageSection
       id="preimushchestva"
       v-animate
       title="Почему выбирают нас"
       description="Работаем с материалами, рассчитанными на улицу и морской климат Сочи — изделия не выгорают, не боятся влаги и сохраняют форму сезон за сезоном."
       :features="[
-        {
-          icon: 'i-lucide-sun-medium',
-          title: 'UV‑защита',
-          description:
-            'Ткани с устойчивостью к выгоранию — подушки долго сохраняют цвет под солнцем.'
-        },
-        {
-          icon: 'i-lucide-umbrella',
-          title: 'Влагостойкие материалы',
-          description:
-            'Ткани и наполнители, рассчитанные на улицу, терпят брызги бассейна и морской воды.'
-        },
-        {
-          icon: 'i-lucide-sofa',
-          title: 'Индивидуальные размеры',
-          description:
-            'Шьём подушки и чехлы под ваши кресла, шезлонги, диваны и носовые зоны яхт.'
-        },
-        {
-          icon: 'i-lucide-ruler',
-          title: 'Точный замер',
-          description:
-            'Выезжаем на объект в Сочи и по Краснодарскому краю или помогаем с замерами онлайн.'
-        },
-        {
-          icon: 'i-lucide-truck',
-          title: 'Быстрая доставка',
-          description:
-            'Оперативное изготовление и доставка по Сочи и Краснодарскому краю.'
-        },
-        {
-          icon: 'i-lucide-badge-check',
-          title: 'Гарантия качества',
-          description:
-            'Аккуратный пошив, плотные швы и проверенные ткани — подушки служат не один сезон.'
-        }
+        { icon: 'i-lucide-sun-medium', title: 'UV‑защита', description: 'Ткани с устойчивостью к выгоранию — подушки долго сохраняют цвет под солнцем.' },
+        { icon: 'i-lucide-umbrella', title: 'Влагостойкие материалы', description: 'Ткани и наполнители, рассчитанные на улицу, терпят брызги бассейна и морской воды.' },
+        { icon: 'i-lucide-sofa', title: 'Индивидуальные размеры', description: 'Шьём подушки и чехлы под ваши кресла, шезлонги, диваны и носовые зоны яхт.' },
+        { icon: 'i-lucide-ruler', title: 'Точный замер', description: 'Выезжаем на объект в Сочи и по Краснодарскому краю или помогаем с замерами онлайн.' },
+        { icon: 'i-lucide-truck', title: 'Быстрая доставка', description: 'Оперативное изготовление и доставка по Сочи и Краснодарскому краю.' },
+        { icon: 'i-lucide-badge-check', title: 'Гарантия качества', description: 'Аккуратный пошив, плотные швы и проверенные ткани — подушки служат не один сезон.' }
       ]"
     />
 
+    <!-- Примеры работ -->
     <UPageSection
       id="primery-rabot"
       v-animate
@@ -120,132 +100,29 @@ useHead({
       description="Подушки для уличной мебели, пляжных лежаков и носовые подушки для яхт. Пока используем заглушки — позже сюда добавим реальные фото из Сочи."
     >
       <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <UCard
-          v-animate="1"
-          class="card-hover"
-        >
-          <template #header>
-            <div class="aspect-video overflow-hidden rounded-lg bg-muted">
-              <img
-                src="/img/booka.webp"
-                alt="Подушки для садовой мебели на террасе"
-                width="700"
-                height="394"
-                loading="lazy"
-                decoding="async"
-                class="h-full w-full object-cover"
-              >
-            </div>
-          </template>
-          <template #footer>
-            <p class="font-medium">
-              Подушки для садовых кресел и шезлонгов
-            </p>
-            <p class="text-sm text-muted">
-              Съёмные чехлы, наполнитель повышенной упругости, влагостойкие ткани с защитой от выгорания.
-            </p>
-            <UButton
-              to="/kontakty"
-              label="Заказать"
-              size="sm"
-              variant="outline"
-              color="neutral"
-              trailing-icon="i-lucide-arrow-right"
-              class="mt-3"
-            />
-          </template>
-        </UCard>
-
-        <UCard
-          v-animate="2"
-          class="card-hover"
-        >
-          <template #header>
-            <div class="aspect-video overflow-hidden rounded-lg bg-muted">
-              <img
-                src="/img/lezhak.webp"
-                alt="Пляжные лежаки с подушками у моря"
-                width="700"
-                height="394"
-                loading="lazy"
-                decoding="async"
-                class="h-full w-full object-cover"
-              >
-            </div>
-          </template>
-          <template #footer>
-            <p class="font-medium">
-              Чехлы для пляжных лежаков
-            </p>
-            <p class="text-sm text-muted">
-              Износостойкие чехлы на лежаки с фиксацией, рассчитанные на частую стирку и интенсивную нагрузку.
-            </p>
-            <UButton
-              to="/kontakty"
-              label="Заказать"
-              size="sm"
-              variant="outline"
-              color="neutral"
-              trailing-icon="i-lucide-arrow-right"
-              class="mt-3"
-            />
-          </template>
-        </UCard>
-
-        <UCard
-          v-animate="3"
-          class="card-hover"
-        >
-          <template #header>
-            <div class="aspect-video overflow-hidden rounded-lg bg-muted">
-              <img
-                src="/img/yacht.webp"
-                alt="Носовая зона отдыха на яхте"
-                width="700"
-                height="394"
-                loading="lazy"
-                decoding="async"
-                class="h-full w-full object-cover"
-              >
-            </div>
-          </template>
-          <template #footer>
-            <p class="font-medium">
-              Носовые подушки для яхт
-            </p>
-            <p class="text-sm text-muted">
-              Носовые зоны из тканей Sunbrella, кожи или алькантары, адаптированные под морской климат.
-            </p>
-            <UButton
-              to="/kontakty"
-              label="Заказать"
-              size="sm"
-              variant="outline"
-              color="neutral"
-              trailing-icon="i-lucide-arrow-right"
-              class="mt-3"
-            />
-          </template>
-        </UCard>
+        <ExampleCard
+          v-for="(ex, i) in examples"
+          :key="ex.image"
+          v-animate="i + 1"
+          v-bind="ex"
+        />
       </div>
     </UPageSection>
 
-    <UPageSection v-animate class="py-8!">
+    <!-- CTA ткани -->
+    <UPageSection
+      v-animate
+      class="py-8!"
+    >
       <UPageCTA
         title="Поставляем ткани"
         description="В нашем ассортименте — Оксфорд, Таффета, Флис, Твил, Репс, Бязь и другие материалы. Работаем оптом и в розницу, принимаем заказы под производство."
         variant="subtle"
-        :links="[
-          {
-            label: 'Каталог тканей',
-            to: '/tkani',
-            trailingIcon: 'i-lucide-arrow-right',
-            color: 'neutral'
-          }
-        ]"
+        :links="[{ label: 'Каталог тканей', to: '/tkani', trailingIcon: 'i-lucide-arrow-right', color: 'neutral' }]"
       />
     </UPageSection>
 
+    <!-- Как мы работаем -->
     <UPageSection
       id="kak-rabotaem"
       v-animate
@@ -254,101 +131,26 @@ useHead({
     >
       <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
         <div
-          v-animate="1"
+          v-for="(step, i) in processSteps"
+          :key="step.num"
+          v-animate="i + 1"
           class="flex flex-col items-center text-center p-4 rounded-xl bg-elevated/50"
         >
           <div class="flex items-center justify-center size-10 rounded-full bg-primary text-white font-bold text-sm mb-3">
-            1
+            {{ step.num }}
           </div>
           <UIcon
-            name="i-lucide-camera"
+            :name="step.icon"
             class="size-6 text-primary mb-2"
           />
           <p class="font-semibold text-sm">
-            Заявка
+            {{ step.title }}
           </p>
           <p class="text-xs text-muted mt-1">
-            Присылаете фото мебели и описание задачи
-          </p>
-        </div>
-
-        <div
-          v-animate="2"
-          class="flex flex-col items-center text-center p-4 rounded-xl bg-elevated/50"
-        >
-          <div class="flex items-center justify-center size-10 rounded-full bg-primary text-white font-bold text-sm mb-3">
-            2
-          </div>
-          <UIcon
-            name="i-lucide-ruler"
-            class="size-6 text-primary mb-2"
-          />
-          <p class="font-semibold text-sm">
-            Замеры
-          </p>
-          <p class="text-xs text-muted mt-1">
-            Выезжаем на объект или помогаем замерить онлайн
-          </p>
-        </div>
-
-        <div
-          v-animate="3"
-          class="flex flex-col items-center text-center p-4 rounded-xl bg-elevated/50"
-        >
-          <div class="flex items-center justify-center size-10 rounded-full bg-primary text-white font-bold text-sm mb-3">
-            3
-          </div>
-          <UIcon
-            name="i-lucide-palette"
-            class="size-6 text-primary mb-2"
-          />
-          <p class="font-semibold text-sm">
-            Подбор тканей
-          </p>
-          <p class="text-xs text-muted mt-1">
-            Предлагаем материалы под ваши условия
-          </p>
-        </div>
-
-        <div
-          v-animate="4"
-          class="flex flex-col items-center text-center p-4 rounded-xl bg-elevated/50"
-        >
-          <div class="flex items-center justify-center size-10 rounded-full bg-primary text-white font-bold text-sm mb-3">
-            4
-          </div>
-          <UIcon
-            name="i-lucide-scissors"
-            class="size-6 text-primary mb-2"
-          />
-          <p class="font-semibold text-sm">
-            Пошив
-          </p>
-          <p class="text-xs text-muted mt-1">
-            Изготавливаем с примеркой и корректировками
-          </p>
-        </div>
-
-        <div
-          v-animate="5"
-          class="flex flex-col items-center text-center p-4 rounded-xl bg-elevated/50"
-        >
-          <div class="flex items-center justify-center size-10 rounded-full bg-primary text-white font-bold text-sm mb-3">
-            5
-          </div>
-          <UIcon
-            name="i-lucide-truck"
-            class="size-6 text-primary mb-2"
-          />
-          <p class="font-semibold text-sm">
-            Доставка
-          </p>
-          <p class="text-xs text-muted mt-1">
-            Привозим по Сочи и краю с рекомендациями по уходу
+            {{ step.text }}
           </p>
         </div>
       </div>
-
       <div class="mt-8 text-center">
         <UButton
           to="/uslugi"
@@ -361,6 +163,7 @@ useHead({
       </div>
     </UPageSection>
 
+    <!-- FAQ -->
     <UPageSection
       id="faq"
       v-animate
@@ -368,51 +171,20 @@ useHead({
       description="Отвечаем на вопросы, которые чаще всего задают клиенты перед заказом."
     >
       <UAccordion
-        :items="[
-          {
-            label: 'Какие ткани вы используете для уличных подушек?',
-            content: 'Мы работаем с влагостойкими тканями, устойчивыми к солнцу и износу: Oxford, полиэстер с водоотталкивающей пропиткой, Sunbrella и аналогичные материалы с UV-защитой. Подбираем ткань под условия эксплуатации — будь то терраса, бассейн или палуба яхты.'
-          },
-          {
-            label: 'Сколько времени занимает изготовление?',
-            content: 'Сроки зависят от объёма заказа. Обычно пошив одного комплекта подушек занимает 5–10 рабочих дней. Для срочных заказов обсуждаем индивидуальные сроки.'
-          },
-          {
-            label: 'Вы выезжаете на замер?',
-            content: 'Да, выезжаем на объекты в Сочи и по Краснодарскому краю. Также можем помочь с замерами онлайн — подскажем, как правильно снять размеры самостоятельно.'
-          },
-          {
-            label: 'Можно ли заказать подушки нестандартной формы?',
-            content: 'Конечно. Все изделия мы шьём на заказ, поэтому можем сделать подушки любой формы, толщины и размера — под конкретную мебель, носовую зону яхты или нестандартный шезлонг.'
-          },
-          {
-            label: 'Как ухаживать за уличными подушками?',
-            content: 'Мы делаем съёмные чехлы на молнии, которые легко стирать. Рекомендуем стирать чехлы при 30–40°C и хранить подушки в сухом месте в межсезонье. Подробные рекомендации по уходу дадим при доставке.'
-          }
-        ]"
+        :items="faq"
         class="max-w-3xl mx-auto"
       />
     </UPageSection>
 
+    <!-- CTA финальный -->
     <UPageSection v-animate>
       <UPageCTA
         title="Расскажите о вашей мебели — подберём решение"
         description="Пришлите фото и примерные размеры в мессенджер Max или Telegram — мы предложим варианты тканей, ориентировочную стоимость и сроки изготовления."
         variant="subtle"
         :links="[
-          {
-            label: 'Оставить заявку',
-            to: '/kontakty',
-            trailingIcon: 'i-lucide-arrow-right',
-            color: 'neutral'
-          },
-          {
-            label: 'Подробнее об услугах',
-            to: '/uslugi',
-            icon: 'i-lucide-file-text',
-            color: 'neutral',
-            variant: 'outline'
-          }
+          { label: 'Оставить заявку', to: '/kontakty', trailingIcon: 'i-lucide-arrow-right', color: 'neutral' },
+          { label: 'Подробнее об услугах', to: '/uslugi', icon: 'i-lucide-file-text', color: 'neutral', variant: 'outline' }
         ]"
       />
     </UPageSection>
