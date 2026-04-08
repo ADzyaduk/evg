@@ -4,25 +4,12 @@ import { coatingBadgeClass, coatingTip, imgPath, categoryAccentColor } from '~/u
 
 const props = defineProps<{ fabric: Fabric }>()
 
-const MAX_COLLAPSED = 12
-const activeColor = ref<string | null>(null)
+const MAX_COLLAPSED = 6
 const expanded = ref(false)
-
 const hasMore = computed(() => props.fabric.images.length > MAX_COLLAPSED)
-const remaining = computed(() => props.fabric.images.length - MAX_COLLAPSED)
 const displayImages = computed(() =>
   expanded.value ? props.fabric.images : props.fabric.images.slice(0, MAX_COLLAPSED)
 )
-
-function onSwatchEnter(color: string) {
-  activeColor.value = color
-}
-function onSwatchLeave() {
-  activeColor.value = null
-}
-function onSwatchClick(color: string) {
-  activeColor.value = activeColor.value === color ? null : color
-}
 </script>
 
 <template>
@@ -57,14 +44,9 @@ function onSwatchClick(color: string) {
         <span v-if="fabric.composition"> · {{ fabric.composition }}</span>
         <span v-if="fabric.weave"> · {{ fabric.weave }}</span>
       </p>
-    </div>
-
-    <!-- Main content -->
-    <div class="px-4 pt-3 pb-4 flex flex-col gap-3 flex-1">
-      <!-- Coating badges -->
       <div
         v-if="fabric.coatings.length"
-        class="flex flex-wrap gap-1.5"
+        class="flex flex-wrap gap-1 mt-2"
       >
         <span
           v-for="c in fabric.coatings"
@@ -76,31 +58,22 @@ function onSwatchClick(color: string) {
           {{ c }}
         </span>
       </div>
+    </div>
 
+    <!-- Main content -->
+    <div class="px-4 pt-3 pb-4 flex flex-col gap-3 flex-1">
       <!-- Description -->
-      <p class="text-sm text-muted leading-relaxed flex-1 line-clamp-3">
-        {{ fabric.description }}
-      </p>
+      <div class="flex-1">
+        <p class="text-sm text-muted leading-relaxed line-clamp-5">
+          {{ fabric.description }}
+        </p>
+      </div>
 
       <!-- Swatches section -->
       <div
         v-if="fabric.images.length"
         class="border-t border-neutral-100 dark:border-neutral-800 pt-3"
       >
-        <!-- Header: label + active color name -->
-        <div class="flex items-center justify-between mb-2 min-h-[1.125rem]">
-          <span class="text-xs text-muted">Оттенки · {{ fabric.images.length }}</span>
-          <Transition name="color-fade">
-            <span
-              v-if="activeColor"
-              key="color-name"
-              class="text-xs font-medium text-default"
-            >
-              {{ activeColor }}
-            </span>
-          </Transition>
-        </div>
-
         <!-- Swatch grid -->
         <div class="grid grid-cols-6 gap-1">
           <button
@@ -108,9 +81,6 @@ function onSwatchClick(color: string) {
             :key="img.file"
             class="swatch w-full aspect-square rounded-md overflow-hidden ring-1 ring-black/10 dark:ring-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60"
             :aria-label="img.color"
-            @mouseenter="onSwatchEnter(img.color)"
-            @mouseleave="onSwatchLeave"
-            @click="onSwatchClick(img.color)"
           >
             <img
               :src="imgPath(fabric.folder, img.file)"
@@ -122,18 +92,20 @@ function onSwatchClick(color: string) {
           </button>
         </div>
 
-        <!-- Expand toggle -->
-        <button
-          v-if="hasMore"
-          class="mt-2 inline-flex items-center gap-1 text-xs text-muted hover:text-default transition-colors cursor-pointer"
-          @click="expanded = !expanded"
-        >
-          <UIcon
-            :name="expanded ? 'i-lucide-chevron-up' : 'i-lucide-chevron-down'"
-            class="size-3.5 shrink-0"
-          />
-          {{ expanded ? 'Свернуть' : `Показать ещё ${remaining}` }}
-        </button>
+        <!-- Expand toggle — wrapper всегда занимает место -->
+        <div class="mt-2 min-h-[1.25rem]">
+          <button
+            v-if="hasMore"
+            class="inline-flex items-center gap-1 text-xs text-muted hover:text-default transition-colors cursor-pointer"
+            @click="expanded = !expanded"
+          >
+            <UIcon
+              :name="expanded ? 'i-lucide-chevron-up' : 'i-lucide-chevron-down'"
+              class="size-3.5 shrink-0"
+            />
+            {{ expanded ? 'Свернуть' : `Ещё ${fabric.images.length - MAX_COLLAPSED} цветов` }}
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -152,14 +124,5 @@ function onSwatchClick(color: string) {
 }
 .swatch:hover {
   opacity: 0.8;
-}
-
-.color-fade-enter-active,
-.color-fade-leave-active {
-  transition: opacity 0.15s ease;
-}
-.color-fade-enter-from,
-.color-fade-leave-to {
-  opacity: 0;
 }
 </style>

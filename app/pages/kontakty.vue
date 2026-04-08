@@ -39,6 +39,14 @@ const contacts = [
     image: '/max.webp'
   },
   {
+    icon: 'i-lucide-mail',
+    title: 'Email',
+    value: 'info@pavlovcraft.ru',
+    link: 'mailto:info@pavlovcraft.ru',
+    description: 'Для деловой переписки и официальных запросов',
+    image: null
+  },
+  {
     icon: 'i-lucide-map-pin',
     title: 'Адрес',
     value: 'Сочи, ул. Мира 44а',

@@ -250,6 +250,18 @@ const items = computed<NavigationMenuItem[]>(() => [
               </li>
               <li class="flex items-center gap-2">
                 <UIcon
+                  name="i-lucide-mail"
+                  class="size-4 shrink-0"
+                />
+                <a
+                  href="mailto:info@pavlovcraft.ru"
+                  class="hover:text-primary transition-colors"
+                >
+                  info@pavlovcraft.ru
+                </a>
+              </li>
+              <li class="flex items-center gap-2">
+                <UIcon
                   name="i-lucide-map-pin"
                   class="size-4 shrink-0"
                 />
