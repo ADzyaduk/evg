@@ -1,10 +1,34 @@
 <script setup lang="ts">
 import { faq } from '~/utils/faq'
+import { createWebPageSchema } from '~/utils/seo'
+
+const pageTitle = 'Швейное производство и поставки тканей в Сочи | PavlovCraft'
+const pageDescription
+  = 'Швейное производство на заказ и поставки тканей в Сочи. Пошив подушек для яхт, лежаков и мебели. Влагостойкие материалы с UV‑защитой, индивидуальные размеры, выезд на замер.'
+
+const homepageSchemas = [
+  createWebPageSchema({
+    path: '/',
+    name: pageTitle,
+    description: pageDescription
+  }),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    'mainEntity': faq.map(item => ({
+      '@type': 'Question',
+      'name': item.label,
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': item.content
+      }
+    }))
+  }
+]
 
 useSeoMeta({
-  title: 'Швейное производство и поставки тканей в Сочи | PavlovCraft',
-  description:
-    'Швейное производство на заказ и поставки тканей в Сочи. Пошив подушек для яхт, лежаков и мебели. Влагостойкие материалы с UV‑защитой, индивидуальные размеры, выезд на замер.',
+  title: pageTitle,
+  description: pageDescription,
   ogTitle: 'Швейное производство и поставки тканей — PavlovCraft, Сочи',
   ogDescription:
     'Пошив на заказ и поставки тканей: Оксфорд, Флис, Твил, Таффета и другие материалы. Работаем в Сочи и Краснодарском крае.',
@@ -16,7 +40,13 @@ useSeoMeta({
 })
 
 useHead({
-  link: [{ rel: 'preload', as: 'image', href: '/img/hero.webp' }]
+  link: [{ rel: 'preload', as: 'image', href: '/img/hero.webp' }],
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify(homepageSchemas)
+    }
+  ]
 })
 
 const examples = [

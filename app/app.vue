@@ -1,9 +1,24 @@
 <script setup lang="ts">
+import { businessIdentity, createAbsoluteUrl, createOrganizationSchema, createWebsiteSchema, normalizeCanonicalPath } from '~/utils/seo'
+
 const title = 'Подушки для уличной мебели и яхт в Сочи'
 const description
   = 'Шьём подушки для уличной мебели, пляжных лежаков и носовые подушки для яхт из влагостойких тканей с UV‑защитой. Перешиваем диваны и мягкую мебель по вашим размерам в Сочи и по Краснодарскому краю.'
 
+const route = useRoute()
+const runtimeConfig = useRuntimeConfig()
+
+const siteUrl = runtimeConfig.public.siteUrl || businessIdentity.siteUrl
+const canonicalUrl = computed(() => createAbsoluteUrl(siteUrl, normalizeCanonicalPath(route.fullPath)))
+const globalSchemas = computed(() => [
+  createOrganizationSchema(description),
+  createWebsiteSchema()
+])
+
 useHead({
+  link: [
+    { rel: 'canonical', href: canonicalUrl }
+  ],
   meta: [
     { name: 'viewport', content: 'width=device-width, initial-scale=1' }
   ],
@@ -12,38 +27,9 @@ useHead({
   },
   script: [
     {
+      key: 'global-structured-data',
       type: 'application/ld+json',
-      innerHTML: JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'LocalBusiness',
-        'name': 'PavlovCraft',
-        'description': description,
-        'url': 'https://pavlovcraft.ru',
-        'telephone': '+79854240703',
-        'address': {
-          '@type': 'PostalAddress',
-          'streetAddress': 'ул. Мира, 44а',
-          'addressLocality': 'Сочи',
-          'addressRegion': 'Краснодарский край',
-          'addressCountry': 'RU'
-        },
-        'openingHoursSpecification': [
-          {
-            '@type': 'OpeningHoursSpecification',
-            'dayOfWeek': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-            'opens': '09:00',
-            'closes': '18:00'
-          },
-          {
-            '@type': 'OpeningHoursSpecification',
-            'dayOfWeek': 'Saturday',
-            'opens': '10:00',
-            'closes': '16:00'
-          }
-        ],
-        'image': 'https://pavlovcraft.ru/img/hero.webp',
-        'priceRange': '$$'
-      })
+      innerHTML: JSON.stringify(globalSchemas.value)
     }
   ]
 })
@@ -52,7 +38,10 @@ useSeoMeta({
   title,
   description,
   ogTitle: title,
-  ogDescription: description
+  ogDescription: description,
+  ogUrl: canonicalUrl,
+  ogImage: `${siteUrl.replace(/\/$/, '')}/img/hero.webp`,
+  twitterCard: 'summary_large_image'
 })
 </script>
 

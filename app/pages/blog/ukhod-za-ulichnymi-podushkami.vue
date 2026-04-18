@@ -1,8 +1,16 @@
 <script setup lang="ts">
+import { SEO_LAST_UPDATED, createArticleSchema, createBreadcrumbSchema, createWebPageSchema } from '~/utils/seo'
+
+const articleTitle = 'Как ухаживать за подушками для уличной мебели'
+const articlePath = '/blog/ukhod-za-ulichnymi-podushkami'
+const articlePublished = '2025-01-20'
+const articleImage = '/img/orig1-opt.webp'
+const articleDescription
+  = 'Подробно рассказываем, как ухаживать за подушками для уличной мебели и пляжных лежаков: чистка, сушка, стирка чехлов и хранение вне сезона.'
+
 useSeoMeta({
-  title: 'Как ухаживать за подушками для уличной мебели — блог PavlovCraft',
-  description:
-    'Подробно рассказываем, как ухаживать за подушками для уличной мебели и пляжных лежаков: чистка, сушка, стирка чехлов и хранение вне сезона.',
+  title: `${articleTitle} — блог PavlovCraft`,
+  description: articleDescription,
   ogTitle: 'Уход за подушками для уличной мебели',
   ogDescription:
     'Регулярная чистка, правильная сушка, бережная стирка чехлов и хранение садовых подушек — простые правила, чтобы они служили дольше.',
@@ -11,6 +19,36 @@ useSeoMeta({
   ogImage: 'https://pavlovcraft.ru/img/orig1-opt.webp',
   twitterCard: 'summary_large_image',
   robots: 'index,follow'
+})
+
+const articleSchemas = [
+  createWebPageSchema({
+    path: articlePath,
+    name: articleTitle,
+    description: articleDescription
+  }),
+  createBreadcrumbSchema([
+    { name: 'Главная', path: '/' },
+    { name: 'Блог', path: '/blog' },
+    { name: articleTitle, path: articlePath }
+  ]),
+  createArticleSchema({
+    path: articlePath,
+    headline: articleTitle,
+    description: articleDescription,
+    image: articleImage,
+    datePublished: articlePublished,
+    dateModified: SEO_LAST_UPDATED
+  })
+]
+
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify(articleSchemas)
+    }
+  ]
 })
 
 const tips = [
@@ -77,19 +115,29 @@ const otherArticles = [
             3 мин
           </span>
           <time
-            datetime="2025-01-20"
+            :datetime="articlePublished"
             class="text-xs text-muted"
           >
             20 января 2025
           </time>
+          <span class="text-xs text-muted">
+            Обновлено 18 апреля 2026
+          </span>
         </div>
 
         <h1 class="text-3xl sm:text-4xl font-bold tracking-tight">
-          Как ухаживать за подушками для уличной мебели
+          {{ articleTitle }}
         </h1>
         <p class="mt-3 text-lg text-muted">
           Простые правила, чтобы подушки служили несколько сезонов и сохраняли внешний вид.
         </p>
+        <div class="mt-4 inline-flex items-center gap-2 rounded-full bg-primary/8 px-3 py-1 text-xs text-toned">
+          <UIcon
+            name="i-lucide-badge-check"
+            class="size-4 text-primary"
+          />
+          Материал подготовлен редакцией PavlovCraft
+        </div>
       </header>
 
       <div

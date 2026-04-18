@@ -1,8 +1,16 @@
 <script setup lang="ts">
+import { SEO_LAST_UPDATED, createArticleSchema, createBreadcrumbSchema, createWebPageSchema } from '~/utils/seo'
+
+const articleTitle = 'Какие ткани лучше для яхт и морского климата'
+const articlePath = '/blog/kakie-tkani-dlya-yaht'
+const articlePublished = '2025-01-25'
+const articleImage = '/img/tkani/sunbrella-fabrics.webp'
+const articleDescription
+  = 'Разбираем, какие ткани подойдут для носовых подушек и мягкой мебели на яхте: Sunbrella, морские ткани, кожа и алькантара.'
+
 useSeoMeta({
-  title: 'Какие ткани лучше для яхт и морского климата — блог PavlovCraft',
-  description:
-    'Разбираем, какие ткани подойдут для носовых подушек и мягкой мебели на яхте: Sunbrella, морские ткани, кожа и алькантара.',
+  title: `${articleTitle} — блог PavlovCraft`,
+  description: articleDescription,
   ogTitle: 'Ткани для яхт и морского климата',
   ogDescription:
     'Чем специализированные морские ткани вроде Sunbrella отличаются от обычных уличных материалов и когда их лучше использовать на яхте.',
@@ -11,6 +19,36 @@ useSeoMeta({
   ogImage: 'https://pavlovcraft.ru/img/tkani/sunbrella-fabrics.webp',
   twitterCard: 'summary_large_image',
   robots: 'index,follow'
+})
+
+const articleSchemas = [
+  createWebPageSchema({
+    path: articlePath,
+    name: articleTitle,
+    description: articleDescription
+  }),
+  createBreadcrumbSchema([
+    { name: 'Главная', path: '/' },
+    { name: 'Блог', path: '/blog' },
+    { name: articleTitle, path: articlePath }
+  ]),
+  createArticleSchema({
+    path: articlePath,
+    headline: articleTitle,
+    description: articleDescription,
+    image: articleImage,
+    datePublished: articlePublished,
+    dateModified: SEO_LAST_UPDATED
+  })
+]
+
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify(articleSchemas)
+    }
+  ]
 })
 
 const materials = [
@@ -75,19 +113,29 @@ const otherArticles = [
             5 мин
           </span>
           <time
-            datetime="2025-01-25"
+            :datetime="articlePublished"
             class="text-xs text-muted"
           >
             25 января 2025
           </time>
+          <span class="text-xs text-muted">
+            Обновлено 18 апреля 2026
+          </span>
         </div>
 
         <h1 class="text-3xl sm:text-4xl font-bold tracking-tight">
-          Какие ткани лучше для яхт и морского климата
+          {{ articleTitle }}
         </h1>
         <p class="mt-3 text-lg text-muted">
           Чем Sunbrella и морские материалы отличаются от обычных уличных тканей.
         </p>
+        <div class="mt-4 inline-flex items-center gap-2 rounded-full bg-primary/8 px-3 py-1 text-xs text-toned">
+          <UIcon
+            name="i-lucide-badge-check"
+            class="size-4 text-primary"
+          />
+          Материал подготовлен редакцией PavlovCraft
+        </div>
       </header>
 
       <div

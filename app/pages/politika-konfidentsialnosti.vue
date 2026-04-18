@@ -1,13 +1,37 @@
 <script setup lang="ts">
+import { createBreadcrumbSchema, createWebPageSchema } from '~/utils/seo'
+
+const pageTitle = 'Политика обработки персональных данных — PavlovCraft'
+const pageDescription
+  = 'Политика конфиденциальности и обработки персональных данных мастерской PavlovCraft в Сочи. Узнайте, какие данные мы собираем, как их храним и для каких целей используем.'
+
 useSeoMeta({
-  title: 'Политика обработки персональных данных — PavlovCraft',
-  description:
-    'Политика конфиденциальности и обработки персональных данных мастерской PavlovCraft в Сочи. Узнайте, какие данные мы собираем, как их храним и для каких целей используем.',
+  title: pageTitle,
+  description: pageDescription,
   ogTitle: 'Политика конфиденциальности PavlovCraft',
   ogUrl: 'https://pavlovcraft.ru/politika-konfidentsialnosti',
   ogImage: 'https://pavlovcraft.ru/img/hero.webp',
   twitterCard: 'summary_large_image',
   robots: 'index,follow'
+})
+
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify([
+        createWebPageSchema({
+          path: '/politika-konfidentsialnosti',
+          name: pageTitle,
+          description: pageDescription
+        }),
+        createBreadcrumbSchema([
+          { name: 'Главная', path: '/' },
+          { name: 'Политика конфиденциальности', path: '/politika-konfidentsialnosti' }
+        ])
+      ])
+    }
+  ]
 })
 </script>
 

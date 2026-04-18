@@ -1,9 +1,14 @@
 <script setup lang="ts">
+import { createBreadcrumbSchema, createWebPageSchema } from '~/utils/seo'
+
+const pageTitle = 'О компании — швейное производство и поставки тканей | PavlovCraft'
+const pageDescription
+  = 'Швейная фабрика полного цикла и поставки тканей. Офис в Сочи, производство в Армении. Более 300 сотрудников и свыше 380 единиц оборудования.'
+
 useSeoMeta({
-  title: 'О компании — швейное производство и поставки тканей | PavlovCraft',
-  description:
-    'Швейная фабрика полного цикла и поставки тканей. Офис в Сочи, производство в Армении. Более 300 сотрудников и свыше 380 единиц оборудования.',
-  ogTitle: 'О компании — швейное производство и поставки тканей | PavlovCraft',
+  title: pageTitle,
+  description: pageDescription,
+  ogTitle: pageTitle,
   ogDescription:
     'Узнайте больше о компании: пошив на заказ, поставки тканей, производство в Армении и офис в Сочи.',
   ogType: 'website',
@@ -11,6 +16,25 @@ useSeoMeta({
   ogImage: 'https://pavlovcraft.ru/img/about/hero.webp',
   twitterCard: 'summary_large_image',
   robots: 'index,follow'
+})
+
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify([
+        createWebPageSchema({
+          path: '/o-kompanii',
+          name: pageTitle,
+          description: pageDescription
+        }),
+        createBreadcrumbSchema([
+          { name: 'Главная', path: '/' },
+          { name: 'О компании', path: '/o-kompanii' }
+        ])
+      ])
+    }
+  ]
 })
 </script>
 

@@ -1,8 +1,13 @@
 <script setup lang="ts">
+import { createAbsoluteUrl, createBreadcrumbSchema, createWebPageSchema, businessIdentity } from '~/utils/seo'
+
+const pageTitle = 'Блог о подушках для уличной мебели и яхт — PavlovCraft'
+const pageDescription
+  = 'Статьи о выборе тканей, уходе за подушками для уличной мебели и особенностях материалов для яхт в сочинском климате.'
+
 useSeoMeta({
-  title: 'Блог о подушках для уличной мебели и яхт — PavlovCraft',
-  description:
-    'Статьи о выборе тканей, уходе за подушками для уличной мебели и особенностях материалов для яхт в сочинском климате.',
+  title: pageTitle,
+  description: pageDescription,
   ogTitle: 'Блог PavlovCraft — советы по тканям и уходу',
   ogDescription:
     'Практичные советы по выбору тканей и уходу за подушками для уличной мебели, пляжных лежаков и яхт.',
@@ -51,6 +56,50 @@ const articles = [
     readTime: '4 мин'
   }
 ]
+
+const blogSchemas = [
+  createWebPageSchema({
+    path: '/blog',
+    name: pageTitle,
+    description: pageDescription
+  }),
+  createBreadcrumbSchema([
+    { name: 'Главная', path: '/' },
+    { name: 'Блог', path: '/blog' }
+  ]),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    '@id': `${businessIdentity.siteUrl}/blog#collection`,
+    'url': `${businessIdentity.siteUrl}/blog`,
+    'name': pageTitle,
+    'description': pageDescription,
+    'isPartOf': {
+      '@id': `${businessIdentity.siteUrl}/#website`
+    },
+    'about': {
+      '@id': `${businessIdentity.siteUrl}/#organization`
+    },
+    'mainEntity': {
+      '@type': 'ItemList',
+      'itemListElement': articles.map((article, index) => ({
+        '@type': 'ListItem',
+        'position': index + 1,
+        'url': createAbsoluteUrl(businessIdentity.siteUrl, article.to),
+        'name': article.title
+      }))
+    }
+  }
+]
+
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify(blogSchemas)
+    }
+  ]
+})
 
 function formatDate(dateStr: string) {
   return new Date(dateStr).toLocaleDateString('ru-RU', {

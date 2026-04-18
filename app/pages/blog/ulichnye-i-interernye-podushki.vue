@@ -1,8 +1,16 @@
 <script setup lang="ts">
+import { SEO_LAST_UPDATED, createArticleSchema, createBreadcrumbSchema, createWebPageSchema } from '~/utils/seo'
+
+const articleTitle = 'Чем уличные подушки отличаются от интерьерных'
+const articlePath = '/blog/ulichnye-i-interernye-podushki'
+const articlePublished = '2025-01-28'
+const articleImage = '/img/lezhak.webp'
+const articleDescription
+  = 'Объясняем, почему нельзя просто вынести диванные подушки на улицу и чем уличные ткани и наполнители отличаются от интерьерных.'
+
 useSeoMeta({
-  title: 'Чем уличные подушки отличаются от интерьерных — блог PavlovCraft',
-  description:
-    'Объясняем, почему нельзя просто вынести диванные подушки на улицу и чем уличные ткани и наполнители отличаются от интерьерных.',
+  title: `${articleTitle} — блог PavlovCraft`,
+  description: articleDescription,
   ogTitle: 'Отличия уличных и интерьерных подушек',
   ogDescription:
     'Подушки для уличной мебели и диванные подушки в доме — разные задачи. Рассказываем о тканях, наполнителях и практическом использовании.',
@@ -11,6 +19,36 @@ useSeoMeta({
   ogImage: 'https://pavlovcraft.ru/img/lezhak.webp',
   twitterCard: 'summary_large_image',
   robots: 'index,follow'
+})
+
+const articleSchemas = [
+  createWebPageSchema({
+    path: articlePath,
+    name: articleTitle,
+    description: articleDescription
+  }),
+  createBreadcrumbSchema([
+    { name: 'Главная', path: '/' },
+    { name: 'Блог', path: '/blog' },
+    { name: articleTitle, path: articlePath }
+  ]),
+  createArticleSchema({
+    path: articlePath,
+    headline: articleTitle,
+    description: articleDescription,
+    image: articleImage,
+    datePublished: articlePublished,
+    dateModified: SEO_LAST_UPDATED
+  })
+]
+
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify(articleSchemas)
+    }
+  ]
 })
 
 const comparison = [
@@ -82,19 +120,29 @@ const otherArticles = [
             4 мин
           </span>
           <time
-            datetime="2025-01-28"
+            :datetime="articlePublished"
             class="text-xs text-muted"
           >
             28 января 2025
           </time>
+          <span class="text-xs text-muted">
+            Обновлено 18 апреля 2026
+          </span>
         </div>
 
         <h1 class="text-3xl sm:text-4xl font-bold tracking-tight">
-          Чем уличные подушки отличаются от интерьерных
+          {{ articleTitle }}
         </h1>
         <p class="mt-3 text-lg text-muted">
           Почему нельзя просто вынести домашние подушки на улицу и чего ждать от уличных материалов.
         </p>
+        <div class="mt-4 inline-flex items-center gap-2 rounded-full bg-primary/8 px-3 py-1 text-xs text-toned">
+          <UIcon
+            name="i-lucide-badge-check"
+            class="size-4 text-primary"
+          />
+          Материал подготовлен редакцией PavlovCraft
+        </div>
       </header>
 
       <div

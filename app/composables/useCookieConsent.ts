@@ -6,12 +6,6 @@ interface CookiePreferences {
 
 const STORAGE_KEY = 'cookie-consent'
 
-const defaults: CookiePreferences = {
-  necessary: true,
-  analytics: false,
-  timestamp: ''
-}
-
 export function useCookieConsent() {
   const preferences = useState<CookiePreferences | null>('cookie-consent', () => null)
   const showBanner = useState('cookie-banner-visible', () => false)

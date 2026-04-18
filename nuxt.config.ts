@@ -3,14 +3,14 @@ declare const process: { env?: { NODE_ENV?: string } }
 
 const YANDEX_METRIKA_COUNTER_ID = '106779888'
 
-export default defineNuxtConfig({
+const config = {
   modules: ['@nuxt/eslint', '@nuxt/ui', '@nuxt/a11y'],
 
   /** SSR включён по умолчанию в Nuxt; явно указываем для SEO и соцсетей (og, превью). */
   ssr: true,
 
   /** В продакшене отключаем, чтобы не отдавать лишнее и не влиять на производительность. */
-  devtools: { enabled: process.env.NODE_ENV === 'development' },
+  devtools: { enabled: process.env?.NODE_ENV === 'development' },
 
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
@@ -52,36 +52,35 @@ export default defineNuxtConfig({
     }
   },
 
-  routeRules: {
-    '/': { prerender: true },
-    '/blog': { prerender: true },
-    '/katalog': { prerender: true },
-    '/kontakty': { prerender: true },
-    '/uslugi': { prerender: true },
-    '/o-kompanii': { prerender: true },
-    '/tkani': { prerender: true },
-    '/otzyvy': { prerender: true },
-    '/politika-konfidentsialnosti': { prerender: true },
-    '/soglasie-na-obrabotku': { prerender: true },
-    // Долгий кэш для статики — меньше повторных запросов, быстрее повторные заходы
-    '/img/**': {
-      headers: { 'Cache-Control': 'public, max-age=31536000, immutable' }
-    },
-    '/logo.png': {
-      headers: { 'Cache-Control': 'public, max-age=31536000, immutable' }
-    },
-    '/max.png': {
-      headers: { 'Cache-Control': 'public, max-age=31536000, immutable' }
-    },
-    '/_nuxt/**': {
-      headers: { 'Cache-Control': 'public, max-age=31536000, immutable' }
-    }
-  },
-
   compatibilityDate: '2026-01-15',
 
   nitro: {
-    compressPublicAssets: true
+    compressPublicAssets: true,
+    routeRules: {
+      '/': { prerender: true },
+      '/blog': { prerender: true },
+      '/katalog': { prerender: true },
+      '/kontakty': { prerender: true },
+      '/uslugi': { prerender: true },
+      '/o-kompanii': { prerender: true },
+      '/tkani': { prerender: true },
+      '/otzyvy': { prerender: true },
+      '/politika-konfidentsialnosti': { prerender: true },
+      '/soglasie-na-obrabotku': { prerender: true },
+      // Долгий кэш для статики — меньше повторных запросов, быстрее повторные заходы
+      '/img/**': {
+        headers: { 'Cache-Control': 'public, max-age=31536000, immutable' }
+      },
+      '/logo.png': {
+        headers: { 'Cache-Control': 'public, max-age=31536000, immutable' }
+      },
+      '/max.png': {
+        headers: { 'Cache-Control': 'public, max-age=31536000, immutable' }
+      },
+      '/_nuxt/**': {
+        headers: { 'Cache-Control': 'public, max-age=31536000, immutable' }
+      }
+    }
   },
 
   eslint: {
@@ -110,4 +109,6 @@ export default defineNuxtConfig({
     // devtools можно тоже выключить, чтобы меньше шума
     devtools: false
   }
-})
+}
+
+export default defineNuxtConfig(config as any)

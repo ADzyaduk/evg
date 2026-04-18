@@ -1,9 +1,17 @@
 <script setup lang="ts">
+import { SEO_LAST_UPDATED, createArticleSchema, createBreadcrumbSchema, createWebPageSchema } from '~/utils/seo'
+
+const articleTitle = 'Как выбрать ткань для садовых подушек'
+const articlePath = '/blog/kak-vybrat-tkan-dlya-sadovykh-podushek'
+const articlePublished = '2025-01-15'
+const articleImage = '/img/booka.webp'
+const articleDescription
+  = 'Рассказываем, какую ткань выбрать для садовых подушек и подушек для уличной мебели, чтобы они не выгорали, не намокали и служили несколько сезонов.'
+
 useSeoMeta({
-  title: 'Как выбрать ткань для садовых подушек — блог PavlovCraft',
-  description:
-    'Рассказываем, какую ткань выбрать для садовых подушек и подушек для уличной мебели, чтобы они не выгорали, не намокали и служили несколько сезонов.',
-  ogTitle: 'Как выбрать ткань для садовых подушек',
+  title: `${articleTitle} — блог PavlovCraft`,
+  description: articleDescription,
+  ogTitle: articleTitle,
   ogDescription:
     'Критерии выбора ткани для подушек для уличной мебели: влагостойкость, UV‑защита, плотность и удобство ухода.',
   ogType: 'article',
@@ -11,6 +19,36 @@ useSeoMeta({
   ogImage: 'https://pavlovcraft.ru/img/booka.webp',
   twitterCard: 'summary_large_image',
   robots: 'index,follow'
+})
+
+const articleSchemas = [
+  createWebPageSchema({
+    path: articlePath,
+    name: articleTitle,
+    description: articleDescription
+  }),
+  createBreadcrumbSchema([
+    { name: 'Главная', path: '/' },
+    { name: 'Блог', path: '/blog' },
+    { name: articleTitle, path: articlePath }
+  ]),
+  createArticleSchema({
+    path: articlePath,
+    headline: articleTitle,
+    description: articleDescription,
+    image: articleImage,
+    datePublished: articlePublished,
+    dateModified: SEO_LAST_UPDATED
+  })
+]
+
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify(articleSchemas)
+    }
+  ]
 })
 
 const otherArticles = [
@@ -54,19 +92,29 @@ const otherArticles = [
             4 мин
           </span>
           <time
-            datetime="2025-01-15"
+            :datetime="articlePublished"
             class="text-xs text-muted"
           >
             15 января 2025
           </time>
+          <span class="text-xs text-muted">
+            Обновлено 18 апреля 2026
+          </span>
         </div>
 
         <h1 class="text-3xl sm:text-4xl font-bold tracking-tight">
-          Как выбрать ткань для садовых подушек
+          {{ articleTitle }}
         </h1>
         <p class="mt-3 text-lg text-muted">
           На что обратить внимание, чтобы подушки служили дольше одного сезона.
         </p>
+        <div class="mt-4 inline-flex items-center gap-2 rounded-full bg-primary/8 px-3 py-1 text-xs text-toned">
+          <UIcon
+            name="i-lucide-badge-check"
+            class="size-4 text-primary"
+          />
+          Материал подготовлен редакцией PavlovCraft
+        </div>
       </header>
 
       <div
